@@ -1,0 +1,125 @@
+@use '../base/colors';
+
+.rainbow-multi {
+  background: linear-gradient(61.54deg, colors.$color-tertiary-light 15%, colors.$color-secondary-light 74.15%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.hero {
+  width: 100%;
+  padding: 0 5rem;
+  color: black;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  .rainbow {
+    color: colors.$color-primary-light;
+  }
+
+  height: 80vh;
+  width: 100%;
+
+  &__left {
+    display: flex;
+    flex: 1 1 60%;
+    justify-content: center;
+    align-items: center;
+
+    &--inner {
+      display: flex;
+      max-width: 58rem;
+      gap: 3rem;
+      flex-direction: column;
+    }
+
+    &--email {
+      width: 25vw;
+    }
+  }
+  &__right {
+    flex: 1 1 40%;
+    img {
+      border: 1px transparent;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+  }
+}
+
+.random-text {
+  margin-top: -4rem;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  max-width: 501px;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.carousel {
+  width: 100%;
+  height: 58rem;
+  background-color: colors.$color-primary;
+  color: colors.$color-white;
+  padding: 0 3.75rem;
+  border-radius: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+}
+
+.landing-info {
+  width: 100%;
+  height: 35rem;
+  padding: 0 3.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__white {
+    color: black;
+    width: 100%;
+    height: 45rem;
+    padding: 0 3.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__green {
+    color: white;
+    background-color: colors.$color-primary;
+    border-radius: 19px;
+    width: 100%;
+    height: 30rem;
+    padding: 0 3.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12rem;
+  }
+  &__left {
+    max-width: 450px;
+  }
+  &__right {
+    max-width: 250px;
+  }
+}

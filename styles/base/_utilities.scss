@@ -1,0 +1,137 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.display-none {
+  display: none !important;
+}
+.flex-column {
+  display: flex;
+  justify-content: column !important;
+  align-items: column;
+}
+.flex-row {
+  display: flex;
+  justify-content: column;
+  align-items: center;
+}
+.spacer {
+  height: 20rem;
+}
+.flex {
+  display: flex;
+}
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+// Top Margin
+.mt-half {
+  margin-top: 0.5rem !important;
+}
+.underline-link {
+  display: inline-block;
+  &:hover::after {
+    width: 100%;
+  }
+  &::after {
+    content: '';
+    width: 0px;
+    height: 0.6px;
+    display: block;
+    background: #b3b3b3;
+    transition: 300ms;
+  }
+}
+
+.mt-one {
+  margin-top: 1rem !important;
+}
+.mt-one-half {
+  margin-top: 1.5rem !important;
+}
+.mt-two {
+  margin-top: 2rem !important;
+}
+.mt-two-half {
+  margin-top: 2.5rem !important;
+}
+.mt-three {
+  margin-top: 3rem !important;
+}
+
+.mr-one {
+  margin-right: 1rem !important;
+}
+.mr-one-half {
+  margin-right: 1.5rem !important;
+}
+.mr-two {
+  margin-right: 2rem !important;
+}
+.mr-two-half {
+  margin-right: 2.5rem !important;
+}
+.mr-three {
+  margin-right: 3rem !important;
+}
+
+.mb-one {
+  margin-bottom: 1rem !important;
+}
+.mb-one-half {
+  margin-bottom: 1.5rem !important;
+}
+.mb-two {
+  margin-bottom: 2rem !important;
+}
+.mb-two-half {
+  margin-bottom: 2.5rem !important;
+}
+.mb-three {
+  margin-bottom: 3rem !important;
+}
+
+.mt-medium {
+  margin-top: 2.5rem !important;
+}
+.mt-one {
+  margin-top: 1rem !important;
+}
+.mt-one-half {
+  margin-top: 1.5rem !important;
+}
+.mt-two {
+  margin-top: 2rem !important;
+}
+.mt-two-half {
+  margin-top: 2.5rem !important;
+}
+
+.ml-one {
+  margin-left: 1rem !important;
+}
+.ml-one-half {
+  margin-left: 1.5rem !important;
+}
+.ml-two {
+  margin-left: 2rem !important;
+}
+.ml-two-half {
+  margin-left: 2.5rem !important;
+}
+
+.mb-one {
+  margin-bottom: 1rem !important;
+}
+.mb-one-half {
+  margin-bottom: 1.5rem !important;
+}
+.mb-two {
+  margin-bottom: 2rem !important;
+}
+.mb-two-half {
+  margin-bottom: 2.5rem !important;
+}

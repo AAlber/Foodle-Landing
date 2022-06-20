@@ -1,0 +1,31 @@
+.alert {
+  position: relative;
+  padding: 2.5rem 2.5rem;
+  margin-bottom: 1rem;
+  border: 0 solid transparent;
+  font-size: 1.8rem;
+}
+
+.alert-warning {
+  color: $color-black;
+  background-color: #dec269;
+  border-color: #dec269;
+}
+
+.alert-info {
+}
+
+.alert-primary {
+}
+
+.alert-secondary {
+}
+
+.alert-success {
+}
+
+.alert-danger {
+}
+
+.alert-light {
+}

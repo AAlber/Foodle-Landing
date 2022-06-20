@@ -1,0 +1,8 @@
+schema: http://localhost:5000/graphql
+documents: 'codegen/**/*.ts'
+generates:
+  codegen/index.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query

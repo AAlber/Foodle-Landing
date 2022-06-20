@@ -1,0 +1,19 @@
+.tab {
+  width: 90%;
+  margin: 0 5% 0 5%;
+  display: flex;
+  height: 100vh;
+  &__sidebar {
+    flex: 1 1 30%;
+    border-right: 3rem solid rgb(214, 214, 214);
+  }
+  &__indicator {
+    color: black;
+  }
+  &__contact {
+  }
+  &__component {
+    flex: 1 1 70%;
+    color: black;
+  }
+}
