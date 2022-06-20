@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` Property can create a listing 1`] = `
+Object {
+  "data": undefined,
+  "errors": Array [
+    [ValidationError: Unknown argument "handle" on field "createListing" of type "Mutation".],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[` Property can query a list of multiple properties 1`] = `
+Object {
+  "data": Object {
+    "findAllProperties": Object {
+      "Properties": Array [
+        Object {
+          "city": "Berlin",
+        },
+      ],
+      "UnknownError": null,
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[` Property can query a single property by the handle 1`] = `
+Object {
+  "data": Object {
+    "findProperty": Object {
+      "ClientErrorInvalidHandle": null,
+      "Property": Object {
+        "city": "Berlin",
+      },
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[` Property it fails when a listing city string arg out of max range 1`] = `
+Object {
+  "data": undefined,
+  "errors": Array [
+    [ValidationError: Unknown argument "handle" on field "createListing" of type "Mutation".],
+  ],
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
