@@ -14,6 +14,19 @@
   background-color: white;
   justify-content: center;
   align-items: center;
+  form{
+    div{
+      display:flex;
+
+    }
+    input{
+      flex: 1 1 80%;
+
+    }
+    button{
+      flex:1 1 20%;
+    }
+  }
   .rainbow {
     color: colors.$color-primary-light;
   }
@@ -63,23 +76,29 @@
 
 .carousel {
   width: 100%;
-  height: 58rem;
+  height: fit-content;
   background-color: colors.$color-primary;
   color: colors.$color-white;
-  padding: 0 3.75rem;
+  padding: 6rem 3.75rem;
   border-radius: 19px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
+
   &__wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 3rem;
+    width: 100%;;
   }
 }
+// #swiper-replace {
+//   margin-top: 200px;
+//   .swiper-button-next {
+//       background-image: url(./carousel-left-arrow.svg);
+//       background-repeat: no-repeat;
+//       background-size: 100% auto;
+//       background-position: center;
+//     }
+// }
 
 .landing-info {
   width: 100%;
