@@ -11,7 +11,6 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 
 import 'slick-carousel/slick/slick-theme.css';
-import Item from '~/components/Layout/Item';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
