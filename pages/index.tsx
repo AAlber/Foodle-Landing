@@ -7,9 +7,6 @@ import Navbar from '../components/Layout/Navbar';
 import LandingInfo from '../components/Layout/LandingInfo';
 import axios from 'axios';
 import Carousel from '../components/Layout/Carousel';
-import 'slick-carousel/slick/slick.css';
-
-import 'slick-carousel/slick/slick-theme.css';
 import Link from 'next/link';
 import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
