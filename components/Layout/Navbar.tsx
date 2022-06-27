@@ -3,22 +3,32 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import styles from './Navbar.module.scss';
 import Tab from './Tab';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
+  const intl = useIntl();
+  const findKitchen = intl.formatMessage({ id: 'component.navbar.find' });
+  const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
+  const contact = intl.formatMessage({ id: 'component.navbar.contact' });
   return (
-    <nav className={styles['navbar'] + ' flex-center'}>
+    <nav className={styles['navbar']}>
       <div className={styles['navbar__logo']}>
+        {/* <div className="flex-center"> */}
         <Link href="/" passHref>
           <a>
-            <Image src="/foodle_logo.svg" width={50} height={35} alt="Foodle Logo" />
+            <Image src="/foodle_logo.svg" width={45} height={30} alt="Foodle Logo" />
           </a>
         </Link>
+        <h1 className="logo-text green-text">Foodle</h1>
+        {/* </div> */}
       </div>
       <div className={styles['navbar__menu']}>
-        <Tab href="/" title="EN/DE" />
-        <Tab href="/" title="How It Works" />
-        <Tab href="/create" title="List Your Kitchen" />
-        <Tab href="/" title="Contact" />
+        <Tab href="/" iconSrc="./world-icon.svg" title="EN" />
+        <Tab href="/" title="F.A.Q." />
+        <Tab href="/" title={findKitchen} />
+        <Tab href="/" title={listKitchen} />
+        <Tab href="/" title={contact} />
       </div>
     </nav>
   );

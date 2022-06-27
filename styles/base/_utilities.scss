@@ -2,7 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  &__column{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+    flex-direction: column;
+  }
 }
+
 .display-none {
   display: none !important;
 }

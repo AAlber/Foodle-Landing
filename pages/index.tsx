@@ -7,15 +7,24 @@ import Navbar from '../components/Layout/Navbar';
 import LandingInfo from '../components/Layout/LandingInfo';
 import axios from 'axios';
 import Carousel from '../components/Layout/Carousel';
-import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 
 import 'slick-carousel/slick/slick-theme.css';
+import Link from 'next/link';
+import Footer from '../components/Layout/Footer';
+import { useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
+
+// import Tween, { Power3 } from 'gsap';
+// import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
   const [state, setState] = useState('idle');
   const [errorMsg, setErrorMsg] = useState(null);
+  const { locales } = useRouter();
+
+  const intl = useIntl();
 
   const subscribe = async (e: any) => {
     e.preventDefault();
@@ -32,45 +41,20 @@ const Home: NextPage = () => {
       setState('Error');
     }
   };
-  //@ts-ignore
-  const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-    <img src={'/carousel-left-arrow.svg'} alt="prevArrow" {...props} />
-  );
 
-  //@ts-ignore
-  const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-    <img src={'/carousel-right-arrow.svg'} alt="nextArrow" {...props} />
-  );
-  // const settings = {
-  //   dots: false,
-  //   infinite: false,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   initialSlide: 0,
-  //   //@ts-ignore
-  //   prevArrow: <SlickArrowLeft />,
-  //   //@ts-ignore
-  //   nextArrow: <SlickArrowRight />,
-  // };
-
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 },
-  ];
-  const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-
-  const addItem = () => {
-    const nextItem = Math.max(1, items.length + 1);
-    setItems([...items, nextItem]);
-  };
-
-  const removeItem = () => {
-    const endRange = Math.max(0, items.length - 1);
-    setItems(items.slice(0, endRange));
-  };
+  const title = intl.formatMessage({ id: 'page.home.hero.title' });
+  const description = intl.formatMessage({ id: 'page.home.hero.description' });
+  const easy = intl.formatMessage({ id: 'page.home.hero.easy' });
+  const submitLabel = intl.formatMessage({ id: 'page.home.hero.submit.label' });
+  const submitPlaceholder = intl.formatMessage({ id: 'page.home.hero.submit.placeholder' });
+  const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
+  const food = intl.formatMessage({ id: 'page.home.food' });
+  const dreams = intl.formatMessage({ id: 'page.home.dreams' });
+  const carouselTitle = intl.formatMessage({ id: 'page.home.carousel.title' });
+  const recipes = intl.formatMessage({ id: 'page.home.recipes' });
+  const finding = intl.formatMessage({ id: 'page.home.finding' });
+  const signupLabel = intl.formatMessage({ id: 'page.home.signup.label' });
+  const signup = intl.formatMessage({ id: 'page.home.signup' });
   return (
     <div>
       <Head>
@@ -81,19 +65,22 @@ const Home: NextPage = () => {
         kitchen rental portal, Foodle."
         />
         <link rel="icon" href="/foodle_logo.svg" />
+        <link rel="alternate" href="http://localhost:3000" hrefLang="de" />
+        <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
       </Head>
       <Navbar />
       <div className={styles['hero']}>
         <div className={styles['hero__left']}>
           <div className={styles['hero__left--inner']}>
             <h1 className={'header-primary'}>
-              Renting kitchens just got <span className={styles['rainbow']}>easier</span>.
+              {title}
+              <span className={styles['rainbow']}>{easy}</span>.
             </h1>
             <h3 className={'body-text-secondary'}>
-              We pair licensed kitchen owners with new chefs and bakers so businesses can grow together.
+              {description}
               <br />
               <br />
-              Submit your email so we can keep you up to date on our launch.
+              {submitLabel}
             </h3>
             <form onSubmit={subscribe}>
               <div>
@@ -103,7 +90,7 @@ const Home: NextPage = () => {
                   id="email-input"
                   name="email"
                   type="email"
-                  placeholder="What's your email address"
+                  placeholder={submitPlaceholder}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -113,7 +100,7 @@ const Home: NextPage = () => {
                   className="primary-btn bold-medium"
                   onClick={subscribe}
                 >
-                  Submit
+                  {submit}
                 </button>
               </div>
             </form>
@@ -126,62 +113,25 @@ const Home: NextPage = () => {
         </div>
       </div>
       <h2 className={styles['random-text'] + ' header-secondary'}>
-        Make your entrepreneurial food<span className={styles['rainbow-multi']}> dreams come true.</span>
+        {food}
+        <span className={styles['rainbow-multi']}> {dreams}</span>
       </h2>
       <div className={styles['carousel']}>
-        <h2 className={'header-secondary centered'}>Licensed Kitchens For Rent</h2>
+        <h2 className={'header-secondary centered'}>{carouselTitle}</h2>
         <div className="mt-two">
           <Carousel />
-          {/* <Carousel breakPoints={breakPoints} isRTL={true}>
-            
-            {/* {items.map((item) => (
-              <Item key={item}>{item}</Item>
-            ))} */}
-          {/* </Carousel> */}
         </div>
-        {/* <div >  */}
-        {/* <Slider {...settings}>
-            {[0, 1, 2].map((item, index) => {
-              return (
-                <div key={index}>
-                  <Image alt="carousel-image" src={'/carousel-image-1.png'} width={361} height={415} />
-                  <Image alt="carousel-image" src={'/carousel-image-2.png'} width={361} height={415} />
-                  <Image alt="carousel-image" src={'/carousel-image-3.png'} width={361} height={415} /> */}
-        {/* <img src={item.url} alt="hero_img" />
-
-                  <div className="card__container--inner--card--date_time">
-                    <img src="https://www.wanderon.in/svg/clock.svg" alt="time" />
-                    <p>4D-5D</p>
-
-                    <img src="https://www.wanderon.in/svg/map-pin.svg" alt="location" style={{ marginLeft: 10 }} />
-                    <p>Delhi</p>
-                  </div>
-
-                  <h2>Meghalaya Backpacking</h2>
-                  <p>
-                    starts at <span>₹15,999/-</span>
-                  </p> */}
-        {/* </div>
-              );
-            })} */}
-        {/* </Slider>
-          <Image alt="carousel-image" src={'/carousel-image-1.png'} width={361} height={415} />
-          <Image alt="carousel-image" src={'/carousel-image-2.png'} width={361} height={415} />
-          <Image alt="carousel-image" src={'/carousel-image-3.png'} width={361} height={415} />
-        </div> */}
       </div>
-      <LandingInfo
-        leftText="Always wanted to sell your homemade recipes? "
-        rightText="You’ll need to find a licensed kitchen near you. 
-        That can be a big challenge."
-        containerStyle={'landing-info__white'}
-      />
-      <LandingInfo
-        leftText="Foodle helps you do just that."
-        rightText="With the click of a button, browse and book the kitchen that best fits your needs.
-        And support local businesses in the process."
-        containerStyle={'landing-info__green'}
-      />
+      <LandingInfo leftText={recipes} rightText={finding} containerStyle={'landing-info__white'} />
+      <div className={styles['landing-info__lower']}>
+        <div className="flex-center__column">
+          <h2 className="subtitle-text semi-bold-text">{signupLabel}</h2>
+          <Link href={'/'}>
+            <a className="primary-btn">{signup}</a>
+          </Link>
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 };

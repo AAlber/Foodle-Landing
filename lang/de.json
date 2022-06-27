@@ -1,0 +1,25 @@
+{
+  "component.navbar.find": "Unsere Küchen",
+  "component.navbar.list": "Vermiete deine Küche",
+  "component.navbar.contact": "Kontakt",
+  "page.home.hero.title": "Küchen mieten aber ",
+  "page.home.hero.easy": "einfach",
+  "page.home.hero.description": "Wir vermitteln Köche mit Besitzer von lizensierten Küchen so dass beide Unternehmen wachsen können.",
+  "page.home.hero.submit.label": "Senden Sie uns gerne Ihre email dann halten wir Sie auf den laufenden.",
+  "page.home.hero.submit.placeholder": "Was ist Ihre Email?",
+  "page.home.hero.submit": "Senden",
+  "page.home.food": "Lassen Sie Ihre kulinarischen ",
+  "page.home.dreams": "Träume wahr werden",
+  "page.home.carousel.title": "Lizensierte Küchen Mieten",
+  "page.home.recipes": "Möchten Sie endlich Ihre selbst erfundenen Rezepte verkaufen?",
+  "page.home.finding": "Eine lizensierte Küche in der Nähe zu finden kann sehr schwierig sein, dass muss aber nicht so sein.",
+  "page.home.signup.label": "Wir können helfen",
+  "page.home.signup": "HEUTE EINSCHREIBEN",
+  "component.footer.about": "Über uns",
+  "component.footer.feature": "Feature",
+  "component.footer.pricing": "Preise",
+  "component.footer.careers": "Karriere",
+  "component.footer.help": "Hilfe",
+  "component.footer.privacy": "Privacy"
+
+}

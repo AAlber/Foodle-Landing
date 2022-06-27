@@ -12,6 +12,61 @@
   font-family: 'Inter', sans-serif !important;
   font-weight: 300;
 }
+
+.hover-title {
+    background-image: linear-gradient(to right,
+        #009688,
+        #00695C 50%,
+        #000 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    display: inline-block;
+    font-weight: 570;
+    padding: 0px 0;
+    position: relative;
+    line-height: 2rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  
+  img{
+    margin-right: 0.5rem;
+    transition: transform .7s ease-in-out;
+  }
+  svg{
+    margin-top: -50px;
+    color: linear-gradient(to right,
+          #009688,
+          #00695C 50%,
+          #000 50%);
+  }
+  
+}
+  
+
+  
+.hover-title:hover {
+  background-position: 0;
+  img {
+    fill: #00695C;
+transform: rotate(360deg);
+  }
+}
+
+.hover-title:hover::before {
+  width: 100%;
+}
+  
+    /* Presentational Styles */
+    // body {
+    //   display: grid;
+    //   font-family: 'Poppins', sans-serif;
+    //   font-size: 27px;
+    //   font-weight: 700;
+    //   height: 100vh;
+    //   place-items: center;
+    // }
+
 .centered{
   text-align: center;
 }
@@ -47,18 +102,22 @@ textarea {
 }
 
 .header-secondary {
-  font-size: 4.6rem;
+  font-size: 40px;
   line-height: 55px;
   font-weight: 500;
   letter-spacing: -0.05em;
 }
 
 .header-tertiary {
-  font-size: 3.6rem;
+  font-size: 24px;
   line-height: 55px;
   font-weight: 400;
   letter-spacing: -0.05em;
 }
+.semi-bold-text{
+  font-weight: 650;
+}
+
 
 .label-text {
   font-size: 2rem;
@@ -68,17 +127,28 @@ textarea {
 .green-text {
   color: colors.$color-primary-light;
 }
+.white-text{
+  color: white;
+}
 .grey-text {
   color: colors.$color-grey;
 }
+.logo-text{
+  font-size: 24px;
+  font-weight: 650;
+}
+.subtitle-text{
+  font-size: 24px;
+}
 .body-text {
-  font-size: 2.4rem;
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 200;
   &__small {
     font-size: 1.8rem;
     font-weight: 300;
   }
 }
+
 
 .body-text-secondary {
   font-size: 1.8rem;
@@ -88,5 +158,5 @@ textarea {
 }
 
 .small-text {
-  font-size: 1.6rem !important;
+  font-size: 16px !important;
 }

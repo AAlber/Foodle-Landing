@@ -8,14 +8,26 @@ import 'slick-carousel/slick/slick-theme.css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
+import en from '../lang/en.json';
+import de from '../lang/de.json';
 
+import { IntlProvider } from 'react-intl';
+import { useRouter } from 'next/router';
 export const queryClient = new QueryClient();
+const messages = {
+  en,
+  de,
+};
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { locale } = useRouter();
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-    </QueryClientProvider>
+    // @ts-ignore
+    <IntlProvider locale={locale!} messages={messages[locale!]}>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+      </QueryClientProvider>
+    </IntlProvider>
   );
 }
 

@@ -53,6 +53,10 @@ const nextConfig = {
   images: {
     domains: ["foodle-bucket.s3.eu-central-1.amazonaws.com"]
   },
+  i18n: {
+   locales: ["en", "de"],
+   defaultLocale: "de",
+ },
   async headers() {
     return [
       {
