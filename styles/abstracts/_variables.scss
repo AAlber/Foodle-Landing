@@ -1,6 +1,11 @@
 // FONT
 $default-font-size: 1.8rem;
-$font-family: "Karla", sans-serif;
+$font-family: 'Karla', sans-serif;
 
 // // GRID
 // $grid-width: 114rem;
+
+// BREAKPOINTS
+$mobile-width: 375px;
+$tablet-width: 768px;
+$desktop-width: 1024px;

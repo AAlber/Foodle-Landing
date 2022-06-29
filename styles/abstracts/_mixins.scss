@@ -12,3 +12,22 @@
     background-color: $hover-bg-color;
   }
 }
+
+// BREAKPOINTS
+@mixin mobile {
+  @media (max-width: #{768px - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{768px}) and (max-width: #{1024px - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{1024px}) {
+    @content;
+  }
+}

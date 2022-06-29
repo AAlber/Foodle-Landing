@@ -14,60 +14,51 @@
 }
 
 .hover-title {
-    background-image: linear-gradient(to right,
-        #009688,
-        #00695C 50%,
-        #000 50%);
-    background-size: 200% 100%;
-    background-position: 100%;
-    display: inline-block;
-    font-weight: 570;
-    padding: 0px 0;
-    position: relative;
-    line-height: 2rem;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-  
-  img{
-    margin-right: 0.5rem;
-    transition: transform .7s ease-in-out;
-  }
-  svg{
-    margin-top: -50px;
-    color: linear-gradient(to right,
-          #009688,
-          #00695C 50%,
-          #000 50%);
-  }
-  
-}
-  
+  background-image: linear-gradient(to right, #009688, #00695c 50%, #000 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  display: inline-block;
+  font-weight: 570;
+  padding: 0px 0;
+  position: relative;
+  line-height: 2rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
 
-  
+  img {
+    margin-right: 0.5rem;
+    transition: transform 0.7s ease-in-out;
+  }
+  svg {
+    margin-top: -50px;
+    color: linear-gradient(to right, #009688, #00695c 50%, #000 50%);
+  }
+}
+
 .hover-title:hover {
   background-position: 0;
   img {
-    fill: #00695C;
-transform: rotate(360deg);
+    fill: #00695c;
+    transform: rotate(360deg);
   }
 }
 
 .hover-title:hover::before {
   width: 100%;
 }
-  
-    /* Presentational Styles */
-    // body {
-    //   display: grid;
-    //   font-family: 'Poppins', sans-serif;
-    //   font-size: 27px;
-    //   font-weight: 700;
-    //   height: 100vh;
-    //   place-items: center;
-    // }
 
-.centered{
+/* Presentational Styles */
+// body {
+//   display: grid;
+//   font-family: 'Poppins', sans-serif;
+//   font-size: 27px;
+//   font-weight: 700;
+//   height: 100vh;
+//   place-items: center;
+// }
+
+.centered {
   text-align: center;
 }
 body {
@@ -99,6 +90,10 @@ textarea {
   line-height: 68px;
   font-weight: 500;
   letter-spacing: -0.05em;
+  @include mobile {
+    font-size: 4rem;
+    line-height: 55px;
+  }
 }
 
 .header-secondary {
@@ -106,6 +101,10 @@ textarea {
   line-height: 55px;
   font-weight: 500;
   letter-spacing: -0.05em;
+  @include mobile {
+    font-size: 24px;
+    line-height: 48px;
+  }
 }
 
 .header-tertiary {
@@ -113,11 +112,14 @@ textarea {
   line-height: 55px;
   font-weight: 400;
   letter-spacing: -0.05em;
+  @include mobile {
+    font-size: 20px;
+    line-height: 40px;
+  }
 }
-.semi-bold-text{
+.semi-bold-text {
   font-weight: 650;
 }
-
 
 .label-text {
   font-size: 2rem;
@@ -127,17 +129,17 @@ textarea {
 .green-text {
   color: colors.$color-primary-light;
 }
-.white-text{
+.white-text {
   color: white;
 }
 .grey-text {
   color: colors.$color-grey;
 }
-.logo-text{
+.logo-text {
   font-size: 24px;
   font-weight: 650;
 }
-.subtitle-text{
+.subtitle-text {
   font-size: 24px;
 }
 .body-text {
@@ -148,7 +150,6 @@ textarea {
     font-weight: 300;
   }
 }
-
 
 .body-text-secondary {
   font-size: 1.8rem;
