@@ -20,12 +20,22 @@
   form {
     div {
       display: flex;
+      @include mixins.mobile {
+        flex-direction: column;
+        gap: 2rem;
+      }
     }
     input {
       flex: 1 1 80%;
+      @include mixins.mobile {
+        width: 100%;
+      }
     }
     button {
       flex: 1 1 20%;
+      @include mixins.mobile {
+        width: 100%;
+      }
     }
   }
   .rainbow {
@@ -61,11 +71,11 @@
     }
   }
   @include mixins.mobile {
-    margin-top: 150px;
+    margin-top: 180px;
     flex-direction: column;
   }
   @include mixins.tablet {
-    margin-top: 100px;
+    margin-top: 150px;
     flex-direction: column;
   }
 }
@@ -83,6 +93,7 @@
   display: block;
   @include mixins.mobile {
     margin-top: 20rem;
+    padding: 0 5rem;
   }
   @include mixins.tablet {
     margin-top: 20rem;
@@ -126,13 +137,23 @@
     display: flex;
     align-items: center;
     gap: 23vw;
+    @include mixins.mobile {
+      flex-direction: column;
+      gap: 6rem;
+    }
   }
   &__left {
     max-width: 500px;
     font-weight: 600;
+    @include mixins.mobile {
+      max-width: 100%;
+    }
   }
   &__right {
     max-width: 300px;
+    @include mixins.mobile {
+      max-width: 100%;
+    }
   }
   &__lower {
     margin-top: -9rem;
