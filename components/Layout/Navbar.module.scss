@@ -1,9 +1,11 @@
 @use '../../styles/base/colors';
+@use '../../styles/abstracts/mixins';
 
 .navbar {
   width: 100%;
   background-color: white;
   position: fixed;
+  overflow: hidden;
   height: 7rem;
   display: flex;
   justify-content: space-between;
@@ -22,17 +24,16 @@
     background: linear-gradient(226.46deg, colors.$color-secondary-light 9.5%, rgba(244, 143, 177, 0.25) 87.45%);
     border-radius: 100%;
   }
-  
 
   &__logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    h1{
+    h1 {
       margin-top: 0.8rem;
       margin-left: 0.5rem;
     }
-    a{
+    a {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -42,7 +43,6 @@
       opacity: 0.5;
       transition: all 0.2s;
     }
-    
   }
   &__auth-btns {
     right: 1vw;
@@ -58,9 +58,6 @@
     justify-content: flex-end;
     gap: 4vw;
     flex-grow: 1;
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
     &--underline {
       display: inline-block;
       &:hover::after {
@@ -83,6 +80,11 @@
       transition: all 0.2s;
       height: 100%;
       padding: 1rem 1rem;
+    }
+  }
+  @include mixins.mobile {
+    &__menu {
+      display: none;
     }
   }
 }

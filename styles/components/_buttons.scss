@@ -1,12 +1,12 @@
 @use '../base/colors';
 @mixin btn($color, $bg-color, $hover-bg-color, $border-color: colors.$color-primary-light) {
-  padding: 1.4rem 3.5rem;
+  padding: 1rem 3.5rem;
   height: 6rem;
   border-radius: 1.8rem;
   cursor: pointer;
   font-size: 20px;
-    // color: white;
-    font-weight: 600;
+  // color: white;
+  font-weight: 600;
   background-color: $bg-color;
   border: 1px solid $border-color;
   color: $color;
@@ -33,7 +33,7 @@
   padding: 20px 25px;
   height: 5rem;
 }
-.button-text{
+.button-text {
   font-size: 20;
   color: white;
   font-weight: bold;
