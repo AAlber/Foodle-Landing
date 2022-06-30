@@ -19,13 +19,13 @@ body {
   line-height: 1.6;
   background-color: white;
   overflow-x: hidden;
-
+  /* 
   @include mobile {
-    padding-top: 18rem;
+    padding-top: 20rem;
   }
   @include tablet {
-    padding-top: 18rem;
-  }
+    padding-top: 20rem;
+  } */
 }
 
 ::selection {

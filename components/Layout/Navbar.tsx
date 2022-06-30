@@ -5,6 +5,7 @@ import styles from './Navbar.module.scss';
 import Tab from './Tab';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
+import Sidebar from './Sidebar';
 
 const Navbar = () => {
   const intl = useIntl();
