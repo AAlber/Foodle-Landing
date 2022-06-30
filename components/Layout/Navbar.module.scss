@@ -5,6 +5,7 @@
   width: 100%;
   background-color: white;
   position: fixed;
+  overflow: hidden;
   height: 7rem;
   display: flex;
   justify-content: space-between;
@@ -57,9 +58,6 @@
     justify-content: flex-end;
     gap: 4vw;
     flex-grow: 1;
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
     &--underline {
       display: inline-block;
       &:hover::after {
@@ -85,5 +83,8 @@
     }
   }
   @include mixins.mobile {
+    &__menu {
+      display: none;
+    }
   }
 }

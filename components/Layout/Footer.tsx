@@ -22,31 +22,49 @@ const Footer = () => {
         </div>
         <div className={styles['footer__elements'] + ' flex-center mt-one'}>
           <Link href={'/'}>
-            <a className="body-text">{about}</a>
+            <a className="body-text--hover">{about}</a>
           </Link>
           <Link href={'/'}>
-            <a className="body-text">{feature}</a>
+            <a className="body-text--hover">{feature}</a>
           </Link>
           <Link href={'/'}>
-            <a className="body-text">{pricing}</a>
+            <a className="body-text--hover">{pricing}</a>
           </Link>
           <Link href={'/'}>
-            <a className="body-text">{careers}</a>
+            <a className="body-text--hover">{careers}</a>
           </Link>
           <Link href={'/'}>
-            <a className="body-text">{help}</a>
+            <a className="body-text--hover">{help}</a>
           </Link>
           <Link href={'/'}>
-            <a className="body-text">{privacy}</a>
+            <a className="body-text--hover">{privacy}</a>
           </Link>
         </div>
       </div>
       <div className={styles['footer__end']}>
         <a>© 2022 Foodle inc. All rights reserved</a>
         <div className={styles['footer__end--socials'] + ' flex-center'}>
-          <Image src={'/instagram.svg'} alt="instagram logo" width={30} height={30} />
-          <Image src={'/twitter.svg'} alt="twitter logo" width={30} height={30} />
-          <Image src={'/youtube.svg'} alt="youtube logo" width={30} height={30} />
+          <Image
+            className={styles['footer__end--socials__image']}
+            src={'/instagram.svg'}
+            alt="instagram logo"
+            width={30}
+            height={30}
+          />
+          <Image
+            className={styles['footer__end--socials__image']}
+            src={'/twitter.svg'}
+            alt="twitter logo"
+            width={30}
+            height={30}
+          />
+          <Image
+            className={styles['footer__end--socials__image']}
+            src={'/youtube.svg'}
+            alt="youtube logo"
+            width={30}
+            height={30}
+          />
         </div>
       </div>
     </div>

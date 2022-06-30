@@ -149,6 +149,14 @@ textarea {
     font-size: 1.8rem;
     font-weight: 300;
   }
+  &--hover {
+    font-size: 16px;
+    font-weight: 200;
+    opacity: 70%;
+    &:hover {
+      opacity: 100%;
+    }
+  }
 }
 
 .body-text-secondary {

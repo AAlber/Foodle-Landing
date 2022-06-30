@@ -52,6 +52,9 @@
     &--socials {
       gap: 2rem;
       margin-right: 2rem;
+      &__image {
+        cursor: pointer;
+      }
     }
   }
   @include mixins.mobile {
