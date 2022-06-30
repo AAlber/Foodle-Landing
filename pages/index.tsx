@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/pages/Home.module.scss';
 import Navbar from '../components/Layout/Navbar';
 import LandingInfo from '../components/Layout/LandingInfo';
@@ -11,9 +11,8 @@ import Link from 'next/link';
 import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
-
-// import Tween, { Power3 } from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
+import { gsap } from 'gsap';
+import { TextPlugin } from '../gsap/umd/TextPlugin';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
@@ -52,6 +51,26 @@ const Home: NextPage = () => {
   const finding = intl.formatMessage({ id: 'page.home.finding' });
   const signupLabel = intl.formatMessage({ id: 'page.home.signup.label' });
   const signup = intl.formatMessage({ id: 'page.home.signup' });
+
+
+  //Animations
+  gsap.registerPlugin(TextPlugin);
+  const imageRef = useRef(null);
+  const easyRef = useRef(null);
+
+  const getTextTransformTimeline = (textList: string[]) => {
+    var textAnimTl = gsap.timeline({ repeat: -1 });
+    textList.forEach((text) => {
+      textAnimTl.add(gsap.to(easyRef.current, { duration: 1, text: { value: text, delimiter: '' } }));
+      textAnimTl.add(gsap.to(easyRef.current, { duration: 1, text: { value: '', delimiter: ' ' } }), '+=2');
+    });
+    return textAnimTl;
+  };
+
+  useEffect(() => {
+    const textAnimTl = getTextTransformTimeline(['easy', 'convenient', 'fun', 'satisfying']);
+  });
+
   return (
     <div>
       <Head>
@@ -71,7 +90,7 @@ const Home: NextPage = () => {
           <div className={styles['hero__left--inner']}>
             <h1 className={'header-primary'}>
               {title}
-              <span className={styles['rainbow']}>{easy}</span>.
+              <span className={styles['rainbow']} ref={easyRef}></span>.
             </h1>
             <h3 className={'body-text-secondary'}>
               {description}
