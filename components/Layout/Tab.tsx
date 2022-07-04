@@ -20,7 +20,7 @@ const Tab = (props: TabProps) => {
     <Link href={props.href || '/'} locale={locale === 'en' ? 'de' : 'en'}>
       {/* <div className="hover-title"> */}
       <a className={'hover-title flex-center'}>
-        {props.iconSrc ? <img src={props.iconSrc} /> : <></>}
+        {props.iconSrc ? <img src={props.iconSrc} alt="world-icon" /> : <></>}
         <span className={'small-text'}>{title}</span>
       </a>
       {/* </div> */}
