@@ -12,7 +12,8 @@ import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 import { gsap } from 'gsap';
-import { TextPlugin } from '../gsap/umd/TextPlugin';
+import { TextPlugin } from 'gsap/dist/TextPlugin';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
@@ -40,7 +41,7 @@ const Home: NextPage = () => {
 
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
-  const easy = intl.formatMessage({ id: 'page.home.hero.easy' });
+  const easyAdjectives = intl.formatMessage({ id: 'page.home.hero.easyAdjectives' });
   const submitLabel = intl.formatMessage({ id: 'page.home.hero.submit.label' });
   const submitPlaceholder = intl.formatMessage({ id: 'page.home.hero.submit.placeholder' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
@@ -52,10 +53,10 @@ const Home: NextPage = () => {
   const signupLabel = intl.formatMessage({ id: 'page.home.signup.label' });
   const signup = intl.formatMessage({ id: 'page.home.signup' });
 
-
   //Animations
   gsap.registerPlugin(TextPlugin);
-  const imageRef = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+  const dreamsScroll = useRef(null);
   const easyRef = useRef(null);
 
   const getTextTransformTimeline = (textList: string[]) => {
@@ -66,10 +67,32 @@ const Home: NextPage = () => {
     });
     return textAnimTl;
   };
+  const getDreamScrollTextAnim = () => {
+    return gsap.fromTo(
+      dreamsScroll.current,
+      { autoAlpha: 0 },
+      {
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: dreamsScroll.current,
+
+          start: '-200px center',
+          end: '200px center',
+          scrub: 0.5,
+          markers: true,
+        },
+      }
+    );
+  };
 
   useEffect(() => {
-    const textAnimTl = getTextTransformTimeline(['easy', 'convenient', 'fun', 'satisfying']);
-  });
+    const dreamScrollAnim = getDreamScrollTextAnim();
+    const textAnimTl = getTextTransformTimeline(easyAdjectives.split(' '));
+    return () => {
+      textAnimTl.kill();
+      dreamScrollAnim.kill();
+    };
+  }, [easyAdjectives]);
 
   return (
     <div>
@@ -128,9 +151,9 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <h2 className={styles['random-text'] + ' header-secondary'}>
+      <h2 className={styles['random-text'] + ' header-secondary'} ref={dreamsScroll}>
         {food}
-        <span className={styles['rainbow-multi']}> {dreams}</span>
+        <span className={styles['rainbow-multi']}> {dreams} </span>
       </h2>
       <div className={styles['carousel']}>
         <h2 className={'header-secondary centered'}>{carouselTitle}</h2>
