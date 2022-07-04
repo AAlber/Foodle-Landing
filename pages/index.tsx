@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
+import Sidebar from '../components/Layout/Sidebar';
 
 // import Tween, { Power3 } from 'gsap';
 // import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -66,6 +67,10 @@ const Home: NextPage = () => {
         <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
       </Head>
       <Navbar />
+      <div className={styles['sidebar']}>
+        <Sidebar />
+      </div>
+
       <div className={styles['hero']}>
         <div className={styles['hero__left']}>
           <div className={styles['hero__left--inner']}>
