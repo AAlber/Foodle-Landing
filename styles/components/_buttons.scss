@@ -33,6 +33,15 @@
   padding: 20px 25px;
   height: 5rem;
 }
+.primary-btn__smallest {
+  @include primary-btn();
+  padding: 5px 5px;
+  height:3rem !important;
+  font-weight: 600;
+  font-size: 14px;
+  // height: 5rem;
+  
+}
 .button-text {
   font-size: 20;
   color: white;
