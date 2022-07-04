@@ -17,7 +17,7 @@ const Navbar = () => {
         {/* <div className="flex-center"> */}
         <Link href="/" passHref>
           <a>
-            <Image src="/foodle_logo.svg" width={45} height={30} alt="Foodle Logo" />
+            <Image src="/foodle_logo.svg" width={45} height={27} alt="Foodle Logo" />
           </a>
         </Link>
         <h1 className="logo-text green-text">Foodle</h1>

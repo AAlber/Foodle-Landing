@@ -17,13 +17,11 @@ const Tab = (props: TabProps) => {
   console.log(title);
 
   return (
-    <Link href={props.href || '/'} locale={locale === 'en' ? 'de' : 'en'}>
-      {/* <div className="hover-title"> */}
+    <Link href={props.href || '/'} locale={props.iconSrc ? (locale === 'en' ? 'de' : 'en') : locale}>
       <a className={'hover-title flex-center'}>
         {props.iconSrc ? <img src={props.iconSrc} /> : <></>}
         <span className={'small-text'}>{title}</span>
       </a>
-      {/* </div> */}
     </Link>
   );
 };
