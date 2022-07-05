@@ -14,6 +14,7 @@ import { useRouter } from 'next/router';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { dir } from 'console';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
@@ -58,6 +59,10 @@ const Home: NextPage = () => {
   gsap.registerPlugin(ScrollTrigger);
   const dreamsScroll = useRef(null);
   const easyRef = useRef(null);
+  const recipesRef = useRef(null);
+  const findingRef = useRef(null);
+
+  const signupRef = useRef(null);
 
   const getTextTransformTimeline = (textList: string[]) => {
     var textAnimTl = gsap.timeline({ repeat: -1 });
@@ -67,30 +72,86 @@ const Home: NextPage = () => {
     });
     return textAnimTl;
   };
-  const getDreamScrollTextAnim = () => {
+  const getSlideInAnim = (ref: React.MutableRefObject<null>, direction: string) => {
+    return gsap.to(
+      ref.current,
+      // { },
+      direction === 'right'
+        ? {
+            // autoAlpha: 1,
+            x: 100,
+            duration: 5,
+            scrollTrigger: {
+              trigger: ref.current,
+
+              start: 'top 800px',
+              end: 'bottom 80px',
+              scrub: 0.5,
+            },
+          }
+        : {
+            // autoAlpha: 1,
+            x: -100,
+            duration: 5,
+            scrollTrigger: {
+              trigger: ref.current,
+
+              start: 'bottom bottom',
+              end: 'bottom 80px',
+              scrub: 0.5,
+            },
+          }
+    );
+  };
+  const getSlideUpAnim = (ref: React.MutableRefObject<null>, direction: string) => {
+    return gsap.to(
+      ref.current,
+      // { },
+      {
+        // autoAlpha: 1,
+        y: -100,
+        duration: 5,
+        scrollTrigger: {
+          trigger: ref.current,
+
+          start: 'bottom 800px',
+          end: 'bottom 80px',
+          scrub: 0.5,
+        },
+      }
+    );
+  };
+
+  const getFadeInAnim = (ref: React.MutableRefObject<null>) => {
     return gsap.fromTo(
-      dreamsScroll.current,
+      ref.current,
       { autoAlpha: 0 },
       {
         autoAlpha: 1,
         scrollTrigger: {
-          trigger: dreamsScroll.current,
+          trigger: ref.current,
 
           start: '-200px center',
           end: '200px center',
           scrub: 0.5,
-          markers: true,
+          markers: false,
         },
       }
     );
   };
 
   useEffect(() => {
-    const dreamScrollAnim = getDreamScrollTextAnim();
+    const dreamScrollAnim = getFadeInAnim(dreamsScroll);
+    const signupAnim = getSlideUpAnim(signupRef, 'top');
+    const slideInRightAnim = getSlideInAnim(recipesRef, 'right');
+    const slideInLeftAnim = getSlideInAnim(findingRef, 'left');
     const textAnimTl = getTextTransformTimeline(easyAdjectives.split(' '));
     return () => {
       textAnimTl.kill();
+      signupAnim.kill();
       dreamScrollAnim.kill();
+      slideInLeftAnim.kill();
+      slideInRightAnim.kill();
     };
   }, [easyAdjectives]);
 
@@ -161,9 +222,18 @@ const Home: NextPage = () => {
           <Carousel />
         </div>
       </div>
-      <LandingInfo leftText={recipes} rightText={finding} containerStyle={'landing-info__white'} />
+      <div className={styles['landing-info__white']}>
+        <div className={styles['landing-info__wrapper']}>
+          <div ref={recipesRef} className={styles['landing-info__left'] + ' header-secondary'}>
+            {recipes}
+          </div>
+          <div ref={findingRef} className={styles['landing-info__right'] + ' subtitle-text'}>
+            {finding}
+          </div>{' '}
+        </div>
+      </div>
       <div className={styles['landing-info__lower']}>
-        <div className="flex-center__column">
+        <div ref={signupRef} className="flex-center__column">
           <h2 className="subtitle-text semi-bold-text">{signupLabel}</h2>
           <Link href={'/'}>
             <a className="primary-btn">{signup}</a>
