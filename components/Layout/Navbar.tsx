@@ -25,7 +25,7 @@ const Navbar = () => {
         {/* </div> */}
       </div>
       <div className={styles['navbar__menu']}>
-        <Tab href="/" iconSrc="./world-icon.svg" title="EN" />
+        <Tab href="/" iconSrc="./world-icon.svg" title="EN" burger={false} />
         <Tab href="/" title="F.A.Q." />
         <Tab href="/" title={findKitchen} />
         <Tab href="/" title={listKitchen} />

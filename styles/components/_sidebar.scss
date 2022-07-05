@@ -11,7 +11,6 @@
 .bm-burger-bars {
   background: #373a47;
 }
-
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
   background: #a90000;
@@ -27,7 +26,6 @@
 .bm-cross {
   background: #bdc3c7;
 }
-
 /*
   Sidebar wrapper styles
   Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
@@ -39,9 +37,12 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: #009688;
-  padding: 2.5em 1.5em 0;
+  background: white;
+
   font-size: $default-font-size;
+  footer{
+    height: 10rem;
+  }
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -53,14 +54,64 @@
 .bm-item-list {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  color: #b8b7ad;
-  padding: 4em 2em;
+  justify-content: space-between;
+  footer{
+    background: #00695C;
+    height: 20vh;
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.7rem;
+    img{
+      
+    }:nth-of-type(1){
+      margin: 0;
+    }
+    div{
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
 }
+
 
 /* Individual item */
 .bm-item {
-  display: inline-block;
+  display: flex;
+ 
+}
+.bm-icon{
+ align-self: flex-end;
+}
+.bm-top{
+  display:flex;
+  
+  &__left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0em 1em 2em 1em;
+    flex:1 1 70%;
+    :nth-child(4){
+      border-bottom: 1px solid white !important;
+    }
+    a{
+      width: 100%;
+      border-bottom: 1px solid #009688;
+
+      h2{
+        padding: 2rem 1rem;
+      }
+    }
+
+  }
+  &__right{
+    flex: 1 1 30%;
+    margin-top: 5rem;
+    
+  }
 }
 
 /* Styling of overlay */
