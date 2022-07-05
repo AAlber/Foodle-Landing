@@ -15,6 +15,10 @@ import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { dir } from 'console';
+import Sidebar from '../components/Layout/Sidebar';
+
+// import Tween, { Power3 } from 'gsap';
+// import ScrollTrigger from 'gsap/ScrollTrigger';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
@@ -96,7 +100,7 @@ const Home: NextPage = () => {
             scrollTrigger: {
               trigger: ref.current,
 
-              start: 'bottom bottom',
+              start: 'top 800px',
               end: 'bottom 80px',
               scrub: 0.5,
             },
@@ -169,6 +173,10 @@ const Home: NextPage = () => {
         <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
       </Head>
       <Navbar />
+      <div className={styles['sidebar']}>
+        <Sidebar />
+      </div>
+
       <div className={styles['hero']}>
         <div className={styles['hero__left']}>
           <div className={styles['hero__left--inner']}>

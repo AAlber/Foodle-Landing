@@ -26,6 +26,7 @@
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
 
+
   img {
     margin-right: 0.5rem;
     transition: transform 0.7s ease-in-out;
@@ -165,7 +166,9 @@ textarea {
   line-height: 20px;
   color: $color-grey;
 }
-
+.black-text{
+  color: black;
+}
 .small-text {
   font-size: 16px !important;
 }
