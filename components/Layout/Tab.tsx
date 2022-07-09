@@ -8,19 +8,16 @@ interface TabProps {
   href: string;
   title: string;
   iconSrc?: string;
+  burger?: boolean;
 }
 const Tab = (props: TabProps) => {
-  const { locale, locales } = useRouter();
-  // console.log(locales![0], locales![1]);
-  console.log(locale);
+  const { locale } = useRouter();
   const title = props.iconSrc ? locale?.toString().toUpperCase() : props.title;
-  console.log(title);
-
   return (
     <Link href={props.href || '/'} locale={props.iconSrc ? (locale === 'en' ? 'de' : 'en') : locale}>
-      <a className={'hover-title flex-center'}>
-        {props.iconSrc ? <img src={props.iconSrc} /> : <></>}
-        <span className={'small-text'}>{title}</span>
+      <a className={'hover-title' + (props.burger ? '' : ' flex-center ')}>
+        {props.iconSrc ? <img src={props.iconSrc} alt="world-icon" /> : <></>}
+        <h2 className={'small-text'}>{title}</h2>
       </a>
     </Link>
   );

@@ -5,6 +5,7 @@ import styles from './Navbar.module.scss';
 import Tab from './Tab';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
+import Sidebar from './Sidebar';
 
 const Navbar = () => {
   const intl = useIntl();
@@ -24,7 +25,7 @@ const Navbar = () => {
         {/* </div> */}
       </div>
       <div className={styles['navbar__menu']}>
-        <Tab href="/" iconSrc="./world-icon.svg" title="EN" />
+        <Tab href="/" iconSrc="./world-icon.svg" title="EN" burger={false} />
         <Tab href="/" title="F.A.Q." />
         <Tab href="/" title={findKitchen} />
         <Tab href="/" title={listKitchen} />

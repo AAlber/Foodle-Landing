@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/pages/Home.module.scss';
 import Navbar from '../components/Layout/Navbar';
 import LandingInfo from '../components/Layout/LandingInfo';
@@ -11,6 +11,12 @@ import Link from 'next/link';
 import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/dist/TextPlugin';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { dir } from 'console';
+import Sidebar from '../components/Layout/Sidebar';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // import Tween, { Power3 } from 'gsap';
 // import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -20,6 +26,7 @@ const Home: NextPage = () => {
   const [state, setState] = useState('idle');
   const [errorMsg, setErrorMsg] = useState(null);
   const { locales } = useRouter();
+  const { height, width } = useWindowDimensions();
 
   const intl = useIntl();
 
@@ -41,17 +48,75 @@ const Home: NextPage = () => {
 
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
-  const easy = intl.formatMessage({ id: 'page.home.hero.easy' });
+  const easyAdjectives = intl.formatMessage({ id: 'page.home.hero.easyAdjectives' });
   const submitLabel = intl.formatMessage({ id: 'page.home.hero.submit.label' });
   const submitPlaceholder = intl.formatMessage({ id: 'page.home.hero.submit.placeholder' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
   const food = intl.formatMessage({ id: 'page.home.food' });
   const dreams = intl.formatMessage({ id: 'page.home.dreams' });
   const carouselTitle = intl.formatMessage({ id: 'page.home.carousel.title' });
-  const recipes = intl.formatMessage({ id: 'page.home.recipes' });
-  const finding = intl.formatMessage({ id: 'page.home.finding' });
   const signupLabel = intl.formatMessage({ id: 'page.home.signup.label' });
   const signup = intl.formatMessage({ id: 'page.home.signup' });
+
+  //Animations
+  gsap.registerPlugin(TextPlugin);
+  gsap.registerPlugin(ScrollTrigger);
+  const dreamsScroll = useRef(null);
+  const easyRef = useRef(null);
+
+  const getTextTransformTimeline = (textList: string[]) => {
+    var textAnimTl = gsap.timeline({ repeat: -1 });
+    textList.forEach((text) => {
+      textAnimTl.add(gsap.to(easyRef.current, { duration: 1, text: { value: text, delimiter: '' } }));
+      textAnimTl.add(gsap.to(easyRef.current, { duration: 1, text: { value: '', delimiter: ' ' } }), '+=2');
+    });
+    return textAnimTl;
+  };
+
+  const getSlideUpAnim = (ref: React.MutableRefObject<null>) => {
+    return gsap.to(ref.current, {
+      y: -100,
+      duration: 5,
+      scrollTrigger: {
+        trigger: ref.current,
+
+        start: 'bottom 800px',
+        end: 'bottom 80px',
+        scrub: 0.5,
+      },
+    });
+  };
+
+  const getFadeInAnim = (ref: React.MutableRefObject<null>) => {
+    return gsap.fromTo(
+      ref.current,
+      { autoAlpha: 0 },
+      {
+        autoAlpha: 1,
+        scrollTrigger: {
+          trigger: ref.current,
+
+          start: '-200px center',
+          end: '200px center',
+          scrub: 0.5,
+          markers: false,
+        },
+      }
+    );
+  };
+  const signupRef = useRef(null);
+
+  useEffect(() => {
+    const dreamScrollAnim = getFadeInAnim(dreamsScroll);
+    const signupAnim = getSlideUpAnim(signupRef);
+    const textAnimTl = getTextTransformTimeline(easyAdjectives.split(' '));
+    return () => {
+      textAnimTl.kill();
+      signupAnim.kill();
+      dreamScrollAnim.kill();
+    };
+  }, [easyAdjectives, width]);
+
   return (
     <div>
       <Head>
@@ -66,12 +131,16 @@ const Home: NextPage = () => {
         <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
       </Head>
       <Navbar />
+      <div className={styles['sidebar']}>
+        <Sidebar />
+      </div>
+
       <div className={styles['hero']}>
         <div className={styles['hero__left']}>
           <div className={styles['hero__left--inner']}>
             <h1 className={'header-primary'}>
               {title}
-              <span className={styles['rainbow']}>{easy}</span>.
+              <span className={styles['rainbow']} ref={easyRef}></span>.
             </h1>
             <h3 className={'body-text-secondary'}>
               {description}
@@ -109,9 +178,9 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <h2 className={styles['random-text'] + ' header-secondary'}>
+      <h2 className={styles['random-text'] + ' header-secondary mb-two'} ref={dreamsScroll}>
         {food}
-        <span className={styles['rainbow-multi']}> {dreams}</span>
+        <span className={styles['rainbow-multi']}> {dreams} </span>
       </h2>
       <div className={styles['carousel']}>
         <h2 className={'header-secondary centered'}>{carouselTitle}</h2>
@@ -119,9 +188,9 @@ const Home: NextPage = () => {
           <Carousel />
         </div>
       </div>
-      <LandingInfo leftText={recipes} rightText={finding} containerStyle={'landing-info__white'} />
+      <LandingInfo containerStyle={''} width={0} />
       <div className={styles['landing-info__lower']}>
-        <div className="flex-center__column">
+        <div ref={signupRef} className="flex-center__column">
           <h2 className="subtitle-text semi-bold-text">{signupLabel}</h2>
           <Link href={'/'}>
             <a className="primary-btn">{signup}</a>
