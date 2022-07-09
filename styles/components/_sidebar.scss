@@ -33,11 +33,13 @@
 .bm-menu-wrap {
   position: fixed;
   height: 100%;
+  max-width: 90%;
 }
 
 /* General sidebar styles */
 .bm-menu {
   background: white;
+
 
   font-size: $default-font-size;
   footer{
