@@ -37,9 +37,7 @@
     color: colors.$color-primary-light;
   }
 
-  // margin: 10rem 0;
-
-  height: 65rem;
+  height: calc(50rem + 25vw);
   width: 100%;
 
   &__left {
@@ -71,9 +69,21 @@
   }
 
   @include mixins.mobile {
-    padding-top: 40rem;
+    padding: 20rem 1.5rem 0rem 1.5rem;
     flex-direction: column;
-    margin-bottom: 38rem;
+    margin-bottom: 15rem;
+    // padding: 0;
+    &__right{
+      display: none;
+      // img{
+      //   display: none;
+      //   visibility: none;
+      // };
+    }
+    .img {
+      display: none;
+      visibility: hidden;
+    }
 
     form {
       div {
@@ -99,7 +109,7 @@
 
 .random-text {
   margin-top: -4rem;
-  height: 35vh;
+  height: calc(27rem + 10vh);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +121,9 @@
 
   @include mixins.mobile {
     margin-top: 20rem;
-    padding: 0 5rem;
+    margin-bottom: 8rem;
+    padding: 0 1rem;
+    font-size: 26px;
   }
 
   @include mixins.tablet {
@@ -129,9 +141,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 8rem;
 
   &__wrapper {
     width: 100%;
+  }
+  @include mixins.mobile {
+    font-size: 20px;
   }
 }
 
@@ -140,7 +156,6 @@
   height: 35rem;
   display: flex;
   justify-content: space-between;
-  // flex-wrap: wrap;
 
   &__white {
     color: black;
@@ -168,28 +183,96 @@
   }
 
   &__lower {
-    margin-top: -9rem;
+    // margin-top: -9rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 40rem;
+    
   }
+    // @include mixins.tablet{
 
-  @include mixins.mobile {
-    &__wrapper {
-      flex-direction: column;
-      gap: 6rem;
-    }
+    // }
 
-    &__left {
-      max-width: 100%;
+    @include mixins.mobile {
+      &__wrapper {
+        margin: 20rem 0;
+        flex-direction: column;
+        gap: 6rem;
+      }
+  
+      &__left {
+        font-size: 24px;
+        max-width: 90%;
+        text-align: center;
+        transform: translate3d(0);
+      }
+  
+      &__lower {
+        height: calc(20rem + 10vh);
+  
+        h2 {
+          font-size: 22px;
+          max-width: 18rem;
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+  
+        a {
+          font-size: 20px;
+          padding: 1rem;
+          height: 5rem;
+        }
+      }
+  
+      &__right {
+        height: fit-content !important;
+        max-width: 90% !important;
+        font-size: 22px;
+        text-align: center;
+        transform: translate3d(0);
+      }
     }
-
-    &__right {
-      max-width: 100%;
-    }
-  }
+        @include mixins.tablet {
+          &__wrapper {
+            margin: 20rem 0;
+            flex-direction: column;
+            gap: 6rem;
+          }
+    
+          &__left {
+            font-size: 24px;
+            max-width: 90%;
+            text-align: center;
+            transform: translate3d(0);
+          }
+    
+          &__lower {
+            height: 30vh;
+    
+            h2 {
+              font-size: 22px;
+              max-width: 18rem;
+              text-align: center;
+              margin-bottom: 2rem;
+            }
+    
+            a {
+              font-size: 20px;
+              padding: 1rem;
+              height: 5rem;
+            }
+          }
+    
+          &__right {
+            height: fit-content !important;
+            max-width: 90% !important;
+            font-size: 22px;
+            text-align: center;
+            transform: translate3d(0);
+          }
+        }
 }
 
 .sidebar {

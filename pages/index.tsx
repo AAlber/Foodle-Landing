@@ -16,6 +16,7 @@ import { TextPlugin } from 'gsap/dist/TextPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { dir } from 'console';
 import Sidebar from '../components/Layout/Sidebar';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 // import Tween, { Power3 } from 'gsap';
 // import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
   const [state, setState] = useState('idle');
   const [errorMsg, setErrorMsg] = useState(null);
   const { locales } = useRouter();
+  const { height, width } = useWindowDimensions();
 
   const intl = useIntl();
 
@@ -76,36 +78,35 @@ const Home: NextPage = () => {
     });
     return textAnimTl;
   };
+  const [dreamsMargin, setDreamsMargin] = useState();
   const getSlideInAnim = (ref: React.MutableRefObject<null>, direction: string) => {
-    return gsap.to(
-      ref.current,
-      // { },
-      direction === 'right'
-        ? {
-            // autoAlpha: 1,
-            x: 100,
-            duration: 5,
-            scrollTrigger: {
-              trigger: ref.current,
+    return width && width < 600
+      ? null
+      : gsap.to(
+          ref.current,
+          direction === 'right'
+            ? {
+                x: 100,
+                duration: 5,
+                scrollTrigger: {
+                  trigger: ref.current,
+                  start: 'top 800px',
+                  end: 'bottom 80px',
+                  scrub: 0.5,
+                },
+              }
+            : {
+                x: -100,
+                duration: 5,
+                scrollTrigger: {
+                  trigger: ref.current,
 
-              start: 'top 800px',
-              end: 'bottom 80px',
-              scrub: 0.5,
-            },
-          }
-        : {
-            // autoAlpha: 1,
-            x: -100,
-            duration: 5,
-            scrollTrigger: {
-              trigger: ref.current,
-
-              start: 'top 800px',
-              end: 'bottom 80px',
-              scrub: 0.5,
-            },
-          }
-    );
+                  start: 'top 800px',
+                  end: 'bottom 80px',
+                  scrub: 0.5,
+                },
+              }
+        );
   };
   const getSlideUpAnim = (ref: React.MutableRefObject<null>, direction: string) => {
     return gsap.to(
@@ -154,10 +155,10 @@ const Home: NextPage = () => {
       textAnimTl.kill();
       signupAnim.kill();
       dreamScrollAnim.kill();
-      slideInLeftAnim.kill();
-      slideInRightAnim.kill();
+      slideInLeftAnim && slideInLeftAnim.kill();
+      slideInRightAnim && slideInRightAnim.kill();
     };
-  }, [easyAdjectives]);
+  }, [easyAdjectives, width]);
 
   return (
     <div>
@@ -220,7 +221,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <h2 className={styles['random-text'] + ' header-secondary'} ref={dreamsScroll}>
+      <h2 className={styles['random-text'] + ' header-secondary mb-two'} ref={dreamsScroll}>
         {food}
         <span className={styles['rainbow-multi']}> {dreams} </span>
       </h2>
