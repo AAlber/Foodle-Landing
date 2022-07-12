@@ -56,7 +56,11 @@ const SwiperCard = (props: SwiperCardProps) => {
           <p>{props.cardInfo.description}</p>
           <div className={'info__tags'}>
             {props.cardInfo.tags.map((tag: string) => {
-              return <h2 className="card__tag">{tag}</h2>;
+              return (
+                <h2 key={tag} className="card__tag">
+                  {tag}
+                </h2>
+              );
             })}
           </div>
           <div className="card__bottom">
