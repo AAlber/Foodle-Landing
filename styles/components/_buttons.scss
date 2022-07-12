@@ -36,7 +36,8 @@
 .primary-btn__smallest {
   @include primary-btn();
   padding: 5px 5px;
-  height:3rem !important;
+  border-radius: 1.5rem;
+  height:2.5rem !important;
   font-weight: 600;
   font-size: 14px;
   // height: 5rem;

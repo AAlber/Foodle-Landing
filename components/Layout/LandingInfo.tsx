@@ -12,7 +12,6 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect } from 'react';
 
 interface LandingInfoProps {
-  containerStyle: string;
   width: number;
 }
 
@@ -70,7 +69,7 @@ const LandingInfo = (props: LandingInfoProps) => {
     props.width > 600;
   });
   useEffect(() => {
-    if (props.width > 600) {
+    if (props.width > 1000) {
       const recipesRightSlideAnim = getSlideInAnim(recipesRef, 'right');
       const findingLeftSlideAnim = getSlideInAnim(findingRef, 'left');
 
