@@ -94,11 +94,12 @@
 
     }
   @include mixins.mobile{
-    width: 160px;
-    height: 220px;
+    width: 240px;
+    height: 300px;
     margin: 0 0.5rem 5rem 0.5rem;
     .location{
-      bottom: 6rem;
+      top: 2rem;
+      // left: 2rem;
     }
     
     
@@ -119,7 +120,7 @@
     h3{
       font-weight: 800;
       @include mixins.mobile {
-        font-size: 12px;
+        font-size: 14px;
         color: black;
         
       }
@@ -134,15 +135,15 @@
         @include mixins.mobile{
           img{
             filter: none;
-            height: 11px;
-            width: 11px;
+            height: 13px;
+            width: 13px;
           }
         }
     h4{
       font-weight: 700;
       @include mixins.mobile {
         color: black;
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }
@@ -164,7 +165,9 @@
       display: block;
       position: fixed;
       transition: ease;
+      
     }
+    
   }
 
   &:before {
@@ -172,6 +175,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    
     display: block;
     width: 100%;
     height: 100%;
@@ -180,6 +184,7 @@
     z-index: 2;
     opacity: 0;
     @include mixins.mobile {
+      opacity: 1;
       background: rgba(white, 0.8);
         width: 100%;
         top:auto;
@@ -212,7 +217,7 @@
           padding: 0.2rem 0.3rem;
           margin:0.2rem;
           border-radius: 0.75rem;
-          font-size: 9px;
+          font-size: 11px;
           
         }
       
@@ -229,6 +234,9 @@
     max-width: 28rem;
     height: 65%;
     @include mixins.mobile{
+      margin-bottom: -2.5rem;
+      opacity: 1;
+      transform: translateY(0px);
       
     }
     &__tags{
@@ -237,9 +245,11 @@
       align-items: center;
       justify-content: center;
     max-width: 28rem;
+    margin: 1rem 0;
     @include mixins.mobile {
         display: inline-block;
-        max-width: 80rem;
+        max-width: 24rem;
+        margin-left: 1rem;
       }
     }
     
@@ -249,7 +259,7 @@
       font-size: 15px;
       margin: 0px;
       @include mixins.mobile {
-          font-size: 12px;
+          font-size: 14px;
           color: black;
       
         }
