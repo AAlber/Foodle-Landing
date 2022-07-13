@@ -10,6 +10,7 @@ import { useIntl } from 'react-intl';
 
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useEffect } from 'react';
+import { isSafari } from 'react-device-detect';
 
 interface LandingInfoProps {
   width: number;
@@ -68,7 +69,6 @@ const LandingInfo = (props: LandingInfoProps) => {
   useEffect(() => {
     props.width > 600;
   });
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   useEffect(() => {
     if (!isSafari) {
       if (props.width > 1000) {
