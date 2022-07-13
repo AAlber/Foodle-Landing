@@ -71,7 +71,7 @@
   }
 
   @include mixins.mobile {
-    padding: 20rem 1.5rem 0rem 1.5rem;
+    padding: 25rem 1.5rem 0rem 1.5rem;
     flex-direction: column;
     margin-bottom: 15rem;
     height:42rem;
@@ -115,10 +115,7 @@
   padding-top: 10rem;
 
   @include mixins.mobile {
-    // margin-top: 5rem;
-    
-    // margin-bottom: 8rem;
-    padding: 6rem 1rem 5rem 1rem;
+    padding: 10rem 1rem 5rem 1rem;
     font-size: 26px;
   }
 
@@ -212,9 +209,9 @@
 
     @include mixins.mobile {
       &__wrapper {
-        margin: 20rem 0;
+        margin: 0;
         flex-direction: column;
-        gap: 6rem;
+        gap: 1rem;
       }
       &__white{
         margin-top: 20rem;
@@ -223,13 +220,13 @@
       &__left {
         font-size: 24px;
         max-width: 90%;
-        text-align: center;
+        text-align: left;
         transform: translate3d(0);
       }
   
       &__lower {
         height: 20rem;
-        margin-top: 14rem;
+        margin-top:8rem;
   
         h2 {
           font-size: 22px;
@@ -249,7 +246,7 @@
         height: fit-content !important;
         max-width: 90% !important;
         font-size: 22px;
-        text-align: center;
+        text-align: left;
         transform: translate3d(0);
       }
     }
