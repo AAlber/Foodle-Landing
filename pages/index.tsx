@@ -192,7 +192,7 @@ const Home: NextPage = () => {
       </div>
       <LandingInfo width={width!} />
       <div className={styles['landing-info__lower']}>
-        <div ref={signupRef} className="flex-center__column">
+        <div ref={signupRef} className={width! > 1000 ? 'flex-center__column' : ''}>
           <h2 className="subtitle-text semi-bold-text">{signupLabel}</h2>
           <Link href={'/'}>
             <a className="primary-btn">{signup}</a>

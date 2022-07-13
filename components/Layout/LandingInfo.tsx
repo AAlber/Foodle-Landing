@@ -53,41 +53,41 @@ const LandingInfo = (props: LandingInfoProps) => {
               }
         );
   };
-  const getSlideUpAnim = (ref: React.MutableRefObject<null>) => {
-    return gsap.to(ref.current, {
-      y: -100,
-      duration: 5,
-      scrollTrigger: {
-        trigger: ref.current,
+  // const getSlideUpAnim = (ref: React.MutableRefObject<null>) => {
+  //   return gsap.to(ref.current, {
+  //     y: -100,
+  //     duration: 5,
+  //     scrollTrigger: {
+  //       trigger: ref.current,
 
-        start: 'bottom 800px',
-        end: 'bottom 80px',
-        scrub: 0.5,
-      },
-    });
-  };
+  //       start: 'bottom 800px',
+  //       end: 'bottom 80px',
+  //       scrub: 0.5,
+  //     },
+  //   });
+  // };
   useEffect(() => {
     props.width > 600;
   });
   useEffect(() => {
-    if (!isSafari) {
-      if (props.width > 1000) {
-        const recipesRightSlideAnim = getSlideInAnim(recipesRef, 'right');
-        const findingLeftSlideAnim = getSlideInAnim(findingRef, 'left');
+    // if (!isSafari) {
+    if (props.width > 1000) {
+      const recipesRightSlideAnim = getSlideInAnim(recipesRef, 'right');
+      const findingLeftSlideAnim = getSlideInAnim(findingRef, 'left');
 
-        return () => {
-          recipesRightSlideAnim && recipesRightSlideAnim.kill();
-          findingLeftSlideAnim && findingLeftSlideAnim.kill();
-        };
-      } else {
-        const recipesSlideUpAnim = getSlideUpAnim(recipesRef);
-        const findingSlideUpAnim = getSlideUpAnim(findingRef);
-        return () => {
-          recipesSlideUpAnim.kill();
-          findingSlideUpAnim.kill();
-        };
-      }
+      return () => {
+        recipesRightSlideAnim && recipesRightSlideAnim.kill();
+        findingLeftSlideAnim && findingLeftSlideAnim.kill();
+      };
+    } else {
+      // const recipesSlideUpAnim = getSlideUpAnim(recipesRef);
+      // const findingSlideUpAnim = getSlideUpAnim(findingRef);
+      // return () => {
+      //   recipesSlideUpAnim.kill();
+      //   findingSlideUpAnim.kill();
+      // };
     }
+    // }
   });
 
   const recipes = intl.formatMessage({ id: 'page.home.recipes' });
