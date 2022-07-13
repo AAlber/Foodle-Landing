@@ -68,22 +68,25 @@ const LandingInfo = (props: LandingInfoProps) => {
   useEffect(() => {
     props.width > 600;
   });
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   useEffect(() => {
-    if (props.width > 1000) {
-      const recipesRightSlideAnim = getSlideInAnim(recipesRef, 'right');
-      const findingLeftSlideAnim = getSlideInAnim(findingRef, 'left');
+    if (!isSafari) {
+      if (props.width > 1000) {
+        const recipesRightSlideAnim = getSlideInAnim(recipesRef, 'right');
+        const findingLeftSlideAnim = getSlideInAnim(findingRef, 'left');
 
-      return () => {
-        recipesRightSlideAnim && recipesRightSlideAnim.kill();
-        findingLeftSlideAnim && findingLeftSlideAnim.kill();
-      };
-    } else {
-      const recipesSlideUpAnim = getSlideUpAnim(recipesRef);
-      const findingSlideUpAnim = getSlideUpAnim(findingRef);
-      return () => {
-        recipesSlideUpAnim.kill();
-        findingSlideUpAnim.kill();
-      };
+        return () => {
+          recipesRightSlideAnim && recipesRightSlideAnim.kill();
+          findingLeftSlideAnim && findingLeftSlideAnim.kill();
+        };
+      } else {
+        const recipesSlideUpAnim = getSlideUpAnim(recipesRef);
+        const findingSlideUpAnim = getSlideUpAnim(findingRef);
+        return () => {
+          recipesSlideUpAnim.kill();
+          findingSlideUpAnim.kill();
+        };
+      }
     }
   });
 

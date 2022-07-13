@@ -47,6 +47,7 @@ const Home: NextPage = () => {
   };
 
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
+  const click = intl.formatMessage({ id: 'page.home.carousel.click' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
   const easyAdjectives = intl.formatMessage({ id: 'page.home.hero.easyAdjectives' });
   const submitLabel = intl.formatMessage({ id: 'page.home.hero.submit.label' });
@@ -184,9 +185,7 @@ const Home: NextPage = () => {
       </h2>
       <div className={styles['carousel']}>
         <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
-        <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>
-          Click or swipe to see more of our restaurants
-        </h3>
+        <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>{click}</h3>
         <div className="mt-two">
           <Carousel />
         </div>
