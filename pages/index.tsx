@@ -174,7 +174,7 @@ const Home: NextPage = () => {
         </div>
         <div className={styles['hero__right']}>
           <div className={styles['hero__right']}>
-            <Image alt={'Hero Image'} src={'/programming.png'} width={450} height={350} />
+            <Image alt={'Hero Image'} src={'/food-platter.jpg'} width={450} height={350} />
           </div>
         </div>
       </div>

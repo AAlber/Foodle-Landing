@@ -134,6 +134,8 @@
         @include mixins.mobile{
           img{
             filter: none;
+            height: 11px;
+            width: 11px;
           }
         }
     h4{

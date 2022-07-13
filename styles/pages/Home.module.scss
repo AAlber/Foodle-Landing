@@ -60,6 +60,12 @@
 
   &__right {
     flex: 1 1 40%;
+    
+    img{
+      transform: rotate(90deg);
+      // overflow: hidden;
+
+    }
 
     img {
       border: 1px transparent;
@@ -105,19 +111,17 @@
 .random-text {
   margin-top: -4rem;
   height: calc(27rem + 10vh);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: black;
   max-width: 501px;
   margin: 0 auto;
   text-align: center;
-  display: block;
+  padding-top: 10rem;
 
   @include mixins.mobile {
-    margin-top: 20rem;
-    margin-bottom: 8rem;
-    padding: 0 1rem;
+    // margin-top: 5rem;
+    
+    // margin-bottom: 8rem;
+    padding: 6rem 1rem 5rem 1rem;
     font-size: 26px;
   }
 
@@ -152,12 +156,12 @@
   @include mixins.mobile {
     padding: 3rem 2rem 3rem 2rem;
     &__header {
-        font-size: 16px;
+        font-size: 25px;
         line-height: 2.5rem;
       }
     
       &__instructions {
-          font-size: 10px;
+          font-size: 13px;
           margin-top: 0.5rem;
           opacity: 0.8;
           text-align: left;
