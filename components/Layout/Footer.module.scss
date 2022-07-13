@@ -2,7 +2,8 @@
 
 .footer {
   height: 256px;
-  padding: 5rem;
+  // padding: 5rem;
+  padding: 4rem 4rem;
   background-color: #00695c;
 
   &__main {
@@ -26,6 +27,8 @@
 
   &__elements {
     display: flex;
+    // gap:1rem !important;
+
   }
 
   &__end {
@@ -59,11 +62,9 @@
   }
   @include mixins.mobile {
     height: auto;
-    padding: auto;
     &__main {
-      height: auto;
+      padding-bottom: 2rem;
       border-bottom: 2px solid rgb(255, 255, 255, 0.2);
-      padding-bottom: auto;
     }
     &__elements {
       gap:3vw !important;
@@ -82,6 +83,7 @@
       margin-top: 2rem;
       flex-direction: column;
       gap: 2rem;
+      margin-bottom: 2rem;
     }
   }
 }

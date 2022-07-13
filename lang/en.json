@@ -20,5 +20,6 @@
   "component.footer.pricing": "Pricing",
   "component.footer.careers": "Careers",
   "component.footer.help": "Help",
-  "component.footer.privacy": "Privacy Policy"
+  "component.footer.privacy": "Privacy",
+  "component.swiperCard.hr": "hr"
 }
