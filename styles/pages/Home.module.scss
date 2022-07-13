@@ -60,6 +60,12 @@
 
   &__right {
     flex: 1 1 40%;
+    
+    img{
+      transform: rotate(90deg);
+      // overflow: hidden;
+
+    }
 
     img {
       border: 1px transparent;
@@ -72,13 +78,8 @@
     padding: 20rem 1.5rem 0rem 1.5rem;
     flex-direction: column;
     margin-bottom: 15rem;
-    // padding: 0;
     &__right{
       display: none;
-      // img{
-      //   display: none;
-      //   visibility: none;
-      // };
     }
     .img {
       display: none;
@@ -110,19 +111,17 @@
 .random-text {
   margin-top: -4rem;
   height: calc(27rem + 10vh);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: black;
   max-width: 501px;
   margin: 0 auto;
   text-align: center;
-  display: block;
+  padding-top: 10rem;
 
   @include mixins.mobile {
-    margin-top: 20rem;
-    margin-bottom: 8rem;
-    padding: 0 1rem;
+    // margin-top: 5rem;
+    
+    // margin-bottom: 8rem;
+    padding: 6rem 1rem 5rem 1rem;
     font-size: 26px;
   }
 
@@ -143,12 +142,36 @@
   justify-content: center;
   margin-bottom: 8rem;
 
+  &__header {
+      font-size: 30px;
+    }
   &__wrapper {
     width: 100%;
   }
-  @include mixins.mobile {
-    font-size: 20px;
+  &__instructions{
+    font-size: 14px;
+    margin-top: 0.5rem;
+    opacity: 0.8;
   }
+  @include mixins.mobile {
+    padding: 3rem 2rem 3rem 2rem;
+    &__header {
+        font-size: 25px;
+        line-height: 2.5rem;
+      }
+    
+      &__instructions {
+          font-size: 13px;
+          margin-top: 0.5rem;
+          opacity: 0.8;
+          text-align: left;
+          content: "click on restaurants to see more" !important;
+        }
+     h2{
+       text-align: left;
+     }
+  }
+  
 }
 
 .landing-info {
@@ -160,7 +183,8 @@
   &__white {
     color: black;
     width: 100%;
-    height: 45rem;
+    margin-top: 10rem;
+    height: calc(20rem + 10vh);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -183,23 +207,22 @@
   }
 
   &__lower {
-    // margin-top: -9rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 40rem;
+    height: 30rem;
     
   }
-    // @include mixins.tablet{
-
-    // }
 
     @include mixins.mobile {
       &__wrapper {
         margin: 20rem 0;
         flex-direction: column;
         gap: 6rem;
+      }
+      &__white{
+        margin-top: 20rem;
       }
   
       &__left {
@@ -210,7 +233,8 @@
       }
   
       &__lower {
-        height: calc(20rem + 10vh);
+        height: 20rem;
+        margin-top: 14rem;
   
         h2 {
           font-size: 22px;

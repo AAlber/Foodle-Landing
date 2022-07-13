@@ -174,7 +174,7 @@ const Home: NextPage = () => {
         </div>
         <div className={styles['hero__right']}>
           <div className={styles['hero__right']}>
-            <Image alt={'Hero Image'} src={'/programming.png'} width={450} height={350} />
+            <Image alt={'Hero Image'} src={'/food-platter.jpg'} width={450} height={350} />
           </div>
         </div>
       </div>
@@ -183,12 +183,15 @@ const Home: NextPage = () => {
         <span className={styles['rainbow-multi']}> {dreams} </span>
       </h2>
       <div className={styles['carousel']}>
-        <h2 className={'header-secondary centered'}>{carouselTitle}</h2>
+        <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
+        <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>
+          Click or swipe to see more of our restaurants
+        </h3>
         <div className="mt-two">
           <Carousel />
         </div>
       </div>
-      <LandingInfo containerStyle={''} width={0} />
+      <LandingInfo width={width!} />
       <div className={styles['landing-info__lower']}>
         <div ref={signupRef} className="flex-center__column">
           <h2 className="subtitle-text semi-bold-text">{signupLabel}</h2>
