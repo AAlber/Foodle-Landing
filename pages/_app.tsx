@@ -16,9 +16,9 @@ const messages = {
   en,
   de,
 };
-
 function MyApp({ Component, pageProps }: AppProps) {
   const { locale } = useRouter();
+
   return (
     // @ts-ignore
     <IntlProvider locale={locale!} messages={messages[locale!]}>
@@ -31,20 +31,3 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp;
-
-// import '../styles/app.scss';
-// import type { AppProps } from 'next/app';
-// import React from 'react';
-// import { QueryClient, QueryClientProvider } from 'react-query';
-
-// export const queryClient = new QueryClient();
-
-// function MyApp({ Component, pageProps }: AppProps) {
-//   return (
-//     <QueryClientProvider client={queryClient}>
-//       <Component {...pageProps} />
-//     </QueryClientProvider>
-//   );
-// }
-
-// export default MyApp;
