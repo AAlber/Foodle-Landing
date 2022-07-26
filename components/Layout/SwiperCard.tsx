@@ -26,6 +26,8 @@ SwiperCore.use([Navigation]);
 type SwiperCardProps = {
   index: number;
   cardInfo: KitchenCardInfo;
+
+  width: number;
   //   title: string;
   //   description: string;
   //   tags: string[];
@@ -53,16 +55,34 @@ const SwiperCard = (props: SwiperCardProps) => {
         <h3 className="location"></h3>
         <div className="info flex-center__column">
           <h1 className="semi-bold-text">{props.cardInfo.title}</h1>
-          <p>{props.cardInfo.description}</p>
-          <div className={'info__tags'}>
-            {props.cardInfo.tags.map((tag: string) => {
-              return (
-                <h2 key={tag} className="card__tag">
-                  {tag}
-                </h2>
-              );
-            })}
-          </div>
+          {props.width > 450 ? (
+            <>
+              <p className="semi-bold-text">{props.cardInfo.description}</p>
+              <div className={'info__tags'}>
+                {props.cardInfo.tags.map((tag: string) => {
+                  return (
+                    <h2 key={tag} className="card__tag">
+                      {tag}
+                    </h2>
+                  );
+                })}
+              </div>
+            </>
+          ) : (
+            <div className="flex-center card__tag--division">
+              <div className={'info__tags'}>
+                {props.cardInfo.tags.map((tag: string) => {
+                  return (
+                    <h2 key={tag} className="card__tag">
+                      {tag}
+                    </h2>
+                  );
+                })}
+              </div>
+              <p className="semi-bold-text">{props.cardInfo.description}</p>
+            </div>
+          )}
+
           <div className="card__bottom">
             <div className="card__badge">
               <h3 className="body-text">

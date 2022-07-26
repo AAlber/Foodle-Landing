@@ -93,12 +93,55 @@
         }
 
     }
+        //  <div className="card__bottom"> {
+        //    props.width < 400 ? <div className="card__badge"><h3 className="body-text"><img src= {
+        //      '/location-black.png'
+        //    }
+    
+        //    width= {
+        //      12
+        //    }
+    
+        //    height= {
+        //      12
+        //    }
+    
+        //    /> {
+        //      ' '+props.cardInfo.distance
+        //    }
+    
+        //    km </h3><h4 className="body-text"><img src= {
+        //      '/euro.png'
+        //    }
+    
+        //    width= {
+        //      10
+        //    }
+    
+        //    height= {
+        //      10
+        //    }
+    
+        //    /> {
+        //      ' '+props.cardInfo.price
+        //    }
+    
+        //    / {
+        //      hr
+        //    }
+    
+        //    </h4></div><button className="primary-btn__smallest">Read More</button> : <></>
   @include mixins.mobile{
-    width: 240px;
-    height: 300px;
-    margin: 0 0.5rem 5rem 0.5rem;
+    width: 420px;
+    height: 500px;
+    margin: 0rem 0rem 0rem 0rem;
+    box-shadow: none;
     .location{
+      position: absolute;
+      height: 3rem !important;
       top: 2rem;
+
+
       // left: 2rem;
     }
     
@@ -114,6 +157,9 @@
     align-items: center;
     margin-top: 1rem;
     gap: 1.5rem;
+    @include mixins.mobile{
+      display: none !important;
+    }
   }
 
   &__badge{
@@ -189,7 +235,7 @@
         width: 100%;
         top:auto;
         bottom: 0;
-        height: 190px;
+        height: 250px;
     
       }
 
@@ -214,10 +260,10 @@
       margin: 0.5rem 0.5rem 0rem 0rem;
       display: inline-block;
       @include mixins.mobile {
-          padding: 0.2rem 0.3rem;
+          padding: 0.3rem 0.3rem;
           margin:0.2rem;
           border-radius: 0.75rem;
-          font-size: 11px;
+          font-size: 13px;
           
         }
       
@@ -232,8 +278,10 @@
     transform: translateY(30px);
     transition: 0.5s;
     max-width: 28rem;
+    width: calc(30rem + 8vw);
     height: 65%;
     @include mixins.mobile{
+      max-width: 30rem;
       margin-bottom: -2.5rem;
       opacity: 1;
       transform: translateY(0px);
@@ -242,13 +290,15 @@
     &__tags{
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-start;
+      // flex: 1 1 100%;
     max-width: 28rem;
-    margin: 1rem 0;
+    margin: 0.5rem 0 0rem 0;
     @include mixins.mobile {
-        display: inline-block;
+        padding: 1rem;
         max-width: 24rem;
+        min-width: 13.8rem;
         margin-left: 1rem;
       }
     }
@@ -259,7 +309,8 @@
       font-size: 15px;
       margin: 0px;
       @include mixins.mobile {
-          font-size: 14px;
+          font-size: 16px;
+          font-weight: 600 !important;
           color: black;
       
         }
@@ -271,7 +322,11 @@
       margin-top: 8px;
       text-align: center;
       @include mixins.mobile{
-        display: none;
+        border-left: 2px solid #00695c;
+        color: black;
+        padding: 0.5rem 1.7rem;
+        align-self: flex-start;
+        text-align: left;
       };
     }
     

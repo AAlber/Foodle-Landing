@@ -9185,6 +9185,13 @@ react-burger-menu@^3.0.8:
     prop-types "^15.7.2"
     snapsvg-cjs "0.0.6"
 
+react-device-detect@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-device-detect/-/react-device-detect-2.2.2.tgz#dbabbce798ec359c83f574c3edb24cf1cca641a5"
+  integrity sha512-zSN1gIAztUekp5qUT/ybHwQ9fmOqVT1psxpSlTn1pe0CO+fnJHKRLOWWac5nKxOxvOpD/w84hk1I+EydrJp7SA==
+  dependencies:
+    ua-parser-js "^1.0.2"
+
 react-dom@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -9227,6 +9234,11 @@ react-input-children@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/react-input-children/-/react-input-children-5.0.0.tgz#bbded1c88a17565aa05c88e56ce0602a197daf20"
   integrity sha512-ZVR8x+6BOq1qoG+VhF520tC9E8YRdzDbzkvic626VkhFy5syXvKNhHrBZ0p6uGcp18HjVUA9NrLgd5S6HytPSA==
+
+react-insta-stories@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/react-insta-stories/-/react-insta-stories-2.4.2.tgz#66f87d32e95a108328135ad0849c3ab7ed57d2fb"
+  integrity sha512-6X19bfa02uvHt3HA5VkLWee2vHef90gfRVYrZwC7WrQ3/bTcDWTdj6mGuw7W+HL/MxB99D7UUYM/ABFeA8CrxQ==
 
 react-intl@^6.0.4:
   version "6.0.4"
@@ -10390,6 +10402,11 @@ ua-parser-js@^0.7.30:
   version "0.7.31"
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.31.tgz#649a656b191dffab4f21d5e053e27ca17cbff5c6"
   integrity sha512-qLK/Xe9E2uzmYI3qLeOmI0tEOt+TBBQyUIAh4aAgU05FVYzeZrKUdkAZfBNVGRaHVgV0TDkdEngJSw/SyQchkQ==
+
+ua-parser-js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-1.0.2.tgz#e2976c34dbfb30b15d2c300b2a53eac87c57a775"
+  integrity sha512-00y/AXhx0/SsnI51fTc0rLRmafiGOM4/O+ny10Ps7f+j/b8p/ZY11ytMgznXkOVo4GQ+KwQG5UQLkLGirsACRg==
 
 uid-safe@~2.1.5:
   version "2.1.5"
