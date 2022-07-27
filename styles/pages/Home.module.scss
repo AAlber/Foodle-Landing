@@ -133,7 +133,7 @@
 
   @include mixins.mobile {
     padding: 15rem 1rem 20rem 1rem;
-    font-size: 26px;
+    font-size: 34px;
     margin-bottom: 30rem !important;
 
   }
@@ -194,7 +194,7 @@
   &__white {
     color: black;
     width: 100%;
-    margin-top: 10rem;
+    margin-top: 15rem;
     height: calc(20rem + 10vh);
     display: flex;
     justify-content: center;
@@ -203,6 +203,7 @@
 
   &__wrapper {
     margin: 0 5rem;
+
     display: flex;
     align-items: center;
     gap: 23vw;
@@ -223,6 +224,10 @@
     align-items: center;
     width: 100%;
     height: 30rem;
+    a{
+      height: 5.2rem;
+      padding: 1rem 2rem;
+    }
     
   }
 
@@ -246,18 +251,12 @@
   
       &__lower {
         height: 25rem;
-        margin-top:0rem;
-        margin-left: 2rem;
-        margin-bottom: 0rem;
-        // align-items: left;
-        // display: block;
         display: inline-block;
         align-items: left;
   
         h2 {
           font-size: 22px;
           max-width: 18rem;
-          // text-align: left;
           margin-bottom: 2rem;
         }
   
@@ -278,7 +277,8 @@
     }
         @include mixins.tablet {
           &__wrapper {
-            margin: 20rem 0;
+
+            margin: 20rem 0 20rem 0;
             flex-direction: column;
             gap: 6rem;
           }
@@ -286,12 +286,12 @@
           &__left {
             font-size: 24px;
             max-width: 90%;
-            text-align: center;
-            transform: translate3d(0);
+            text-align: left;
+            width: 50%;
           }
     
           &__lower {
-            height: 30vh;
+            height: 25rem;
     
             h2 {
               font-size: 22px;
@@ -311,7 +311,9 @@
             height: fit-content !important;
             max-width: 90% !important;
             font-size: 22px;
-            text-align: center;
+            text-align: left;
+            width: 50%;
+            
             transform: translate3d(0);
           }
         }

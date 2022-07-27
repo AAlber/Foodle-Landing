@@ -9,7 +9,8 @@
 }*/
 
 * {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  // font-family: 'Inter', sans-serif !important;
   font-weight: 300;
 }
 
@@ -28,7 +29,7 @@
 
 
   img {
-    margin-right: 0.5rem;
+    margin-right: 0.1rem !important;
     transition: transform 0.7s ease-in-out;
   }
   svg {
@@ -63,11 +64,13 @@
   text-align: center;
 }
 body {
-  font-family: 'Inter', sans-serif !important;
+  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  // font-family: 'Inter', sans-serif !important;
   font-weight: 300;
 }
 textarea {
-  font-family: 'Inter', sans-serif !important;
+  // font-family: 'Inter', sans-serif !important;
+  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
 }
 .subtle-text {
   color: colors.$color-subtle;
@@ -98,7 +101,7 @@ textarea {
 }
 
 .header-secondary {
-  font-size: 4rem;
+  font-size: 4rem ;
   line-height: 5.5rem;
   font-weight: 500;
   letter-spacing: -0.05em;

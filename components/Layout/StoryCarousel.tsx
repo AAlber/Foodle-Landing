@@ -10,6 +10,7 @@ import Story from 'react-insta-stories/dist/interfaces';
 import SwiperCard, { KitchenCardInfo } from './SwiperCard';
 import { createDecipheriv } from 'crypto';
 import { nonExecutableDefinitionMessage } from 'graphql/validation/rules/ExecutableDefinitions';
+import ConstructionPopup from './ConstructionPopup';
 
 export type StoryCarouselProps = {
   cardInfo: KitchenCardInfo[];
@@ -20,38 +21,9 @@ const StoryCarousel = (props: StoryCarouselProps) => {
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
   const seeMoreObj = ({ close }: { close: () => void }) => {
     return (
-      <div
-        style={{
-          width: '100%',
-          height: '105%',
-          display: 'flex',
-          opacity: 0.96,
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          padding: 20,
-          border: 'none !important',
-
-          background: '#00695c',
-
-          zIndex: -1000,
-          gap: '2rem',
-        }}
-      >
-        <Image src={'/construction.png'} width={50} height={50} />
-        <p className="body-text semi-bold-text">
-          Foodle is still under construction
-          <br />
-        </p>
-        <p className="smallest-text">
-          However, we are already beginning to match up cooks and bakers with licensed kitchens. So simply go up and and
-          enter your email to join.
-        </p>
-        <p className="primary-btn-small small-text pb-1" onClick={close}>
-          {' '}
-          Return To Posts
-        </p>
-      </div>
+      <>
+        <ConstructionPopup screenWidth={props.width} close={close} />
+      </>
     );
   };
   const contentObj = (index: number, card: KitchenCardInfo) => {

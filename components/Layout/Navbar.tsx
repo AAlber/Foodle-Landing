@@ -17,15 +17,17 @@ const Navbar = () => {
       <div className={styles['navbar__logo']}>
         {/* <div className="flex-center"> */}
         <Link href="/" passHref>
-          <a>
-            <Image src="/foodle_logo.svg" width={45} height={27} alt="Foodle Logo" />
-          </a>
+          <div className="flex-center">
+            <a>
+              <Image src="/foodle_logo.svg" width={45} height={27} alt="Foodle Logo" />
+            </a>
+            <h1 className="logo-text green-text">Foodle</h1>
+          </div>
         </Link>
-        <h1 className="logo-text green-text">Foodle</h1>
         {/* </div> */}
       </div>
       <div className={styles['navbar__menu']}>
-        <Tab href="/" iconSrc="./world-icon.svg" title="EN" burger={false} />
+        <Tab href="/" iconSrc="/world-icon.svg" title="EN" burger={false} />
         <Tab href="/" title="F.A.Q." />
         <Tab href="/" title={findKitchen} />
         <Tab href="/" title={listKitchen} />

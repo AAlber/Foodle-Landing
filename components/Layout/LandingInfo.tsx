@@ -59,13 +59,14 @@ const LandingInfo = (props: LandingInfoProps) => {
       duration: 5,
       scrollTrigger: {
         trigger: ref.current,
-
         start: 'bottom 800px',
         end: 'bottom 80px',
         scrub: 0.5,
       },
     });
   };
+
+  const wrapperRef = useRef(null);
   useEffect(() => {
     // if (!isSafari) {
     if (props.width > 1000) {
@@ -77,11 +78,9 @@ const LandingInfo = (props: LandingInfoProps) => {
         findingLeftSlideAnim && findingLeftSlideAnim.kill();
       };
     } else {
-      const recipesSlideUpAnim = getSlideUpAnim(recipesRef);
-      const findingSlideUpAnim = getSlideUpAnim(findingRef);
+      const wrapperSlideUpAnim = getSlideUpAnim(wrapperRef);
       return () => {
-        recipesSlideUpAnim.kill();
-        findingSlideUpAnim.kill();
+        wrapperSlideUpAnim.kill();
       };
     }
     // }
@@ -92,7 +91,7 @@ const LandingInfo = (props: LandingInfoProps) => {
 
   return (
     <div className={styles['landing-info__white']}>
-      <div className={styles['landing-info__wrapper']}>
+      <div ref={wrapperRef} className={styles['landing-info__wrapper']}>
         <div ref={recipesRef} className={styles['landing-info__left'] + ' header-secondary'}>
           {recipes}
         </div>

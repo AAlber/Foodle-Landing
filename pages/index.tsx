@@ -83,7 +83,6 @@ const Home: NextPage = () => {
 
   const subscribe = async (e: any) => {
     e.preventDefault();
-    console.log('doing  this');
     setState('Loading');
 
     try {
@@ -243,8 +242,8 @@ const Home: NextPage = () => {
         </div>
       </div>
       <LandingInfo width={width!} />
-      <div className={styles['landing-info__lower']}>
-        <div ref={signupRef} className={width! > 1000 ? 'flex-center__column' : ''}>
+      <div ref={signupRef} className={styles['landing-info__lower']}>
+        <div className="flex-center__column">
           <h2 className="subtitle-text semi-bold-text">{signupLabel}</h2>
           <Link href={'/'}>
             <a className="primary-btn">{signup}</a>

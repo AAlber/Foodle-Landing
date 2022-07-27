@@ -21,22 +21,22 @@ const Footer = () => {
           <h3 className={styles['footer__logo'] + ' logo-text'}>Foodle</h3>
         </div>
         <div className={styles['footer__elements'] + ' flex-center mt-one'}>
-          <Link href={'/'}>
+          <Link href={'/not-done-yet'}>
             <a className="body-text--hover">{about}</a>
           </Link>
-          <Link href={'/'}>
+          <Link href={'/not-done-yet'}>
             <a className="body-text--hover">{feature}</a>
           </Link>
-          <Link href={'/'}>
+          <Link href={'/not-done-yet'}>
             <a className="body-text--hover">{pricing}</a>
           </Link>
-          <Link href={'/'}>
+          <Link href={'/not-done-yet'}>
             <a className="body-text--hover">{careers}</a>
           </Link>
-          <Link href={'/'}>
+          <Link href={'/not-done-yet'}>
             <a className="body-text--hover">{help}</a>
           </Link>
-          <Link href={'/'}>
+          <Link href={'/not-done-yet'}>
             <a className="body-text--hover">{privacy}</a>
           </Link>
         </div>
@@ -44,27 +44,39 @@ const Footer = () => {
       <div className={styles['footer__end']}>
         <a>© 2022 Foodle inc. All rights reserved</a>
         <div className={styles['footer__end--socials'] + ' flex-center'}>
-          <Image
-            className={styles['footer__end--socials__image']}
-            src={'/instagram.svg'}
-            alt="instagram logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            className={styles['footer__end--socials__image']}
-            src={'/twitter.svg'}
-            alt="twitter logo"
-            width={30}
-            height={30}
-          />
-          <Image
-            className={styles['footer__end--socials__image']}
-            src={'/youtube.svg'}
-            alt="youtube logo"
-            width={30}
-            height={30}
-          />
+          <Link href={'https://www.instagram.com/foodle.berlin/?hl=en'}>
+            <a>
+              <Image
+                className={styles['footer__end--socials__image']}
+                src={'/instagram.svg'}
+                alt="instagram logo"
+                width={30}
+                height={30}
+              />
+            </a>
+          </Link>
+          <Link href={'https://twitter.com/foodle_en'}>
+            <a>
+              <Image
+                className={styles['footer__end--socials__image']}
+                src={'/twitter.svg'}
+                alt="twitter logo"
+                width={30}
+                height={30}
+              />
+            </a>
+          </Link>
+          <Link href={'https://www.youtube.com/channel/UCOiQ1goR6EBfwd68Ul0vbig'}>
+            <a>
+              <Image
+                className={styles['footer__end--socials__image']}
+                src={'/youtube.svg'}
+                alt="youtube logo"
+                width={30}
+                height={30}
+              />
+            </a>
+          </Link>
         </div>
       </div>
     </div>

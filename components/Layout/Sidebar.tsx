@@ -5,12 +5,16 @@ import Tab from './Tab';
 import Image from 'next/image';
 
 import styles from './Footer.module.scss';
+import { useRef, useState } from 'react';
+import ConstructionPopup from './ConstructionPopup';
 
 const Sidebar = () => {
   const intl = useIntl();
   const findKitchen = intl.formatMessage({ id: 'component.navbar.find' });
   const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
+
+  const [openConstructionPopup, setOpenConstructionPopup] = useState<boolean>(false);
 
   const FoodleHamburger = () => (
     <div className="svg-burger">
@@ -21,18 +25,19 @@ const Sidebar = () => {
       </svg>
     </div>
   );
+  const burgerRef = useRef(null);
 
   return (
-    <Menu right customBurgerIcon={<FoodleHamburger />} width={300}>
+    <Menu ref={burgerRef} right customBurgerIcon={<FoodleHamburger />} width={300}>
       <header className="bm-top">
         <div className="bm-top__right">
-          <Tab href="/" iconSrc="./world-icon.svg" title="EN" />
+          <Tab href="/" iconSrc="/world-icon.svg" title="EN" />
         </div>
         <div className="bm-top__left mt-two">
-          <Tab href="/" title={findKitchen} burger />
-          <Tab href="/" title={listKitchen} burger />
-          <Tab href="/" title="F.A.Q." burger />
-          <Tab href="/" title={contact} burger />
+          <Tab href="/not-done-yet" title={findKitchen} burger />
+          <Tab href="/not-done-yet" title={listKitchen} burger />
+          <Tab href="/not-done-yet" title="F.A.Q." burger />
+          <Tab href="/not-done-yet" title={contact} burger />
         </div>
       </header>
       <footer>
