@@ -20,7 +20,9 @@
         color: #00695c!important;
         font-size: 12px !important;
         font-weight: 600 !important;
-
+        &:nth-child(1){
+          margin-bottom: -0.3rem !important;
+        }
       }
     }
   }
