@@ -186,7 +186,6 @@ const Home: NextPage = () => {
       <div className={styles['sidebar']}>
         <Sidebar />
       </div>
-
       <div className={styles['hero']}>
         <div className={styles['hero__left']}>
           <div className={styles['hero__left--inner']}>
