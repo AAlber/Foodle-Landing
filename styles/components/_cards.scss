@@ -261,11 +261,11 @@
     opacity: 0;
     @include mixins.mobile {
       opacity: 1;
-      background: rgba(white, 0.8);
+      background: rgba(white, 0.9);
         width: 100%;
         top:auto;
         bottom: 0;
-        height: 250px;
+        height: 235px;
     
       }
 
@@ -355,10 +355,9 @@
       margin-top: 8px;
       text-align: center;
       @include mixins.mobile{
-        letter-spacing: -0.02rem;
-        border-left: 2px solid rgba(black, 0.1);
+        letter-spacing: -0.04rem;
         color: black;
-        padding: 0.5rem 1.6rem;
+        padding: 0.5rem 0.8rem;
         align-self: flex-start;
         text-align: left;
       };

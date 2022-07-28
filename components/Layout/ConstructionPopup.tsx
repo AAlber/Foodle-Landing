@@ -10,9 +10,10 @@ export type ConstructionPopupProps = {
 };
 const ConstructionPopup = (props: ConstructionPopupProps) => {
   const intl = useIntl();
-  const construction = intl.formatMessage({ id: 'component.layout.constructionPopup.construction' });
-  const feature = intl.formatMessage({ id: 'component.footer.feature' });
-  const pricing = intl.formatMessage({ id: 'component.footer.pricing' });
+  const constructionTitle = intl.formatMessage({ id: 'component.layout.constructionPopup.title' });
+  const constructionDescription = intl.formatMessage({ id: 'component.layout.constructionPopup.description' });
+  const constructionSignUp = intl.formatMessage({ id: 'component.layout.constructionPopup.signup' });
+  const constructionReturn = intl.formatMessage({ id: 'component.layout.constructionPopup.return' });
   return (
     <div
       className="construction-popup"
@@ -37,26 +38,19 @@ const ConstructionPopup = (props: ConstructionPopupProps) => {
     >
       <Image src={'/construction.png'} width={50} height={50} />
       <h1 className="semi-bold-text header-tertiary white-text">
-        Foodle is still under construction
+        {constructionTitle}
         <br />
       </h1>
-      <p className="smallest-text">
-        However, we are already beginning to match up cooks and bakers with licensed kitchens. So simply go up and and
-        enter your email to join.
-      </p>
+      <p className="smallest-text">{constructionDescription}</p>
       {props.fullPage ? (
         <Link href={'/'}>
           <a className="primary-btn-small body-text pb-1" onClick={props.close}>
-            {/* <p className="primary-btn-small body-text pb-1" onClick={props.close}>
-              {' '} */}
-            Return To Sign Up
-            {/* </p> */}
+            {constructionSignUp}
           </a>
         </Link>
       ) : (
         <p className={'primary-btn-small body-text pb-1 '} onClick={props.close}>
-          {' '}
-          Return To Posts
+          {constructionReturn}
         </p>
       )}
     </div>

@@ -9,16 +9,16 @@
   height: 7rem;
   display: flex;
   justify-content: space-between;
-  // flex-basis: ;
   top: 0;
   z-index: 10000;
   color: rgb(153, 130, 130);
-  // border-bottom: 0.2rem solid rgb(214, 214, 214);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-  // border-bottom: 0.1rem solid #b3b3b3; CHANGED THIS
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   padding-right: 20px;
   padding-left: 20px;
+  @include mixins.mobile{
+    filter:none;
+  }
   .avatar {
     width: 40px;
     height: 40px;
@@ -85,7 +85,9 @@
   }
   @include mixins.mobile {
     &__menu {
-      display: none;
+      h2{
+        display:none;
+      }
     }
   }
 }

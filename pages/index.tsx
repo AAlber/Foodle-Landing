@@ -194,12 +194,13 @@ const Home: NextPage = () => {
               {title}
               <span className={styles['rainbow']} ref={easyRef}></span>.
             </h1>
-            <h3 className={'body-text-secondary'}>
-              {description}
-              <br />
-              <br />
-              {submitLabel}
-            </h3>
+
+            <h3 className={'body-text-secondary'}>{description}</h3>
+            <div className="promotion-badge flex-center">
+              <h1 className=" header-primary">€20</h1>
+              <h3 className="white-text">{submitLabel}</h3>
+            </div>
+
             <form onSubmit={subscribe}>
               <div>
                 <input

@@ -1,3 +1,4 @@
+// BurgerIcon from @SeyfDesigner
 import Link from 'next/link';
 import { slide as Menu } from 'react-burger-menu';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -28,7 +29,12 @@ const Sidebar = () => {
   const burgerRef = useRef(null);
 
   return (
-    <Menu ref={burgerRef} right customBurgerIcon={<FoodleHamburger />} width={300}>
+    <Menu
+      ref={burgerRef}
+      right
+      customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} />}
+      width={300}
+    >
       <header className="bm-top">
         <div className="bm-top__right">
           <Tab href="/" iconSrc="/world-icon.svg" title="EN" />

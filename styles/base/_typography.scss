@@ -134,7 +134,7 @@ textarea {
   color: colors.$color-primary-light;
 }
 .white-text {
-  color: white;
+  color: white !important;
 }
 .grey-text {
   color: colors.$color-grey;
