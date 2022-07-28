@@ -58,7 +58,7 @@ export const kitchenCards: KitchenCardInfo[] = [
   {
     title: 'Bakery Open 7 evenings a Week ',
     description: 'Our bakery kitchen is usable from 1pm onwards, please be careful with...',
-    tags: ['Verified', 'Dual-Oven', 'Oven', 'Large Shelves', '...'],
+    tags: ['Verified', 'Dual-Oven', 'Oven', 'Fridge', '...'],
     cityRegion: 'Kreuzberg',
     distance: 1.1,
     price: 60,
