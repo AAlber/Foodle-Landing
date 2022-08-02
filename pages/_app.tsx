@@ -11,6 +11,9 @@ import de from '../lang/de.json';
 
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
+const SafeHydrate = ({ children }: { children: any }) => {
+  return <div suppressHydrationWarning>{typeof window === 'undefined' ? null : children}</div>;
+};
 export const queryClient = new QueryClient();
 const messages = {
   en,
@@ -20,13 +23,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { locale } = useRouter();
 
   return (
-    // @ts-ignore
-    <IntlProvider locale={locale!} messages={messages[locale!]}>
-      <QueryClientProvider client={queryClient}>
-        {/* @ts-ignore */}
-        <Component {...pageProps} />
-      </QueryClientProvider>
-    </IntlProvider>
+    <SafeHydrate>
+      {/* @ts-ignore */}
+      <IntlProvider locale={locale!} messages={messages[locale!]}>
+        <QueryClientProvider client={queryClient}>
+          {/* @ts-ignore */}
+          <Component {...pageProps} />
+        </QueryClientProvider>
+      </IntlProvider>
+    </SafeHydrate>
   );
 }
 

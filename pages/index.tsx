@@ -20,8 +20,6 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import StoryCarousel from '../components/Layout/StoryCarousel';
 import { KitchenCardInfo } from '~/components/Layout/SwiperCard';
 
-// import Tween, { Power3 } from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
 export const kitchenCards: KitchenCardInfo[] = [
   {
     title: 'Industrial Grade Kitchen Mitte',
@@ -75,14 +73,13 @@ export const kitchenCards: KitchenCardInfo[] = [
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
   const [state, setState] = useState('idle');
-  const [errorMsg, setErrorMsg] = useState(null);
+
   const { locales } = useRouter();
   const { height, width } = useWindowDimensions();
 
   const intl = useIntl();
 
   const subscribe = async (e: any) => {
-    e.preventDefault();
     setState('Loading');
 
     try {
@@ -91,8 +88,7 @@ const Home: NextPage = () => {
       setState('Success');
       setEmail('');
     } catch (e: any) {
-      console.log(e.response.data.error);
-      setErrorMsg(e.response.data.error);
+      console.log(e.response.data.error.message);
       setState('Error');
     }
   };
@@ -109,7 +105,10 @@ const Home: NextPage = () => {
   const carouselTitle = intl.formatMessage({ id: 'page.home.carousel.title' });
   const signupLabel = intl.formatMessage({ id: 'page.home.signup.label' });
   const signup = intl.formatMessage({ id: 'page.home.signup' });
-
+  const signupError = intl.formatMessage({ id: 'page.home.signup.error' });
+  // "Please enter a valid email that you haven't entered before.";
+  const signupSuccess = intl.formatMessage({ id: 'page.home.signup.success' });
+  // 'successfully submitted';
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -175,8 +174,9 @@ const Home: NextPage = () => {
         <title>Foodle</title>
         <meta
           name="description"
-          content="The landing page of the up and coming
-        kitchen rental portal, Foodle."
+          content="Foodle is a licensed kitchen rental service where food businesses (like restaurants, bakeries, ice cream shops, etc.) rent out their kitchens to cooks, bakers or other food producers.
+          Foodle ist eine .
+          "
         />
         <link rel="icon" href="/foodle_logo.svg" />
         <link rel="alternate" href="http://localhost:3000" hrefLang="de" />
@@ -221,12 +221,23 @@ const Home: NextPage = () => {
                   {submit}
                 </button>
               </div>
+              {state === 'Success' || 'Error' ? (
+                <h2
+                  className={
+                    'smallest-text ' + (state === 'Success' ? 'success-msg' : state === 'Error' ? 'error-msg' : '')
+                  }
+                >
+                  {state === 'Success' ? signupSuccess : state === 'Error' ? signupError : ''}
+                </h2>
+              ) : (
+                <></>
+              )}
             </form>
           </div>
         </div>
         <div className={styles['hero__right']}>
           <div className={styles['hero__right']}>
-            <Image alt={'Hero Image'} src={'/programming.png'} width={450} height={350} />
+            <Image alt={'Hero Image'} src={'/programming.png'} width={600} height={450} />
           </div>
         </div>
       </div>

@@ -28,24 +28,16 @@ type SwiperCardProps = {
   cardInfo: KitchenCardInfo;
 
   width: number;
-  //   title: string;
-  //   description: string;
-  //   tags: string[];
-  //   size: string;
 };
 
 const SwiperCard = (props: SwiperCardProps) => {
   const intl = useIntl();
   const hr = intl.formatMessage({ id: 'component.swiperCard.hr' });
+  const indexIncremented = props.index + 1;
   if (props !== undefined) {
     return (
       <div className="card">
-        <img
-          className="slide card__image"
-          src={`/carousel-image-${props.index + 1}.png`}
-          alt={`Slide ${props.index + 1}`}
-        />
-        {/* <Image src={'/landing-2.jpg'} width={50} height={50} /> */}
+        <Image className="slide card__image" src={'/carousel-image-' + indexIncremented + '.png'} layout={'fill'} />
         <h2 className="location primary-btn__smallest">
           {props.cardInfo.cityRegion + ' '}
           <img src={'/location.png'} width={15} height={15} />

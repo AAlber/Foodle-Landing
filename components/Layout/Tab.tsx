@@ -19,7 +19,10 @@ const Tab = (props: TabProps) => {
   const title = props.iconSrc ? locale?.toString().toUpperCase() : props.title;
 
   return (
-    <Link href={props.iconSrc ? '' : '/not-done-yet'} locale={props.iconSrc ? (locale === 'en' ? 'de' : 'en') : locale}>
+    <Link
+      href={props.iconSrc ? '/' : '/not-done-yet'}
+      locale={props.iconSrc ? (locale === 'en' ? 'de' : 'en') : locale}
+    >
       <a className={'hover-title' + (props.burger ? '' : ' flex-center ')}>
         {props.iconSrc ? <Image src={props.iconSrc} alt="world-icon" height={18} width={18} /> : <></>}
         <h2 className={'small-text'}>{title}</h2>

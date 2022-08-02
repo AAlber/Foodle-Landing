@@ -59,7 +59,7 @@
     padding-bottom: 4.3rem;
   }
   h1{
-    @include mixins.mobile{
+    @include mixins.small-mobile{
       font-size: 22px;
       text-align: center;
     }
@@ -78,7 +78,7 @@
     // margin-left: -10rem;
     content:"Hello";
 
-    @include mixins.mobile{
+    @include mixins.small-mobile{
       font-size: 16px;
     }
 
@@ -161,7 +161,7 @@
         //    }
     
         //    </h4></div><button className="primary-btn__smallest">Read More</button> : <></>
-  @include mixins.mobile{
+  @include mixins.small-mobile{
     width: 420px;
     height: 500px;
     margin: 0rem 0rem 0rem 0rem;
@@ -187,7 +187,7 @@
     align-items: center;
     margin-top: 1rem;
     gap: 1.5rem;
-    @include mixins.mobile{
+    @include mixins.small-mobile{
       display: none !important;
     }
   }
@@ -195,7 +195,7 @@
   &__badge{
     h3{
       font-weight: 800;
-      @include mixins.mobile {
+      @include mixins.small-mobile {
         font-size: 14px;
         color: black;
         
@@ -208,7 +208,7 @@
           width: 14px;
           height: 14px;
         }
-        @include mixins.mobile{
+        @include mixins.small-mobile{
           img{
             filter: none;
             height: 13px;
@@ -217,7 +217,7 @@
         }
     h4{
       font-weight: 700;
-      @include mixins.mobile {
+      @include mixins.small-mobile {
         color: black;
         font-size: 14px;
       }
@@ -259,7 +259,7 @@
     background: rgba(black, 0.6);
     z-index: 2;
     opacity: 0;
-    @include mixins.mobile {
+    @include mixins.small-mobile {
       opacity: 1;
       background: rgba(white, 0.9);
         width: 100%;
@@ -289,7 +289,7 @@
       border-radius: 1rem;
       margin: 0.5rem 0.5rem 0rem 0rem;
       display: inline-block;
-      @include mixins.mobile {
+      @include mixins.small-mobile {
           padding: 0.3rem 0.3rem;
           margin:0.2rem;
           border-radius: 0.75rem;
@@ -310,7 +310,7 @@
     max-width: 28rem;
     width: calc(30rem + 8vw);
     height: 65%;
-    @include mixins.mobile{
+    @include mixins.small-mobile{
       max-width: 30rem;
       margin-bottom: -2.5rem;
       opacity: 1;
@@ -325,7 +325,7 @@
       // flex: 1 1 100%;
     max-width: 28rem;
     margin: 0.5rem 0 0rem 0;
-    @include mixins.mobile {
+    @include mixins.small-mobile {
       align-items: flex-start;
         justify-content: flex-start;
         padding: 1rem;
@@ -341,7 +341,7 @@
       text-align: center;
       font-size: 15px;
       margin: 0px;
-      @include mixins.mobile {
+      @include mixins.small-mobile {
           font-size: 16px;
           font-weight: 600 !important;
           color: black;
@@ -354,7 +354,7 @@
       font-size: 13.5px;
       margin-top: 8px;
       text-align: center;
-      @include mixins.mobile{
+      @include mixins.small-mobile{
         letter-spacing: -0.04rem;
         color: black;
         padding: 0.5rem 0.8rem;

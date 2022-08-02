@@ -16,6 +16,8 @@
   "page.home.finding": "Finding a licensed kitchen near you can be a big challenge, but it doesn’t have to be.",
   "page.home.signup.label": "Let's fix that",
   "page.home.signup": "SIGN UP TODAY",
+  "page.home.signup.error": "Please enter a valid email that you haven't entered before.",
+  "page.home.signup.success": "You've been successfully added! We'll keep you posted so that we can try to get you started in a kitchen even before Foodle officially starts.  If you can't see an email in your inbox, please check your advertisement folder.",
   "component.footer.about": "About",
   "component.footer.feature": "Feature",
   "component.footer.pricing": "Pricing",

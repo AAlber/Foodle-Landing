@@ -15,26 +15,8 @@ const Sidebar = () => {
   const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
 
-  const [openConstructionPopup, setOpenConstructionPopup] = useState<boolean>(false);
-
-  const FoodleHamburger = () => (
-    <div className="svg-burger">
-      <svg width="31" height="21" viewBox="0 0 31 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect y="0.5" width="16" height="2" fill="black" />
-        <rect y="9.5" width="31" height="2" fill="black" />
-        <rect x="16" y="18.5" width="15" height="2" fill="black" />
-      </svg>
-    </div>
-  );
-  const burgerRef = useRef(null);
-
   return (
-    <Menu
-      ref={burgerRef}
-      right
-      customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} />}
-      width={300}
-    >
+    <Menu right customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} />} width={300}>
       <header className="bm-top">
         <div className="bm-top__right">
           <Tab href="/" iconSrc="/world-icon.svg" title="EN" />

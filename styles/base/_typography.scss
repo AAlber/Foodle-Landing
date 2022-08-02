@@ -1,4 +1,5 @@
 @use './colors';
+@use '../abstracts/mixins';
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 /*@font-face {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap'); /*@font-face {
@@ -177,4 +178,15 @@ textarea {
 }
 .smallest-text {
   font-size: 13px !important;
+}
+.error-msg{
+  background-color: #F44336;
+  color: white;
+  @include mixins.submit-msg();
+}
+
+.success-msg {
+  color: #009688;
+  font-weight: 600;
+  @include submit-msg();
 }
