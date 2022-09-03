@@ -39,7 +39,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-  background: white;
+  background: linear-gradient(264.54deg, #009688 -13.78%, #00695C 70.16%);;
 
 
   font-size: $default-font-size;
@@ -59,14 +59,12 @@
   flex-direction: column;
   justify-content: space-between;
   footer{
-    background: #00695C;
     height: 20vh;
     display: flex !important;
     justify-content: center;
     flex-direction: column;
     gap: 0.7rem;
     img{
-      
     }:nth-of-type(1){
       margin: 0;
     }
@@ -101,10 +99,15 @@
     //   border-bottom: 1px solid white !important;
     // }
     a{
+      // background-color: white, 0.4;
       width: 100%;
+      color: white !important;
       border-bottom: 1px solid #009688;
 
       h2{
+        color: white !important;
+        fill: white !important;
+        // background-color: white, 0.4;
         padding: 2rem 1rem;
       }
     }

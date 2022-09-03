@@ -96,23 +96,19 @@
   align-items: flex-end;
   transition: 0.4s ease-out;
   box-shadow: 0px 7px 10px rgba(black, 0.5);
-  // .location{
-  //   display: none;
-  // }
     .location {
       color: black;
-      height: 2rem !important;
       border-radius: 1.2rem !important;
-      // display: inline-block;
-      position: fixed;
-      bottom: 8.5rem;
-      width: fit-content;
-      // background: #00695C;
+      position: absolute;
+      height: 2rem !important;
+      top: 2rem;
+      width: fit-content !important;
       color: white;
       transition: ease-in-out 0.5s;
       transition-delay: 0.2s;
       transition-duration: 0.7s;
       img {
+        display: inline-block;
           &:nth-of-type(2) {
             filter: invert(100%) sepia(0%) saturate(3660%) hue-rotate(299deg) brightness(117%) contrast(101%);
             width: 11px !important;
@@ -123,44 +119,6 @@
         }
 
     }
-        //  <div className="card__bottom"> {
-        //    props.width < 400 ? <div className="card__badge"><h3 className="body-text"><img src= {
-        //      '/location-black.png'
-        //    }
-    
-        //    width= {
-        //      12
-        //    }
-    
-        //    height= {
-        //      12
-        //    }
-    
-        //    /> {
-        //      ' '+props.cardInfo.distance
-        //    }
-    
-        //    km </h3><h4 className="body-text"><img src= {
-        //      '/euro.png'
-        //    }
-    
-        //    width= {
-        //      10
-        //    }
-    
-        //    height= {
-        //      10
-        //    }
-    
-        //    /> {
-        //      ' '+props.cardInfo.price
-        //    }
-    
-        //    / {
-        //      hr
-        //    }
-    
-        //    </h4></div><button className="primary-btn__smallest">Read More</button> : <></>
   @include mixins.small-mobile{
     width: 420px;
     height: 500px;
@@ -170,13 +128,7 @@
       position: absolute;
       height: 3rem !important;
       top: 2rem;
-
-
-      // left: 2rem;
     }
-    
-    
-   
 
   }
   

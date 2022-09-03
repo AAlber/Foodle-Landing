@@ -17,14 +17,19 @@ interface TabProps {
 const Tab = (props: TabProps) => {
   const { locale } = useRouter();
   const title = props.iconSrc ? locale?.toString().toUpperCase() : props.title;
+  const isBurger = props.burger;
 
   return (
     <Link
       href={props.iconSrc ? '/' : '/not-done-yet'}
       locale={props.iconSrc ? (locale === 'en' ? 'de' : 'en') : locale}
     >
-      <a className={'hover-title' + (props.burger ? '' : ' flex-center ')}>
-        {props.iconSrc ? <Image src={props.iconSrc} alt="world-icon" height={18} width={18} /> : <></>}
+      <a className={isBurger ? '' : 'hover-title flex-center '}>
+        {props.iconSrc ? (
+          <Image src={props.iconSrc} alt={'world-icon' + isBurger ? '-white' : ''} height={18} width={18} />
+        ) : (
+          <></>
+        )}
         <h2 className={'small-text'}>{title}</h2>
       </a>
     </Link>

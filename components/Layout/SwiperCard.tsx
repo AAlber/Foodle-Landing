@@ -44,7 +44,6 @@ const SwiperCard = (props: SwiperCardProps) => {
           {' ' + props.cardInfo.distance} km {'  '}
           <img src={'/euro.png'} width={15} height={15} /> {' ' + props.cardInfo.price}
         </h2>
-        <h3 className="location"></h3>
         <div className="info flex-center__column">
           <h1 className="semi-bold-text">{props.cardInfo.title}</h1>
           {props.width > 450 ? (

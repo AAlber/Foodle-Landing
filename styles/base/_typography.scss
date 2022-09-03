@@ -1,6 +1,7 @@
 @use './colors';
 @use '../abstracts/mixins';
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://db.onlinewebfonts.com/c/6dec48f5c4399fb4a63b23cbcc441fcb?family=SequelSansW00-LightOblHead');
 /*@font-face {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap'); /*@font-face {
   font-family: ""Archia Regular"";
@@ -10,7 +11,7 @@
 }*/
 
 * {
-  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Sequel','Inter', 'Helvetica', 'Arial', sans-serif;
   // font-family: 'Inter', sans-serif !important;
   font-weight: 300;
 }
@@ -65,13 +66,13 @@
   text-align: center;
 }
 body {
-  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Sequel', 'Inter', 'Helvetica', 'Arial', sans-serif;
   // font-family: 'Inter', sans-serif !important;
   font-weight: 300;
 }
 textarea {
   // font-family: 'Inter', sans-serif !important;
-  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family:'Sequel', 'Inter', 'Helvetica', 'Arial', sans-serif;
 }
 .subtle-text {
   color: colors.$color-subtle;
