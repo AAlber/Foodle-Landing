@@ -15,7 +15,7 @@ import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { dir } from 'console';
-import Sidebar from '../components/Layout/Sidebar';
+import Sidebar from '../components/Layout/BurgerMenu';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import StoryCarousel from '../components/Layout/StoryCarousel';
 import { KitchenCardInfo } from '~/components/Layout/SwiperCard';
@@ -181,6 +181,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/foodle_logo.svg" />
         <link rel="alternate" href="http://localhost:3000" hrefLang="de" />
         <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
+        {/* Web Analytics */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "39f2e396c9d545eb89eea1d7fd8ccdaf"}'
+        ></script>
       </Head>
       <Navbar />
       <div className={styles['sidebar']}>
