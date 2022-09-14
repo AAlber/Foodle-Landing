@@ -19,6 +19,8 @@ import Sidebar from '../components/Layout/BurgerMenu';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import StoryCarousel from '../components/Layout/StoryCarousel';
 import { KitchenCardInfo } from '~/components/Layout/SwiperCard';
+import Script from 'next/script';
+import posthog from 'posthog-js';
 
 export const kitchenCards: KitchenCardInfo[] = [
   {
@@ -168,6 +170,11 @@ const Home: NextPage = () => {
     };
   }, [easyAdjectives, width]);
 
+  const handleOnBuy = () => {
+    console.log("s'happening");
+    posthog.capture('my event', { property: 'value' });
+  };
+
   return (
     <div>
       <Head>
@@ -182,13 +189,14 @@ const Home: NextPage = () => {
         <link rel="alternate" href="http://localhost:3000" hrefLang="de" />
         <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
         {/* Web Analytics */}
-        <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "39f2e396c9d545eb89eea1d7fd8ccdaf"}'
-        ></script>
       </Head>
       <Navbar />
+      <Script
+
+      // defer
+      // src="https://static.cloudflareinsights.com/beacon.min.js"
+      // data-cf-beacon='{"token": "39f2e396c9d545eb89eea1d7fd8ccdaf"}'
+      ></Script>
       <div className={styles['sidebar']}>
         <Sidebar />
       </div>
@@ -222,7 +230,7 @@ const Home: NextPage = () => {
                   disabled={state === 'Loading'}
                   type="submit"
                   className="primary-btn bold-medium"
-                  onClick={subscribe}
+                  onClick={handleOnBuy} //subscribe
                 >
                   {submit}
                 </button>

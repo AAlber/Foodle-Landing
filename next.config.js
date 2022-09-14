@@ -4,11 +4,11 @@
 // 'unsafe-inline' is not ideal, but also very little can be achieved with CSS XSS attacks (Even Twitter and Spotify use it and they have very high security rating)
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval'; 
+  script-src 'self' *.cloudflareinsights.com 'unsafe-eval'; 
   child-src ${process.env.CLIENT_URL};
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://db.onlinewebfonts.com http://db.onlinewebfonts.com; 
   img-src 'self' data:;
-  connect-src 'self' ${process.env.NEXT_PUBLIC_SERVER_URL} https://s3.eu-central-1.amazonaws.com;
+  connect-src 'self' https://cloudflareinsights.com ${process.env.NEXT_PUBLIC_SERVER_URL}  https://s3.eu-central-1.amazonaws.com;
   font-src 'self' https://db.onlinewebfonts.com data: https://fonts.gstatic.com http://db.onlinewebfonts.com;  
 `
 const securityHeaders = [
@@ -43,10 +43,10 @@ const securityHeaders = [
     key: 'Referrer-Policy',
     value: 'strict-origin-when-cross-origin'
   },
-  {
-    key: 'Content-Security-Policy',
-    value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
-  }
+  // {
+  //   key: 'Content-Security-Policy',
+  //   value: ContentSecurityPolicy.replace(/\s{2,}/g, ' ').trim()
+  // }
 ]
 const nextConfig = {
   reactStrictMode: true,
