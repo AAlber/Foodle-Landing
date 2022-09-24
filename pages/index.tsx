@@ -13,13 +13,13 @@ import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { dir } from 'console';
-import Sidebar from '../components/Layout/BurgerMenu';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import Script from 'next/script';
 import posthog from 'posthog-js';
 import SpecialSection from '../components/Layout/special-section/SpecialSection';
 import Faq from '../components/landing/Faq';
 import TrustFactor from '../components/landing/TrustFactor';
+import BurgerMenu from '../components/Layout/BurgerMenu';
 
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
@@ -128,7 +128,7 @@ const Home: NextPage = () => {
         <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
         {/* Web Analytics */}
       </Head>
-      <Navbar />
+      <Navbar screenWidth={width} />
       <Script
 
       // defer
@@ -136,7 +136,7 @@ const Home: NextPage = () => {
       // data-cf-beacon='{"token": "39f2e396c9d545eb89eea1d7fd8ccdaf"}'
       ></Script>
       <div className={styles['sidebar']}>
-        <Sidebar />
+        <BurgerMenu />
       </div>
 
       {/* <=== Section 1 ===> */}
