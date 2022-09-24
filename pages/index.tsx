@@ -21,6 +21,7 @@ import StoryCarousel from '../components/Layout/StoryCarousel';
 import { KitchenCardInfo } from '~/components/Layout/SwiperCard';
 import Script from 'next/script';
 import posthog from 'posthog-js';
+import Faq from '../components/landing/Faq';
 
 export const kitchenCards: KitchenCardInfo[] = [
   {
@@ -259,6 +260,7 @@ const Home: NextPage = () => {
         {food}
         <span className={styles['rainbow-multi']}> {dreams} </span>
       </h2>
+      <Faq />
       <div className={styles['carousel']}>
         <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
         <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>{click}</h3>
@@ -266,6 +268,7 @@ const Home: NextPage = () => {
           {width! < 480 ? <StoryCarousel cardInfo={kitchenCards} width={width!} /> : <Carousel width={width!} />}
         </div>
       </div>
+
       <LandingInfo width={width!} />
       <div ref={signupRef} className={styles['landing-info__lower']}>
         <div className="flex-center__column">
