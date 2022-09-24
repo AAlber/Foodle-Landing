@@ -35,8 +35,8 @@ const Faq = () => {
 
       <div className={styles['accordion']}>
         <hr />
-        {faqData.map(({ title, content }) => (
-          <FaqAccordion title={title} content={content} />
+        {faqData.map(({ title, content }, index) => (
+          <FaqAccordion title={title} content={content} key={index} />
         ))}
       </div>
     </div>
