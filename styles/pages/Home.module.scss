@@ -56,7 +56,7 @@
     color: colors.$color-primary-light;
   }
 
-  height: calc(62.5rem + 30vh);
+  height: calc(62.5rem);
   width: 100%;
 
   &__left {
@@ -157,7 +157,7 @@
 .trustFactors {
   display: flex;
   flex-direction: row;
-  margin-bottom: 8rem;
+  margin: 0 10rem 8rem 10rem;
 
   &__container {
     display: flex;
@@ -175,8 +175,9 @@
 
   &__number {
     flex: 1;
-    font-size: 10rem;
-    font-weight: 40rem;
+    font-size: 5.6rem;
+    font-weight: 700px;
+    line-height: 7.2rem;
     background: colors.$color-gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -185,10 +186,40 @@
 
   &__text {
     margin-right: 9rem;
+    font-weight: 50rem;
 
     &--last-child {
       margin-right: 0;
     }
+  }
+  @include mixins.tablet {
+    display: none;
+  }
+  @include mixins.mobile {
+    display: none;
+  }
+  @include mixins.small-mobile {
+    display: none;
+  }
+}
+
+.trustFactorsMobile {
+  display: none;
+
+  @include mixins.tablet {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include mixins.small-mobile {
+    display: flex;
+    flex-direction: column;
   }
 }
 
