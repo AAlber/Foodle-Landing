@@ -21,6 +21,7 @@ import StoryCarousel from '../components/Layout/StoryCarousel';
 import { KitchenCardInfo } from '~/components/Layout/SwiperCard';
 import Script from 'next/script';
 import posthog from 'posthog-js';
+import SpecialSection from '../components/Layout/special-section/SpecialSection';
 
 export const kitchenCards: KitchenCardInfo[] = [
   {
@@ -273,8 +274,9 @@ const Home: NextPage = () => {
           <Link href={'/'}>
             <a className="primary-btn">{signup}</a>
           </Link>
-        </div>
+        </div>          
       </div>
+      <SpecialSection/>
       <Footer />
     </div>
   );
