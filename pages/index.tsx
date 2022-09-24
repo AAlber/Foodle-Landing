@@ -211,7 +211,7 @@ const Home: NextPage = () => {
             <p className="overline">Democratise food-making</p>
             <h1 className={'header-primary'}>
               {title}
-              <span className={styles['rainbow']} ref={easyRef}></span>.
+              <span className={'header-primary'} ref={easyRef}></span>.
             </h1>
 
             <p className={'body-text'}>{description}</p>
@@ -227,23 +227,23 @@ const Home: NextPage = () => {
           </div>
           {/* Section 1 Trust Factors DESKTOP */}
           <div className="flex-center">
-            <div className={styles['trustFactors']}>
-              <div className={styles['trustFactors__container']}>
-                <p className={styles['trustFactors__number']}>0€</p>
+            <div className={styles['trustNumbers']}>
+              <div className={styles['trustNumbers__container']}>
+                <p className={styles['trustNumbers__number']}>0€</p>
                 <div className="flex-center">
-                  <p className={styles['trustFactors__text'] + ' body-text'}>of upfront costs</p>
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>of upfront costs</p>
                 </div>
               </div>
-              <div className={styles['trustFactors__container']}>
-                <p className={styles['trustFactors__number']}>+15</p>
+              <div className={styles['trustNumbers__container']}>
+                <p className={styles['trustNumbers__number']}>+15</p>
                 <div className="flex-center">
-                  <p className={styles['trustFactors__text'] + ' body-text'}>cooks onboarded with Foodle</p>
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>cooks onboarded with Foodle</p>
                 </div>
               </div>
-              <div className={styles['trustFactors__container--last-child']}>
-                <p className={styles['trustFactors__number']}>0</p>
+              <div className={styles['trustNumbers__container--last-child']}>
+                <p className={styles['trustNumbers__number']}>0</p>
                 <div className="flex-center">
-                  <p className={styles['trustFactors__text--last-child'] + ' body-text'}>cooking equipment needed</p>
+                  <p className={styles['trustNumbers__text--last-child'] + ' body-text'}>cooking equipment needed</p>
                 </div>
               </div>
             </div>
