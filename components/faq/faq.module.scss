@@ -1,0 +1,34 @@
+@use '../../styles/base/colors';
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    
+    padding: 50px;
+    margin-bottom: 3rem !important;
+    margin-top: 10rem !important;
+    
+
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 300;
+
+    display: flex ;
+
+    justify-content: column ;
+
+    gap: 10px ;
+    border-radius: 25px ;
+
+    width: 100% ;
+
+    background-color: colors.$color-light-mint ;
+
+    &__title{
+        font-size: 6rem;
+        margin-bottom: 1rem;
+
+        display: flex;
+        align-self: flex-start;
+    }
+
+}
