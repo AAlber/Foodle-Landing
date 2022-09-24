@@ -202,65 +202,54 @@ const Home: NextPage = () => {
       <div className={styles['sidebar']}>
         <Sidebar />
       </div>
+
+      {/* <=== Section 1 ===> */}
       <div className={styles['hero']}>
-        <div className={styles['hero__left']}>
-          <div className={styles['hero__left--inner']}>
+        {/* Section 1 TOP */}
+        <div className={styles['hero__top']}>
+          <div className={styles['hero__top--inner']}>
+            <p className="overline">Democratise food-making</p>
             <h1 className={'header-primary'}>
               {title}
-              <span className={styles['rainbow']} ref={easyRef}></span>.
+              <span className={'header-primary'} ref={easyRef}></span>.
             </h1>
 
-            <h3 className={'body-text-secondary'}>{description}</h3>
-            <div className="promotion-badge flex-center">
-              <h1 className=" header-primary">€20</h1>
-              <h3 className="white-text">{submitLabel}</h3>
-            </div>
+            <p className={'body-text'}>{description}</p>
 
-            <form onSubmit={subscribe}>
-              <div>
-                <input
-                  className="standard-form__inputMedium"
-                  required
-                  id="email-input"
-                  name="email"
-                  type="email"
-                  placeholder={submitPlaceholder}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button
-                  disabled={state === 'Loading'}
-                  type="submit"
-                  className="primary-btn bold-medium"
-                  onClick={handleOnBuy} //subscribe
-                >
-                  {submit}
-                </button>
-              </div>
-              {state === 'Success' || 'Error' ? (
-                <h2
-                  className={
-                    'smallest-text ' + (state === 'Success' ? 'success-msg' : state === 'Error' ? 'error-msg' : '')
-                  }
-                >
-                  {state === 'Success' ? signupSuccess : state === 'Error' ? signupError : ''}
-                </h2>
-              ) : (
-                <></>
-              )}
-            </form>
+            <button
+              disabled={state === 'Loading'}
+              type="submit"
+              className={styles['home-btn'] + ' bold-medium'}
+              onClick={handleOnBuy} //subscribe
+            >
+              {submit}
+            </button>
           </div>
-        </div>
-        <div className={styles['hero__right']}>
-          <div className={styles['hero__right']}>
-            <Image alt={'Hero Image'} src={'/programming.png'} width={600} height={450} />
+          {/* Section 1 Trust Factors DESKTOP */}
+          <div className="flex-center">
+            <div className={styles['trustNumbers']}>
+              <div className={styles['trustNumbers__container']}>
+                <p className={styles['trustNumbers__number']}>0€</p>
+                <div className="flex-center">
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>of upfront costs</p>
+                </div>
+              </div>
+              <div className={styles['trustNumbers__container']}>
+                <p className={styles['trustNumbers__number']}>+15</p>
+                <div className="flex-center">
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>cooks onboarded with Foodle</p>
+                </div>
+              </div>
+              <div className={styles['trustNumbers__container--last-child']}>
+                <p className={styles['trustNumbers__number']}>0</p>
+                <div className="flex-center">
+                  <p className={styles['trustNumbers__text--last-child'] + ' body-text'}>cooking equipment needed</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <h2 className={styles['random-text'] + ' header-secondary mb-two'} ref={dreamsScroll}>
-        {food}
-        <span className={styles['rainbow-multi']}> {dreams} </span>
-      </h2>
       <Faq />
       <div className={styles['trustFactors']}>
         <div className={styles['trustGrid']}>
