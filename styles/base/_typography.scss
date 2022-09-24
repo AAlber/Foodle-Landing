@@ -11,7 +11,7 @@
 }*/
 
 * {
-  font-family: 'Sequel','Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Sequel', 'Inter', 'Helvetica', 'Arial', sans-serif;
   // font-family: 'Inter', sans-serif !important;
   font-weight: 300;
 }
@@ -28,7 +28,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: all 0.3s ease-in-out;
-
 
   img {
     margin-right: 0.1rem !important;
@@ -72,7 +71,7 @@ body {
 }
 textarea {
   // font-family: 'Inter', sans-serif !important;
-  font-family:'Sequel', 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Sequel', 'Inter', 'Helvetica', 'Arial', sans-serif;
 }
 .subtle-text {
   color: colors.$color-subtle;
@@ -103,7 +102,7 @@ textarea {
 }
 
 .header-secondary {
-  font-size: 4rem ;
+  font-size: 4rem;
   line-height: 5.5rem;
   font-weight: 500;
   letter-spacing: -0.05em;
@@ -171,7 +170,7 @@ textarea {
   line-height: 20px;
   color: $color-grey;
 }
-.black-text{
+.black-text {
   color: black;
 }
 .small-text {
@@ -180,8 +179,8 @@ textarea {
 .smallest-text {
   font-size: 13px !important;
 }
-.error-msg{
-  background-color: #F44336;
+.error-msg {
+  background-color: #f44336;
   color: white;
   @include mixins.submit-msg();
 }
@@ -190,4 +189,12 @@ textarea {
   color: #009688;
   font-weight: 600;
   @include submit-msg();
+}
+
+.overline {
+  font-size: 1.4rem !important;
+  line-height: 1.6rem !important;
+  font-weight: 2rem !important;
+  text-transform: uppercase;
+  color: $color-primary;
 }

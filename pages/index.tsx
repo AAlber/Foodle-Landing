@@ -203,15 +203,16 @@ const Home: NextPage = () => {
 
       {/* <=== Section 1 ===> */}
       <div className={styles['hero']}>
-        {/* Section 1 LEFT */}
-        <div className={styles['hero__left']}>
-          <div className={styles['hero__left--inner']}>
+        {/* Section 1 TOP */}
+        <div className={styles['hero__top']}>
+          <div className={styles['hero__top--inner']}>
+            <p className="overline">Democratise food-making</p>
             <h1 className={'header-primary'}>
               {title}
               <span className={styles['rainbow']} ref={easyRef}></span>.
             </h1>
 
-            <h3 className={'body-text-secondary'}>{description}</h3>
+            <p className={'body-text'}>{description}</p>
 
             <button
               disabled={state === 'Loading'}
@@ -222,44 +223,27 @@ const Home: NextPage = () => {
               {submit}
             </button>
           </div>
-        </div>
-
-        {/* Section 1 Trust Factors MOBILE */}
-        <div className="flex-center">
-          <div className={styles['trustFactorsMobile']}>
-            <div className={styles['trustFactorsMobile__container']}>Div 1</div>
-            <div className={styles['trustFactorsMobile__container']}>Div 2</div>
-            <div className={styles['trustFactorsMobile__container']}>Div 3</div>
-          </div>
-        </div>
-
-        {/* Section 1 RIGHT */}
-        <div className={styles['hero__right']}>
-          <div className={styles['hero__right']}>
-            <Image alt={'Hero Image'} src={'/kitchen-unsplash.png'} width={600} height={450} />
-          </div>
-        </div>
-      </div>
-
-      {/* Section 1 Trust Factors DESKTOP */}
-      <div className="flex-center">
-        <div className={styles['trustFactors']}>
-          <div className={styles['trustFactors__container']}>
-            <p className={styles['trustFactors__number']}>0€</p>
-            <div className="flex-center">
-              <p className={styles['trustFactors__text'] + ' body-text'}>of upfront costs</p>
-            </div>
-          </div>
-          <div className={styles['trustFactors__container']}>
-            <p className={styles['trustFactors__number']}>+15</p>
-            <div className="flex-center">
-              <p className={styles['trustFactors__text'] + ' body-text'}>cooks onboarded with Foodle</p>
-            </div>
-          </div>
-          <div className={styles['trustFactors__container--last-child']}>
-            <p className={styles['trustFactors__number']}>0</p>
-            <div className="flex-center">
-              <p className={styles['trustFactors__text--last-child'] + ' body-text'}>cooking equipment needed</p>
+          {/* Section 1 Trust Factors DESKTOP */}
+          <div className="flex-center">
+            <div className={styles['trustFactors']}>
+              <div className={styles['trustFactors__container']}>
+                <p className={styles['trustFactors__number']}>0€</p>
+                <div className="flex-center">
+                  <p className={styles['trustFactors__text'] + ' body-text'}>of upfront costs</p>
+                </div>
+              </div>
+              <div className={styles['trustFactors__container']}>
+                <p className={styles['trustFactors__number']}>+15</p>
+                <div className="flex-center">
+                  <p className={styles['trustFactors__text'] + ' body-text'}>cooks onboarded with Foodle</p>
+                </div>
+              </div>
+              <div className={styles['trustFactors__container--last-child']}>
+                <p className={styles['trustFactors__number']}>0</p>
+                <div className="flex-center">
+                  <p className={styles['trustFactors__text--last-child'] + ' body-text'}>cooking equipment needed</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

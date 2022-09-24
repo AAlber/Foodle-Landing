@@ -31,9 +31,10 @@
   width: 100%;
   padding: 0 5rem;
   color: black;
-
+  background: linear-gradient(248.65deg, rgba(0, 105, 31, 0.1) 6.41%, rgba(178, 223, 219, 0.1) 93.3%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0) -7.36%, #ffffff 100%), url('../../public/landing-2.jpg');
+  background-size: cover;
   display: flex;
-  background-color: white;
   justify-content: center;
   align-items: center;
   gap: 6rem;
@@ -56,43 +57,44 @@
     color: colors.$color-primary-light;
   }
 
-  height: calc(62.5rem);
+  height: 100vh;
   width: 100%;
 
-  &__left {
+  &__top {
     display: flex;
-    flex: 1 1 55%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
     &--inner {
       display: flex;
-      max-width: 58rem;
+      max-width: 88rem;
       gap: 3rem;
       flex-direction: column;
-    }
-
-    &--email {
-      width: 25vw;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      @include mixins.small-mobile {
+        padding: 0 3rem 0 3rem;
+        inline-size: 450px;
+        overflow-wrap: break-word;
+      }
+      @include mixins.mobile {
+        padding: 0 3rem 0 3rem;
+        inline-size: 450px;
+        overflow-wrap: break-word;
+      }
     }
   }
 
-  &__right {
-    flex: 1 1 45%;
-
-    img {
-      border: 1px transparent;
-      border-radius: 1rem;
-      overflow: hidden;
-      max-width: 54rem !important;
-    }
+  @include mixins.small-mobile {
+    padding: 0 1.5rem 0rem 1.5rem;
+    flex-direction: column;
   }
 
   @include mixins.mobile {
-    padding: 50rem 1.5rem 0rem 1.5rem;
+    padding: 0 1.5rem 0rem 1.5rem;
     flex-direction: column;
-    margin-bottom: 30rem;
-    height: 48rem;
 
     form {
       div {
@@ -157,13 +159,22 @@
 .trustFactors {
   display: flex;
   flex-direction: row;
-  margin: 0 10rem 8rem 10rem;
+  margin: 10rem 10rem 0 10rem;
 
   &__container {
     display: flex;
     flex-direction: row;
     border-right: 5px solid #00695c;
     margin-right: 9rem;
+
+    @include mixins.small-mobile {
+      border-right: none;
+      margin-right: 0;
+    }
+    @include mixins.mobile {
+      border-right: none;
+      margin-right: 0;
+    }
 
     &--last-child {
       display: flex;
@@ -192,34 +203,12 @@
       margin-right: 0;
     }
   }
-  @include mixins.tablet {
+
+  @include mixins.small-mobile {
     display: none;
   }
   @include mixins.mobile {
     display: none;
-  }
-  @include mixins.small-mobile {
-    display: none;
-  }
-}
-
-.trustFactorsMobile {
-  display: none;
-
-  @include mixins.tablet {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-  }
-
-  @include mixins.mobile {
-    display: flex;
-    flex-direction: column;
-  }
-
-  @include mixins.small-mobile {
-    display: flex;
-    flex-direction: column;
   }
 }
 
