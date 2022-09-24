@@ -21,6 +21,7 @@ import StoryCarousel from '../components/Layout/StoryCarousel';
 import { KitchenCardInfo } from '../components/Layout/SwiperCard';
 import Script from 'next/script';
 import posthog from 'posthog-js';
+import SpecialSection from '../components/Layout/special-section/SpecialSection';
 import Faq from '../components/landing/Faq';
 import TrustFactor from '../components/landing/TrustFactor';
 
@@ -308,6 +309,7 @@ const Home: NextPage = () => {
           </Link>
         </div>
       </div>
+      <SpecialSection />
       <Footer />
     </div>
   );
