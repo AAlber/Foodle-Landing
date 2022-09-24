@@ -32,10 +32,11 @@ const Faq = () => {
 
     return (
 
+
         <div className={styles['faq']}>
 
           <div className='header-primary'>
-            <h1>F.A.Q.</h1>
+            <h4>F.A.Q.</h4>
           </div>
 
           <div className={styles['accordion']}>

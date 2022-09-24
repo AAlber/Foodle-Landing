@@ -1,4 +1,5 @@
 @use '../../styles/base/colors';
+@use '../../styles/abstracts/mixins';
 
 .question{
     display: flex;
@@ -17,12 +18,14 @@
         font-size: 1.5rem;
         font-weight: 900;
         margin-bottom: 2rem;
+        @include mixins.mobile{
+            max-width: 20rem;
+        }
         
     }
 
     &__content{
 
-        max-width: fit-content;
         font-size: 1.5rem;
         margin-bottom: 3rem;
         color: colors.$color-dark-grey;

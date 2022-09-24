@@ -18,7 +18,7 @@ const FaqAccordion = (props: FaqAccordionProps) => {
     <div>
       <div className={styles['question']} onClick={() => setIsActive(!isActive)}>
         <div className={styles['question__title']}>{props.title}</div>
-        <Image className={imageStyle} alt={'xmark'} src={'/xmark.svg'} width={15} height={15} />
+          <Image className={imageStyle} alt={'xmark'} src={'/xmark.svg'} width={15} height={15} />
       </div>
       {isActive && <div className={styles['question__content']}>{props.content}</div>}
 
