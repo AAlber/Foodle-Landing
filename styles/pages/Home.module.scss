@@ -8,19 +8,19 @@
   -webkit-text-fill-color: transparent;
 }
 
-.stories-wrapper{
+.stories-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  div{
-    &:first-of-type{
-      border-radius:1.5rem;
-      span{
-        color: #00695c!important;
+
+  div {
+    &:first-of-type {
+      border-radius: 1.5rem;
+      span {
+        color: #00695c !important;
         font-size: 12px !important;
         font-weight: 600 !important;
-        &:nth-child(1){
+        &:nth-child(1) {
           margin-bottom: -0.3rem !important;
         }
       }
@@ -31,12 +31,14 @@
   width: 100%;
   padding: 0 5rem;
   color: black;
-
+  background: linear-gradient(248.65deg, rgba(0, 105, 31, 0.1) 6.41%, rgba(178, 223, 219, 0.1) 93.3%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0) -7.36%, #ffffff 100%), url('../../public/landing-2.jpg');
+  background-size: cover;
   display: flex;
-  background-color: white;
   justify-content: center;
   align-items: center;
   gap: 6rem;
+  margin-top: 5rem;
 
   form {
     div {
@@ -56,52 +58,44 @@
     color: colors.$color-primary-light;
   }
 
-  height: calc(62.5rem + 30vh);
+  height: 100vh;
   width: 100%;
 
-  &__left {
+  &__top {
     display: flex;
-    flex: 1 1 55%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
     &--inner {
       display: flex;
-      max-width: 58rem;
+      max-width: 88rem;
       gap: 3rem;
       flex-direction: column;
-    }
-
-    &--email {
-      width: 25vw;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      @include mixins.small-mobile {
+        padding: 0 3rem 0 3rem;
+        inline-size: 450px;
+        overflow-wrap: break-word;
+      }
+      @include mixins.mobile {
+        padding: 0 3rem 0 3rem;
+        inline-size: 450px;
+        overflow-wrap: break-word;
+      }
     }
   }
 
-  &__right {
-    flex: 1 1 45%;
-    
-    
-
-    img {
-      border: 1px transparent;
-      border-radius: 1rem;
-      overflow: hidden;
-      max-width: 54rem !important;
-    }
+  @include mixins.small-mobile {
+    padding: 0 1.5rem 0rem 1.5rem;
+    flex-direction: column;
   }
 
   @include mixins.mobile {
-    padding: 25rem 1.5rem 0rem 1.5rem;
+    padding: 0 1.5rem 0rem 1.5rem;
     flex-direction: column;
-    margin-bottom: 30rem;
-    height:48rem;
-    &__right{
-      display: none;
-    }
-    .img {
-      display: none;
-      visibility: hidden;
-    }
 
     form {
       div {
@@ -138,11 +132,84 @@
     padding: 15rem 1rem 20rem 1rem;
     font-size: 34px;
     margin-bottom: 30rem !important;
-
   }
 
   @include mixins.tablet {
     margin-top: 20rem;
+  }
+}
+
+.home-btn {
+  @include mixins.btn(white, colors.$color-primary-light, white);
+  max-width: 19.5rem;
+  height: 6.5rem;
+  border-radius: 1.8rem;
+  border: 1px solid #009688;
+  background: linear-gradient(264.54deg, #009688 -13.78%, #00695c 70.16%);
+  &:hover {
+    color: #009688;
+    background: white;
+  }
+  &:disabled {
+    background-color: #c4c4c4;
+    color: colors.$color-white;
+    border: 2px solid #c4c4c4;
+  }
+}
+
+.trustNumbers {
+  display: flex;
+  flex-direction: row;
+  margin: 10rem 10rem 0 10rem;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    border-right: 5px solid #00695c;
+    margin-right: 9rem;
+
+    @include mixins.small-mobile {
+      border-right: none;
+      margin-right: 0;
+    }
+    @include mixins.mobile {
+      border-right: none;
+      margin-right: 0;
+    }
+
+    &--last-child {
+      display: flex;
+      flex-direction: row;
+      border-right: none;
+      margin-right: 0;
+    }
+  }
+
+  &__number {
+    flex: 1;
+    font-size: 5.6rem;
+    font-weight: 700px;
+    line-height: 7.2rem;
+    background: colors.$color-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 2rem;
+  }
+
+  &__text {
+    margin-right: 9rem;
+    font-weight: 50rem;
+
+    &--last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include mixins.small-mobile {
+    display: none;
+  }
+  @include mixins.mobile {
+    display: none;
   }
 }
 
@@ -162,7 +229,7 @@
   &__wrapper {
     width: 100%;
   }
-  &__instructions{
+  &__instructions {
     font-size: 14px;
     margin-top: 0.5rem;
     opacity: 0.8;
@@ -170,22 +237,21 @@
   @include mixins.mobile {
     padding: 3rem 2rem 3rem 2rem;
     &__header {
-        font-size: 25px;
-        line-height: 2.5rem;
-      }
-    
-      &__instructions {
-          font-size: 13px;
-          margin-top: 0.5rem;
-          opacity: 0.8;
-          text-align: left;
-          content: "click on restaurants to see more" !important;
-        }
-     h2{
-       text-align: left;
-     }
+      font-size: 25px;
+      line-height: 2.5rem;
+    }
+
+    &__instructions {
+      font-size: 13px;
+      margin-top: 0.5rem;
+      opacity: 0.8;
+      text-align: left;
+      content: 'click on restaurants to see more' !important;
+    }
+    h2 {
+      text-align: left;
+    }
   }
-  
 }
 
 .landing-info {
@@ -227,101 +293,99 @@
     align-items: center;
     width: 100%;
     height: 30rem;
-    a{
+    a {
       height: 5.2rem;
       padding: 1rem 2rem;
     }
-    
   }
 
-    @include mixins.mobile {
-      // height: 10rem;
-      &__wrapper {
-        margin: 0;
-        flex-direction: column;
-        gap: 0rem;
-      }
-      &__white{
-        margin-top: 20rem;
-      }
-  
-      &__left {
-        font-size: 24px;
-        max-width: 90%;
-        text-align: left;
-        transform: translate3d(0);
-      }
-  
-      &__lower {
-        height: 25rem;
-        display: inline-block;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-  
-        h2 {
-          font-size: 22px;
-          max-width: 18rem;
-          margin-bottom: 2rem;
-        }
-  
-        a {
-          font-size: 20px;
-          padding: 1rem;
-          height: 5rem;
-        }
-      }
-  
-      &__right {
-        height: fit-content !important;
-        max-width: 90% !important;
+  @include mixins.mobile {
+    // height: 10rem;
+    &__wrapper {
+      margin: 0;
+      flex-direction: column;
+      gap: 0rem;
+    }
+    &__white {
+      margin-top: 20rem;
+    }
+
+    &__left {
+      font-size: 24px;
+      max-width: 90%;
+      text-align: left;
+      transform: translate3d(0);
+    }
+
+    &__lower {
+      height: 25rem;
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      h2 {
         font-size: 22px;
-        text-align: left;
-        transform: translate3d(0);
+        max-width: 18rem;
+        margin-bottom: 2rem;
+      }
+
+      a {
+        font-size: 20px;
+        padding: 1rem;
+        height: 5rem;
       }
     }
-        @include mixins.tablet {
-          &__wrapper {
 
-            margin: 20rem 0 20rem 0;
-            flex-direction: column;
-            gap: 6rem;
-          }
-    
-          &__left {
-            font-size: 24px;
-            max-width: 90%;
-            text-align: left;
-            width: 50%;
-          }
-    
-          &__lower {
-            height: 25rem;
-    
-            h2 {
-              font-size: 22px;
-              max-width: 18rem;
-              text-align: center;
-              margin-bottom: 2rem;
-            }
-    
-            a {
-              font-size: 20px;
-              padding: 1rem;
-              height: 5rem;
-            }
-          }
-    
-          &__right {
-            height: fit-content !important;
-            max-width: 90% !important;
-            font-size: 22px;
-            text-align: left;
-            width: 50%;
-            
-            transform: translate3d(0);
-          }
-        }
+    &__right {
+      height: fit-content !important;
+      max-width: 90% !important;
+      font-size: 22px;
+      text-align: left;
+      transform: translate3d(0);
+    }
+  }
+  @include mixins.tablet {
+    &__wrapper {
+      margin: 20rem 0 20rem 0;
+      flex-direction: column;
+      gap: 6rem;
+    }
+
+    &__left {
+      font-size: 24px;
+      max-width: 90%;
+      text-align: left;
+      width: 50%;
+    }
+
+    &__lower {
+      height: 25rem;
+
+      h2 {
+        font-size: 22px;
+        max-width: 18rem;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      a {
+        font-size: 20px;
+        padding: 1rem;
+        height: 5rem;
+      }
+    }
+
+    &__right {
+      height: fit-content !important;
+      max-width: 90% !important;
+      font-size: 22px;
+      text-align: left;
+      width: 50%;
+
+      transform: translate3d(0);
+    }
+  }
 }
 
 .sidebar {
@@ -329,5 +393,46 @@
 
   @include mixins.mobile {
     display: block;
+  }
+}
+.trustFactors {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 10rem;
+  @include mixins.mobile {
+    margin-bottom: 2rem;
+    padding-right: 1rem;
+  }
+}
+.trustGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, calc(10rem + 15vh));
+
+  grid-row-gap: calc(2rem + 5vw);
+  grid-column-gap: calc(2rem + 5vw);
+  @include mixins.mobile {
+    grid-row-gap: 0rem;
+    grid-column-gap: 3rem;
+  }
+
+  &:nth-child(1) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+  &:nth-child(2) {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+  &:nth-child(3) {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  &:nth-child(4) {
+    grid-row: 2/3;
+    grid-column: 2/3;
   }
 }

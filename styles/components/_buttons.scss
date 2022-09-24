@@ -37,11 +37,10 @@
   @include primary-btn();
   padding: 5px 5px;
   border-radius: 1.5rem;
-  height:2.5rem !important;
+  height: 2.5rem !important;
   font-weight: 600;
   font-size: 14px;
   // height: 5rem;
-  
 }
 .button-text {
   font-size: 20;
@@ -78,7 +77,6 @@
   bottom: 5% !important;
   right: 5% !important;
 }
-
 
 .active-btn {
   border: 2px solid #009688;
@@ -164,40 +162,38 @@
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
-  border: 3px solid #8C82FC;
+  border: 3px solid #8c82fc;
   background: #fff;
-  color: #8C82FC;
+  color: #8c82fc;
   border-radius: 40px;
   cursor: pointer;
   overflow: hidden;
-  transition: all .35s;
-  &:active{
+  transition: all 0.35s;
+  &:active {
     width: 40px;
-      height: 40px;
-      .submit-success {
-          opacity: 1;
-          visibility: visible;
-      }
-        svg {
-          margin-top: 50%;
-          transform: translateY(-50%) rotate(720deg) scale(1);
-        }
-            span {
-              opacity: 0;
-              visibility: hidden;
-            }
-  }
-  &:hover{
-    background: #8C82FC;
-    color: #fff;
-
-  }
-    span {
+    height: 40px;
+    .submit-success {
       opacity: 1;
       visibility: visible;
-      transition: all .35s;
     }
-    
+    svg {
+      margin-top: 50%;
+      transform: translateY(-50%) rotate(720deg) scale(1);
+    }
+    span {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &:hover {
+    background: #8c82fc;
+    color: #fff;
+  }
+  span {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.35s;
+  }
 }
 
 .submit-success {
@@ -211,17 +207,16 @@
   z-index: 1;
   opacity: 0;
   visibility: hidden;
-  transition: all .35s;
+  transition: all 0.35s;
   svg {
-      width: 20px;
-      height: 20px;
-      fill: yellowgreen;
-      transform-origin: 50% 50%;
-      transform: translateY(-50%) rotate(0deg) scale(0);
-      transition: all .35s;
-    }
+    width: 20px;
+    height: 20px;
+    fill: yellowgreen;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(0deg) scale(0);
+    transition: all 0.35s;
+  }
 }
-
 
 // button.is_active {
 //   width: 40px;

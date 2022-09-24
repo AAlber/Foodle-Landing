@@ -7,7 +7,7 @@
   "page.home.hero.description": "We pair licensed kitchen owners with new chefs and bakers so businesses can grow together.",
   "page.home.hero.submit.label": "Off your first booking! Submit your email and we will contact you soon for the next steps.",
   "page.home.hero.submit.placeholder": "What's your email address?",
-  "page.home.hero.submit": "Submit",
+  "page.home.hero.submit": "GET STARTED",
   "page.home.food": "Make your entrepreneurial food",
   "page.home.dreams": "dreams come true",
   "page.home.carousel.title": "Licensed Kitchens For Rent",
@@ -25,8 +25,8 @@
   "component.footer.help": "Help",
   "component.footer.privacy": "Privacy",
   "component.swiperCard.hr": "hr",
-  "component.layout.constructionPopup.title":"Foodle is still under construction",
-"component.layout.constructionPopup.description":"However, we are already beginning to match up cooks and bakers with licensed kitchens. So simply go up and enter your email to join.",
-"component.layout.constructionPopup.signup":"Return To Sign Up",
-"component.layout.constructionPopup.return":"Return To Posts"
+  "component.layout.constructionPopup.title": "Foodle is still under construction",
+  "component.layout.constructionPopup.description": "However, we are already beginning to match up cooks and bakers with licensed kitchens. So simply go up and enter your email to join.",
+  "component.layout.constructionPopup.signup": "Return To Sign Up",
+  "component.layout.constructionPopup.return": "Return To Posts"
 }

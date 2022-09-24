@@ -18,10 +18,12 @@ import { dir } from 'console';
 import Sidebar from '../components/Layout/BurgerMenu';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import StoryCarousel from '../components/Layout/StoryCarousel';
-import { KitchenCardInfo } from '~/components/Layout/SwiperCard';
+import { KitchenCardInfo } from '../components/Layout/SwiperCard';
 import Script from 'next/script';
 import posthog from 'posthog-js';
 import SpecialSection from '../components/Layout/special-section/SpecialSection';
+import Faq from '../components/landing/Faq';
+import TrustFactor from '../components/landing/TrustFactor';
 
 export const kitchenCards: KitchenCardInfo[] = [
   {
@@ -201,65 +203,95 @@ const Home: NextPage = () => {
       <div className={styles['sidebar']}>
         <Sidebar />
       </div>
+
+      {/* <=== Section 1 ===> */}
       <div className={styles['hero']}>
-        <div className={styles['hero__left']}>
-          <div className={styles['hero__left--inner']}>
+        {/* Section 1 TOP */}
+        <div className={styles['hero__top']}>
+          <div className={styles['hero__top--inner']}>
+            <p className="overline">Democratise food-making</p>
             <h1 className={'header-primary'}>
               {title}
-              <span className={styles['rainbow']} ref={easyRef}></span>.
+              <span className={'header-primary'} ref={easyRef}></span>.
             </h1>
 
-            <h3 className={'body-text-secondary'}>{description}</h3>
-            <div className="promotion-badge flex-center">
-              <h1 className=" header-primary">€20</h1>
-              <h3 className="white-text">{submitLabel}</h3>
-            </div>
+            <p className={'body-text'}>{description}</p>
 
-            <form onSubmit={subscribe}>
-              <div>
-                <input
-                  className="standard-form__inputMedium"
-                  required
-                  id="email-input"
-                  name="email"
-                  type="email"
-                  placeholder={submitPlaceholder}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button
-                  disabled={state === 'Loading'}
-                  type="submit"
-                  className="primary-btn bold-medium"
-                  onClick={handleOnBuy} //subscribe
-                >
-                  {submit}
-                </button>
-              </div>
-              {state === 'Success' || 'Error' ? (
-                <h2
-                  className={
-                    'smallest-text ' + (state === 'Success' ? 'success-msg' : state === 'Error' ? 'error-msg' : '')
-                  }
-                >
-                  {state === 'Success' ? signupSuccess : state === 'Error' ? signupError : ''}
-                </h2>
-              ) : (
-                <></>
-              )}
-            </form>
+            <button
+              disabled={state === 'Loading'}
+              type="submit"
+              className={styles['home-btn'] + ' bold-medium'}
+              onClick={handleOnBuy} //subscribe
+            >
+              {submit}
+            </button>
           </div>
-        </div>
-        <div className={styles['hero__right']}>
-          <div className={styles['hero__right']}>
-            <Image alt={'Hero Image'} src={'/programming.png'} width={600} height={450} />
+          {/* Section 1 Trust Factors DESKTOP */}
+          <div className="flex-center">
+            <div className={styles['trustNumbers']}>
+              <div className={styles['trustNumbers__container']}>
+                <p className={styles['trustNumbers__number']}>0€</p>
+                <div className="flex-center">
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>of upfront costs</p>
+                </div>
+              </div>
+              <div className={styles['trustNumbers__container']}>
+                <p className={styles['trustNumbers__number']}>+15</p>
+                <div className="flex-center">
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>cooks onboarded with Foodle</p>
+                </div>
+              </div>
+              <div className={styles['trustNumbers__container--last-child']}>
+                <p className={styles['trustNumbers__number']}>0</p>
+                <div className="flex-center">
+                  <p className={styles['trustNumbers__text--last-child'] + ' body-text'}>cooking equipment needed</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <h2 className={styles['random-text'] + ' header-secondary mb-two'} ref={dreamsScroll}>
-        {food}
-        <span className={styles['rainbow-multi']}> {dreams} </span>
-      </h2>
+      <Faq />
+      <div className={styles['trustFactors']}>
+        <div className={styles['trustGrid']}>
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+        </div>
+      </div>
       <div className={styles['carousel']}>
         <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
         <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>{click}</h3>
@@ -267,6 +299,7 @@ const Home: NextPage = () => {
           {width! < 480 ? <StoryCarousel cardInfo={kitchenCards} width={width!} /> : <Carousel width={width!} />}
         </div>
       </div>
+
       <LandingInfo width={width!} />
       <div ref={signupRef} className={styles['landing-info__lower']}>
         <div className="flex-center__column">
@@ -274,9 +307,9 @@ const Home: NextPage = () => {
           <Link href={'/'}>
             <a className="primary-btn">{signup}</a>
           </Link>
-        </div>          
+        </div>
       </div>
-      <SpecialSection/>
+      <SpecialSection />
       <Footer />
     </div>
   );
