@@ -200,7 +200,10 @@ const Home: NextPage = () => {
       <div className={styles['sidebar']}>
         <Sidebar />
       </div>
+
+      {/* <=== Section 1 ===> */}
       <div className={styles['hero']}>
+        {/* Section 1 LEFT */}
         <div className={styles['hero__left']}>
           <div className={styles['hero__left--inner']}>
             <h1 className={'header-primary'}>
@@ -209,56 +212,28 @@ const Home: NextPage = () => {
             </h1>
 
             <h3 className={'body-text-secondary'}>{description}</h3>
-            <div className="promotion-badge flex-center">
-              <h1 className=" header-primary">€20</h1>
-              <h3 className="white-text">{submitLabel}</h3>
-            </div>
 
-            <form onSubmit={subscribe}>
-              <div>
-                <input
-                  className="standard-form__inputMedium"
-                  required
-                  id="email-input"
-                  name="email"
-                  type="email"
-                  placeholder={submitPlaceholder}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button
-                  disabled={state === 'Loading'}
-                  type="submit"
-                  className="primary-btn bold-medium"
-                  onClick={handleOnBuy} //subscribe
-                >
-                  {submit}
-                </button>
-              </div>
-              {state === 'Success' || 'Error' ? (
-                <h2
-                  className={
-                    'smallest-text ' + (state === 'Success' ? 'success-msg' : state === 'Error' ? 'error-msg' : '')
-                  }
-                >
-                  {state === 'Success' ? signupSuccess : state === 'Error' ? signupError : ''}
-                </h2>
-              ) : (
-                <></>
-              )}
-            </form>
+            <button
+              disabled={state === 'Loading'}
+              type="submit"
+              className={styles['home-btn'] + ' bold-medium'}
+              onClick={handleOnBuy} //subscribe
+            >
+              {submit}
+            </button>
           </div>
         </div>
+        {/* Section 1 RIGHT */}
         <div className={styles['hero__right']}>
           <div className={styles['hero__right']}>
-            <Image alt={'Hero Image'} src={'/programming.png'} width={600} height={450} />
+            <Image alt={'Hero Image'} src={'/kitchen-unsplash.png'} width={600} height={450} />
           </div>
         </div>
       </div>
-      <h2 className={styles['random-text'] + ' header-secondary mb-two'} ref={dreamsScroll}>
-        {food}
-        <span className={styles['rainbow-multi']}> {dreams} </span>
-      </h2>
+
+      {/* Section 1 Trust Factors */}
+      <div className={styles['trustFactors']}></div>
+
       <div className={styles['carousel']}>
         <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
         <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>{click}</h3>
