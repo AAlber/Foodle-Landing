@@ -21,6 +21,7 @@ import StoryCarousel from '../components/Layout/StoryCarousel';
 import { KitchenCardInfo } from '../components/Layout/SwiperCard';
 import Script from 'next/script';
 import posthog from 'posthog-js';
+import Faq from '../components/landing/Faq';
 import TrustFactor from '../components/landing/TrustFactor';
 
 export const kitchenCards: KitchenCardInfo[] = [
@@ -260,6 +261,7 @@ const Home: NextPage = () => {
         {food}
         <span className={styles['rainbow-multi']}> {dreams} </span>
       </h2>
+      <Faq />
       <div className={styles['trustFactors']}>
         <div className={styles['trustGrid']}>
           <TrustFactor
@@ -307,6 +309,7 @@ const Home: NextPage = () => {
           {width! < 480 ? <StoryCarousel cardInfo={kitchenCards} width={width!} /> : <Carousel width={width!} />}
         </div>
       </div>
+
       <LandingInfo width={width!} />
       <div ref={signupRef} className={styles['landing-info__lower']}>
         <div className="flex-center__column">
