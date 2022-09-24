@@ -1,34 +1,52 @@
 @use '../../styles/base/colors';
+@use '../../styles/abstracts/mixins';
 
 .faq {
-    display: flex;
-    flex-direction: column;
-    
-    padding: 50px;
-    margin-bottom: 3rem !important;
-    margin-top: 10rem !important;
-    
-
-    font-family: 'Inter', sans-serif !important;
-    font-weight: 300;
 
     display: flex ;
+    flex-direction: row;
+    justify-content: space-between !important;
+    font-family: 'Inter', sans-serif !important;
 
-    justify-content: column ;
-
+    padding: 5rem;
     gap: 10px ;
     border-radius: 25px ;
 
-    width: 100% ;
-
     background-color: colors.$color-light-mint ;
 
-    &__title{
-        font-size: 6rem;
-        margin-bottom: 1rem;
+    width: 90%;
 
-        display: flex;
-        align-self: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+@include mixins.mobile {
+    .faq {
+        flex-direction: column;
+        align-items: center;
+        padding: 5rem 0;
+    }
+
+    .accordion{
+        width: 100%;
+    }
+}
+
+.accordion{
+
+    width: 65%;
+    margin-top: 1rem;
+
+    hr{
+        color: colors.$color-light-purple;
+        background-color:colors.$color-light-purple;
+        clear: both;
+        border: 0;
+        display: block;
+        height: 3px;
+        margin-bottom: 2rem;
     }
 
 }

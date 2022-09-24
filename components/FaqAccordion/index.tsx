@@ -22,7 +22,7 @@ const FaqAccordion = (props: FaqAccordionProps) => {
       </div>
       {isActive && <div className={styles['question__content']}>{props.content}</div>}
 
-      <hr />
+      <hr className={styles['hr']}/>
     </div>
   );
 };

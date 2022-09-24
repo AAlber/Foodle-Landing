@@ -34,15 +34,16 @@ const Faq = () => {
 
         <div className={styles['faq']}>
 
-            <div className={styles['faq__title']}>
-                <h1>F.A.Q</h1>
-            </div>
+          <div className='header-primary'>
+            <h1>F.A.Q.</h1>
+          </div>
 
-            <div className="">
-                {faqData.map(({ title, content }) => (
-                    <FaqAccordion title={title} content={content} />
-                ))}
-            </div>
+          <div className={styles['accordion']}>
+            <hr/>
+            {faqData.map(({ title, content }) => (
+                <FaqAccordion title={title} content={content} />
+            ))}
+          </div>
             
         </div>
 
