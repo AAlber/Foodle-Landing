@@ -1,0 +1,45 @@
+@use '../../styles/base/colors';
+
+.question{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    cursor: pointer;
+    img{
+        transition: all 0.2s !important;
+    }
+
+    &__title{
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        
+    }
+
+    &__content{
+
+        max-width: fit-content;
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        color: colors.$color-dark-grey;
+    
+    }
+    
+    hr{
+    
+        color: colors.$color-light-purple;
+        background-color:colors.$color-light-purple;
+        clear: both;
+        border: 0;
+        display: block;
+        height: 3px;
+    
+        margin-bottom: 2rem;
+    }
+
+}
+.rotate{
+    transition: all 0.2s;
+    transform: rotate(45deg);
+}
