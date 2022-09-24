@@ -4,9 +4,7 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/pages/Home.module.scss';
 import Navbar from '../components/Layout/Navbar';
-import LandingInfo from '../components/Layout/LandingInfo';
 import axios from 'axios';
-import Carousel from '../components/Layout/Carousel';
 import Link from 'next/link';
 import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
@@ -17,64 +15,12 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { dir } from 'console';
 import Sidebar from '../components/Layout/BurgerMenu';
 import useWindowDimensions from '../hooks/useWindowDimensions';
-import StoryCarousel from '../components/Layout/StoryCarousel';
-import { KitchenCardInfo } from '../components/Layout/SwiperCard';
 import Script from 'next/script';
 import posthog from 'posthog-js';
 import SpecialSection from '../components/Layout/special-section/SpecialSection';
 import Faq from '../components/landing/Faq';
 import TrustFactor from '../components/landing/TrustFactor';
 
-export const kitchenCards: KitchenCardInfo[] = [
-  {
-    title: 'Industrial Grade Kitchen Mitte',
-    description: 'Practically New Kitchen in the center of the center. Come Join our...',
-    tags: ['Verified', 'Oven', 'Skillet', 'Freezer', 'Fridge', '...'],
-    cityRegion: 'Mitte',
-    distance: 5.1,
-    price: 50,
-  },
-  {
-    title: 'Cozy 3 person kitchen Moabit',
-    description: 'Small kitchen with not so much equipment, but an opportunity for...',
-    tags: ['Verified', 'Oven', 'Fridge', 'Hot Plate', 'Air Fryer', '...'],
-    cityRegion: 'Moabit',
-    distance: 3.2,
-    price: 40,
-  },
-  {
-    title: 'Pizzeria Kitchen Friedrichshain',
-    description: 'Fully stocked kitchen in a very popular area. Please take a loot at...',
-    tags: ['Shared', 'Verified', 'Pizza Oven', 'Skillet', '...'],
-    cityRegion: 'Friedrichshain',
-    distance: 4.3,
-    price: 19,
-  },
-  {
-    title: 'Sushi Kitchen in Reinickendorf',
-    description: 'Sushi kitchen open for 2 days a week, very well equipped and flexible... ',
-    tags: ['Verified', 'Oven', 'Skillet', 'Freezer', 'Fridge', '...'],
-    cityRegion: 'Reinickendorf',
-    distance: 6.5,
-    price: 32,
-  },
-  {
-    title: 'Bakery Open 7 evenings a Week ',
-    description: 'Our bakery kitchen is usable from 1pm onwards, please be careful with...',
-    tags: ['Verified', 'Dual-Oven', 'Oven', 'Fridge', '...'],
-    cityRegion: 'Kreuzberg',
-    distance: 1.1,
-    price: 60,
-  },
-  {
-    title: 'Thai kitchen for rent Neukölln',
-    description: 'Newly opened Thai kitchen available on Mondays and Tuesdays...',
-    tags: ['Shared', 'Verified', 'Oven', 'Skillet', 'Deep-Fryer', '...'],
-    cityRegion: 'Neukölln',
-    distance: 5.1,
-    price: 25,
-  },
-];
 const Home: NextPage = () => {
   const [email, setEmail] = useState('');
   const [state, setState] = useState('idle');
@@ -99,21 +45,10 @@ const Home: NextPage = () => {
   };
 
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
-  const click = intl.formatMessage({ id: 'page.home.carousel.click' });
+  const title2 = intl.formatMessage({ id: 'page.home.hero.title2' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
   const easyAdjectives = intl.formatMessage({ id: 'page.home.hero.easyAdjectives' });
-  const submitLabel = intl.formatMessage({ id: 'page.home.hero.submit.label' });
-  const submitPlaceholder = intl.formatMessage({ id: 'page.home.hero.submit.placeholder' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
-  const food = intl.formatMessage({ id: 'page.home.food' });
-  const dreams = intl.formatMessage({ id: 'page.home.dreams' });
-  const carouselTitle = intl.formatMessage({ id: 'page.home.carousel.title' });
-  const signupLabel = intl.formatMessage({ id: 'page.home.signup.label' });
-  const signup = intl.formatMessage({ id: 'page.home.signup' });
-  const signupError = intl.formatMessage({ id: 'page.home.signup.error' });
-  // "Please enter a valid email that you haven't entered before.";
-  const signupSuccess = intl.formatMessage({ id: 'page.home.signup.success' });
-  // 'successfully submitted';
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -212,7 +147,8 @@ const Home: NextPage = () => {
             <p className="overline">Democratise food-making</p>
             <h1 className={'header-primary'}>
               {title}
-              <span className={'header-primary'} ref={easyRef}></span>.
+              <span className={'header-primary'} ref={easyRef}></span>
+              {title2}
             </h1>
 
             <p className={'body-text'}>{description}</p>
@@ -251,7 +187,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <Faq />
+
+      <SpecialSection />
       <div className={styles['trustFactors']}>
         <div className={styles['trustGrid']}>
           <TrustFactor
@@ -292,24 +229,8 @@ const Home: NextPage = () => {
           />
         </div>
       </div>
-      <div className={styles['carousel']}>
-        <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
-        <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>{click}</h3>
-        <div className="mt-two">
-          {width! < 480 ? <StoryCarousel cardInfo={kitchenCards} width={width!} /> : <Carousel width={width!} />}
-        </div>
-      </div>
+      <Faq />
 
-      <LandingInfo width={width!} />
-      <div ref={signupRef} className={styles['landing-info__lower']}>
-        <div className="flex-center__column">
-          <h2 className="subtitle-text semi-bold-text">{signupLabel}</h2>
-          <Link href={'/'}>
-            <a className="primary-btn">{signup}</a>
-          </Link>
-        </div>
-      </div>
-      <SpecialSection />
       <Footer />
     </div>
   );

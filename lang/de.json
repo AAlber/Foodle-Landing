@@ -2,8 +2,10 @@
   "component.navbar.find": "Unsere Küchen",
   "component.navbar.list": "Vermiete deine Küche",
   "component.navbar.contact": "Kontakt",
-  "page.home.hero.title": "Küchen mieten - aber ",
-  "page.home.hero.easyAdjectives": "einfach bequem simpel unkompliziert",
+  "page.home.hero.title": "Zeig allen wie ",
+  "page.home.hero.title2": " dein Essen ist!",
+
+  "page.home.hero.easyAdjectives": "lecker neu kreativ",
   "page.home.hero.description": "Wir vermitteln Köche und Köchinnen mit Inhaber/-innen von lizensierten Küchen, so dass beide Unternehmen wachsen können.",
   "page.home.hero.submit.label": "Rabatt auf die erste Buchung! Sende uns gerne deine Email Adresse dann halten wir dich auf dem Laufenden.",
   "page.home.hero.submit.placeholder": "Was ist deine Email?",

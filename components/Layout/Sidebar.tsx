@@ -7,7 +7,6 @@ import Image from 'next/image';
 
 import styles from './Footer.module.scss';
 import { useRef, useState } from 'react';
-import ConstructionPopup from './ConstructionPopup';
 
 const Sidebar = () => {
   const intl = useIntl();
