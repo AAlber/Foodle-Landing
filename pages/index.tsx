@@ -232,7 +232,28 @@ const Home: NextPage = () => {
       </div>
 
       {/* Section 1 Trust Factors */}
-      <div className={styles['trustFactors']}></div>
+      <div className="flex-center">
+        <div className={styles['trustFactors']}>
+          <div className={styles['trustFactors__container']}>
+            <p className={styles['trustFactors__number']}>0€</p>
+            <div className="flex-center">
+              <p className={styles['trustFactors__text'] + ' subtitle-text'}>of upfront costs</p>
+            </div>
+          </div>
+          <div className={styles['trustFactors__container']}>
+            <p className={styles['trustFactors__number']}>8</p>
+            <div className="flex-center">
+              <p className={styles['trustFactors__text'] + ' subtitle-text'}>second div</p>
+            </div>
+          </div>
+          <div className={styles['trustFactors__container--last-child']}>
+            <p className={styles['trustFactors__number']}>8</p>
+            <div className="flex-center">
+              <p className={styles['trustFactors__text--last-child'] + ' subtitle-text'}>third div</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className={styles['carousel']}>
         <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
