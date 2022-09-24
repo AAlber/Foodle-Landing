@@ -18,9 +18,11 @@ import { dir } from 'console';
 import Sidebar from '../components/Layout/BurgerMenu';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import StoryCarousel from '../components/Layout/StoryCarousel';
-import { KitchenCardInfo } from '~/components/Layout/SwiperCard';
+import { KitchenCardInfo } from '../components/Layout/SwiperCard';
 import Script from 'next/script';
 import posthog from 'posthog-js';
+import Faq from '../components/landing/Faq';
+import TrustFactor from '../components/landing/TrustFactor';
 
 export const kitchenCards: KitchenCardInfo[] = [
   {
@@ -248,7 +250,47 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-
+      <Faq />
+      <div className={styles['trustFactors']}>
+        <div className={styles['trustGrid']}>
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+          <TrustFactor
+            width={width!}
+            title={'Hello'}
+            text={
+              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+            }
+            shortText={'Get cooking in weeks, not months.'}
+            iconSrc={'/burger-menu.png'}
+          />
+        </div>
+      </div>
       <div className={styles['carousel']}>
         <h2 className={styles['carousel__header'] + ' header-secondary centered'}>{carouselTitle}</h2>
         <h3 className={styles['carousel__instructions'] + ' subtitle-text centered'}>{click}</h3>
@@ -256,6 +298,7 @@ const Home: NextPage = () => {
           {width! < 480 ? <StoryCarousel cardInfo={kitchenCards} width={width!} /> : <Carousel width={width!} />}
         </div>
       </div>
+
       <LandingInfo width={width!} />
       <div ref={signupRef} className={styles['landing-info__lower']}>
         <div className="flex-center__column">
