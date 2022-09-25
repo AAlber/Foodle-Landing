@@ -21,10 +21,10 @@ const BurgerMenu = () => {
           <Tab href="/" iconSrc="/world-icon.svg" title="EN" />
         </div>
         <div className="bm-top__left mt-two">
-          <Tab href="/not-done-yet" title={findKitchen} burger />
-          <Tab href="/not-done-yet" title={listKitchen} burger />
-          <Tab href="/not-done-yet" title="F.A.Q." burger />
-          <Tab href="/not-done-yet" title={contact} burger />
+          <Tab href="/" title={findKitchen} burger />
+          <Tab href="/" title={listKitchen} burger />
+          <Tab href="/" title="F.A.Q." burger />
+          <Tab href="/" title={contact} burger />
         </div>
       </header>
       <footer>
