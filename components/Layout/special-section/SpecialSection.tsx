@@ -3,10 +3,7 @@ import Image from 'next/image';
 import FeatureComponent from './FeatureComponent';
 import { useIntl } from 'react-intl';
 
-export type SpecialSectionProps = {
-  screenWidth: number;
-};
-function SpecialSection(props: SpecialSectionProps) {
+function SpecialSection() {
   const intl = useIntl();
   const specialMainTitle = intl.formatMessage({ id: 'page.home.special.mainTitle' });
   const specialTitle1 = intl.formatMessage({ id: 'page.home.special.title.1' });
