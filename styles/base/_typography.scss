@@ -66,13 +66,13 @@
   text-align: center;
 }
 body {
-  font-family: 'Sequel', 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
   // font-family: 'Inter', sans-serif !important;
-  font-weight: 300;
+  // font-weight: 300;
 }
 textarea {
   // font-family: 'Inter', sans-serif !important;
-  font-family:'Sequel', 'Inter', 'Helvetica', 'Arial', sans-serif;
+  font-family:'Inter', 'Helvetica', 'Arial', sans-serif;
 }
 .subtle-text {
   color: colors.$color-subtle;
@@ -92,18 +92,15 @@ textarea {
 }
 
 .header-primary {
-  // font-size: 6.4rem;
-  // line-height: 6.8rem;
-  // font-weight: 500;
-  // letter-spacing: -0.05em;
   font-size: 88px;
   line-height: 104px;
   font-weight: 700;
   letter-spacing: -5px;
   @include mobile {
-    font-size: 4rem;
+    font-size: 56px;
     line-height: 5.5rem;
     letter-spacing: 0;
+    font-weight: 700;
   }
 }
 

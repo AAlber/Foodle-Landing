@@ -51,15 +51,6 @@ const Home: NextPage = () => {
   const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
   const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
   const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
-  const specialMainTitle = intl.formatMessage({ id: 'page.home.special.mainTitle' });
-  const specialTitle1 = intl.formatMessage({ id: 'page.home.special.title.1' });
-  const specialTitle2 = intl.formatMessage({ id: 'page.home.special.title.2' });
-  const specialTitle3 = intl.formatMessage({ id: 'page.home.special.title.3' });
-  const specialTitle4 = intl.formatMessage({ id: 'page.home.special.title.4' });
-  const specialText1 = intl.formatMessage({ id: 'page.home.special.text.1' });
-  const specialText2 = intl.formatMessage({ id: 'page.home.special.text.2' });
-  const specialText3 = intl.formatMessage({ id: 'page.home.special.text.3' });
-  const specialText4 = intl.formatMessage({ id: 'page.home.special.text.4' });
   const trustFactorTitle1 = intl.formatMessage({ id: 'page.home.trustFactor.title.1' });
   const trustFactorTitle2 = intl.formatMessage({ id: 'page.home.trustFactor.title.2' });
   const trustFactorTitle3 = intl.formatMessage({ id: 'page.home.trustFactor.title.3' });

@@ -31,8 +31,7 @@
   width: 100%;
   padding: 0 5rem;
   color: black;
-  background: linear-gradient(248.65deg, rgba(0, 105, 31, 0.1) 6.41%, rgba(178, 223, 219, 0.1) 93.3%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0) -7.36%, #ffffff 100%), url('../../public/landing-2.jpg');
+  background:  url('../../public/landing.svg');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -76,17 +75,17 @@
       align-items: center;
       text-align: center;
       @include mixins.small-mobile {
-        justify-content: start;
-        align-items: start;
-        padding: 0 3rem 0 3rem;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0 3rem 0 4rem !important;
         inline-size: 450px;
         overflow-wrap: break-word;
         text-align: left;
       }
       @include mixins.mobile {
-        justify-content: start;
-        align-items: start;
-        padding: 0 3rem 0 3rem;
+        justify-content: flex-start;
+        align-content: flex-start;
+        margin: 0 3rem 0 3rem !important;
         inline-size: 450px;
         overflow-wrap: break-word;
         text-align: left;

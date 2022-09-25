@@ -45,7 +45,7 @@
   grid-template-rows: repeat(2, calc(10rem + 15vh));
 
   grid-row-gap: calc(20rem + 5vw);
-  grid-column-gap: calc(2rem + 5vw);
+  grid-column-gap: calc(5rem + 5vw);
 
   &:nth-child(1) {
     grid-row: 1/2;
