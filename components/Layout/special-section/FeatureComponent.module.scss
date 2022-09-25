@@ -14,6 +14,9 @@
   @include mixins.mobile {
     gap: 0.5rem;
   }
+  img{
+    margin-top: 1rem !important;
+  }
 }
 
 .textContainer {

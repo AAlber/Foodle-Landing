@@ -217,7 +217,7 @@
   &__number {
     flex: 1;
     font-size: 5.6rem;
-    font-weight: 700px;
+    font-weight: 700;
     line-height: 7.2rem;
     background: colors.$color-gradient;
     -webkit-background-clip: text;
@@ -440,42 +440,18 @@
 }
 .trustFactors {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 12rem;
   padding: 2rem;
-  margin-bottom: 10rem;
+  margin-top: 20rem;
+  margin-bottom: 20rem;
   @include mixins.mobile {
-    margin-bottom: 2rem;
+    flex-direction: column;
+    gap: 6rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
     padding-right: 1rem;
-  }
-}
-.trustGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, calc(10rem + 15vh));
-
-  grid-row-gap: calc(2rem + 5vw);
-  grid-column-gap: calc(2rem + 5vw);
-  @include mixins.mobile {
-    grid-row-gap: 0rem;
-    grid-column-gap: 3rem;
-  }
-
-  &:nth-child(1) {
-    grid-row: 1/2;
-    grid-column: 1/2;
-  }
-  &:nth-child(2) {
-    grid-row: 1/2;
-    grid-column: 2/3;
-  }
-  &:nth-child(3) {
-    grid-row: 2/3;
-    grid-column: 1/2;
-  }
-  &:nth-child(4) {
-    grid-row: 2/3;
-    grid-column: 2/3;
   }
 }

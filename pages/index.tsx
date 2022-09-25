@@ -190,36 +190,28 @@ const Home: NextPage = () => {
 
       <SpecialSection />
       <div className={styles['trustFactors']}>
-        <div className={styles['trustGrid']}>
-          <TrustFactor
-            width={width!}
-            title={trustFactorTitle1}
-            text={trustFactorText1}
-            shortText={trustFactorTextShort1}
-            iconSrc={'/pot.svg'}
-          />
-          <TrustFactor
-            width={width!}
-            title={trustFactorTitle2}
-            text={trustFactorText2}
-            shortText={trustFactorTextShort2}
-            iconSrc={'/support.svg'}
-          />
-          <TrustFactor
-            width={width!}
-            title={trustFactorTitle3}
-            text={trustFactorText3}
-            shortText={trustFactorTextShort3}
-            iconSrc={'/verified.svg'}
-          />
-          <TrustFactor
-            width={width!}
-            title={trustFactorTitle4}
-            text={trustFactorText4}
-            shortText={trustFactorTextShort4}
-            iconSrc={'/chefhat.svg'}
-          />
-        </div>
+        {/* <div className={styles['trustGrid']}> */}
+        <TrustFactor
+          width={width!}
+          title={trustFactorTitle1}
+          text={trustFactorText1}
+          shortText={trustFactorTextShort1}
+          iconSrc={'/pot.svg'}
+        />
+        <TrustFactor
+          width={width!}
+          title={trustFactorTitle2}
+          text={trustFactorText2}
+          shortText={trustFactorTextShort2}
+          iconSrc={'/support.svg'}
+        />
+        <TrustFactor
+          width={width!}
+          title={trustFactorTitle3}
+          text={trustFactorText3}
+          shortText={trustFactorTextShort3}
+          iconSrc={'/verified.svg'}
+        />
       </div>
       <Faq />
 

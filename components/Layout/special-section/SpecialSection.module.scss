@@ -8,7 +8,7 @@
   border-radius: 50px;
   &__header {
     width: 365px;
-    height: 24px;
+    // height: 24px;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
@@ -17,6 +17,10 @@
     text-transform: uppercase;
     color: white;
     margin: 10rem 0 10rem 0;
+    @include mixins.mobile{
+      margin:5rem 10rem;
+      width: 320px;
+    }
   }
   &__flex {
     display: flex;
@@ -27,12 +31,15 @@
     margin-bottom: 10rem;
     @include mixins.mobile {
       margin-bottom: 2rem;
+      gap:2rem !important;
       padding-right: 1rem;
     }
   }
   @include mixins.small-mobile {
     width: 100%;
     height: auto;
+    padding-bottom:  50px;
+    // margin-top: -10rem;
   }
   @include mixins.mobile {
     width: 100%;
@@ -44,7 +51,7 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, calc(10rem + 15vh));
 
-  grid-row-gap: calc(20rem + 5vw);
+  grid-row-gap: calc(25rem + 5vw);
   grid-column-gap: calc(5rem + 5vw);
 
   &:nth-child(1) {
