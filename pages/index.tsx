@@ -46,8 +46,24 @@ const Home: NextPage = () => {
 
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
-  const easyAdjectives = intl.formatMessage({ id: 'page.home.hero.easyAdjectives' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
+  const submitSubtitle = intl.formatMessage({ id: 'page.home.hero.submitSubtitle' });
+  const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
+  const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
+  const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
+  const trustFactorTitle1 = intl.formatMessage({ id: 'page.home.trustFactor.title.1' });
+  const trustFactorTitle2 = intl.formatMessage({ id: 'page.home.trustFactor.title.2' });
+  const trustFactorTitle3 = intl.formatMessage({ id: 'page.home.trustFactor.title.3' });
+  const trustFactorTitle4 = intl.formatMessage({ id: 'page.home.trustFactor.title.4' });
+  const trustFactorText1 = intl.formatMessage({ id: 'page.home.trustFactor.text.1' });
+  const trustFactorText2 = intl.formatMessage({ id: 'page.home.trustFactor.text.2' });
+  const trustFactorText3 = intl.formatMessage({ id: 'page.home.trustFactor.text.3' });
+  const trustFactorText4 = intl.formatMessage({ id: 'page.home.trustFactor.text.4' });
+  const trustFactorTextShort1 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.1' });
+  const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
+  const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
+  const trustFactorTextShort4 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.4' });
+
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -96,21 +112,16 @@ const Home: NextPage = () => {
   };
   const signupRef = useRef(null);
 
-  useEffect(() => {
-    const dreamScrollAnim = getFadeInAnim(dreamsScroll);
-    const signupAnim = getSlideUpAnim(signupRef);
-    const textAnimTl = getTextTransformTimeline(easyAdjectives.split(' '));
-    return () => {
-      textAnimTl.kill();
-      signupAnim.kill();
-      dreamScrollAnim.kill();
-    };
-  }, [easyAdjectives, width]);
-
-  const handleOnBuy = () => {
-    console.log("s'happening");
-    posthog.capture('my event', { property: 'value' });
-  };
+  // useEffect(() => {
+  //   const dreamScrollAnim = getFadeInAnim(dreamsScroll);
+  //   const signupAnim = getSlideUpAnim(signupRef);
+  //   const textAnimTl = getTextTransformTimeline(easyAdjectives.split(' '));
+  //   return () => {
+  //     textAnimTl.kill();
+  //     signupAnim.kill();
+  //     dreamScrollAnim.kill();
+  //   };
+  // }, [easyAdjectives, width]);
 
   return (
     <div>
@@ -147,15 +158,9 @@ const Home: NextPage = () => {
             <h1 className={'header-primary'}>{title}</h1>
 
             <p className={'body-text'}>{description}</p>
-
-            <button
-              disabled={state === 'Loading'}
-              type="submit"
-              className={styles['home-btn'] + ' bold-medium'}
-              onClick={handleOnBuy} //subscribe
-            >
-              {submit}
-            </button>
+            <Link href={'https://form.typeform.com/to/FuAphrrA'}>
+              <a className={styles['home-btn'] + ' bold-medium'}>{submit}</a>
+            </Link>
           </div>
           {/* Section 1 Trust Factors DESKTOP */}
           <div className="flex-center">
@@ -163,19 +168,19 @@ const Home: NextPage = () => {
               <div className={styles['trustNumbers__container']}>
                 <p className={styles['trustNumbers__number']}>0€</p>
                 <div className="flex-center">
-                  <p className={styles['trustNumbers__text'] + ' body-text'}>of upfront costs</p>
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>{trustNumber1}</p>
                 </div>
               </div>
               <div className={styles['trustNumbers__container']}>
                 <p className={styles['trustNumbers__number']}>+15</p>
                 <div className="flex-center">
-                  <p className={styles['trustNumbers__text'] + ' body-text'}>cooks onboarded with Foodle</p>
+                  <p className={styles['trustNumbers__text'] + ' body-text'}>{trustNumber2}</p>
                 </div>
               </div>
               <div className={styles['trustNumbers__container--last-child']}>
                 <p className={styles['trustNumbers__number']}>0</p>
                 <div className="flex-center">
-                  <p className={styles['trustNumbers__text--last-child'] + ' body-text'}>cooking equipment needed</p>
+                  <p className={styles['trustNumbers__text--last-child'] + ' body-text'}>{trustNumber3}</p>
                 </div>
               </div>
             </div>
@@ -185,32 +190,27 @@ const Home: NextPage = () => {
 
       <SpecialSection />
       <div className={styles['trustFactors']}>
+        {/* <div className={styles['trustGrid']}> */}
         <TrustFactor
           width={width!}
-          title={'Hello'}
-          text={
-            'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
-          }
-          shortText={'Get cooking in weeks, not months.'}
-          iconSrc={'/burger-menu.png'}
+          title={trustFactorTitle1}
+          text={trustFactorText1}
+          shortText={trustFactorTextShort1}
+          iconSrc={'/pot.svg'}
         />
         <TrustFactor
           width={width!}
-          title={'Hello'}
-          text={
-            'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
-          }
-          shortText={'Get cooking in weeks, not months.'}
-          iconSrc={'/burger-menu.png'}
+          title={trustFactorTitle2}
+          text={trustFactorText2}
+          shortText={trustFactorTextShort2}
+          iconSrc={'/support.svg'}
         />
         <TrustFactor
           width={width!}
-          title={'Hello'}
-          text={
-            'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
-          }
-          shortText={'Get cooking in weeks, not months.'}
-          iconSrc={'/burger-menu.png'}
+          title={trustFactorTitle3}
+          text={trustFactorText3}
+          shortText={trustFactorTextShort3}
+          iconSrc={'/verified.svg'}
         />
       </div>
       <Faq />
