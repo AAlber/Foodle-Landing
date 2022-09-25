@@ -76,14 +76,20 @@
       align-items: center;
       text-align: center;
       @include mixins.small-mobile {
+        justify-content: start;
+        align-items: start;
         padding: 0 3rem 0 3rem;
         inline-size: 450px;
         overflow-wrap: break-word;
+        text-align: left;
       }
       @include mixins.mobile {
+        justify-content: start;
+        align-items: start;
         padding: 0 3rem 0 3rem;
         inline-size: 450px;
         overflow-wrap: break-word;
+        text-align: left;
       }
     }
   }
@@ -169,10 +175,18 @@
     margin-right: 9rem;
 
     @include mixins.small-mobile {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
       border-right: none;
       margin-right: 0;
     }
     @include mixins.mobile {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
       border-right: none;
       margin-right: 0;
     }
@@ -182,6 +196,22 @@
       flex-direction: row;
       border-right: none;
       margin-right: 0;
+      @include mixins.small-mobile {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        border-right: none;
+        margin-right: 0;
+      }
+      @include mixins.mobile {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        border-right: none;
+        margin-right: 0;
+      }
     }
   }
 
@@ -194,6 +224,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-right: 2rem;
+    @include mixins.small-mobile {
+      margin: 0;
+    }
+    @include mixins.mobile {
+      margin: 0;
+    }
   }
 
   &__text {
@@ -203,13 +239,21 @@
     &--last-child {
       margin-right: 0;
     }
+    @include mixins.small-mobile {
+      margin: 0;
+    }
+    @include mixins.mobile {
+      margin: 0;
+    }
   }
 
   @include mixins.small-mobile {
-    display: none;
+    gap: 5rem;
+    margin: 10rem 9rem 0 9rem;
   }
   @include mixins.mobile {
-    display: none;
+    gap: 5rem;
+    margin: 10rem 9rem 0 9rem;
   }
 }
 
