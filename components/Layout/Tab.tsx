@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { ViewProps } from 'react-device-detect';
-import ConstructionPopup from './ConstructionPopup';
 import styles from './Navbar.module.scss';
 
 interface TabProps {
@@ -13,6 +12,7 @@ interface TabProps {
   iconSrc?: string;
   burger?: boolean;
   onClick?: () => void;
+  screenWidth?: number;
 }
 const Tab = (props: TabProps) => {
   const { locale } = useRouter();

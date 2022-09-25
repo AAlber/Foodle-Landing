@@ -103,6 +103,7 @@ textarea {
   @include mobile {
     font-size: 4rem;
     line-height: 5.5rem;
+    letter-spacing: 0;
   }
 }
 

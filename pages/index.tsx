@@ -45,7 +45,6 @@ const Home: NextPage = () => {
   };
 
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
-  const title2 = intl.formatMessage({ id: 'page.home.hero.title2' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
   const easyAdjectives = intl.formatMessage({ id: 'page.home.hero.easyAdjectives' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
@@ -145,11 +144,7 @@ const Home: NextPage = () => {
         <div className={styles['hero__top']}>
           <div className={styles['hero__top--inner']}>
             <p className="overline">Democratise food-making</p>
-            <h1 className={'header-primary'}>
-              {title}
-              <span className={'header-primary'} ref={easyRef}></span>
-              {title2}
-            </h1>
+            <h1 className={'header-primary'}>{title}</h1>
 
             <p className={'body-text'}>{description}</p>
 
