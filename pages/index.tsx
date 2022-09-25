@@ -205,28 +205,28 @@ const Home: NextPage = () => {
             title={trustFactorTitle1}
             text={trustFactorText1}
             shortText={trustFactorTextShort1}
-            iconSrc={'/palm.svg'}
+            iconSrc={'/pot.svg'}
           />
           <TrustFactor
             width={width!}
             title={trustFactorTitle2}
             text={trustFactorText2}
             shortText={trustFactorTextShort2}
-            iconSrc={'/bike.svg'}
+            iconSrc={'/support.svg'}
           />
           <TrustFactor
             width={width!}
             title={trustFactorTitle3}
             text={trustFactorText3}
             shortText={trustFactorTextShort3}
-            iconSrc={'/pan.svg'}
+            iconSrc={'/verified.svg'}
           />
           <TrustFactor
             width={width!}
             title={trustFactorTitle4}
             text={trustFactorText4}
             shortText={trustFactorTextShort4}
-            iconSrc={'/dollarsign.png'}
+            iconSrc={'/chefhat.svg'}
           />
         </div>
       </div>
