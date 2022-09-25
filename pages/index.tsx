@@ -185,44 +185,33 @@ const Home: NextPage = () => {
 
       <SpecialSection />
       <div className={styles['trustFactors']}>
-        <div className={styles['trustGrid']}>
-          <TrustFactor
-            width={width!}
-            title={'Hello'}
-            text={
-              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
-            }
-            shortText={'Get cooking in weeks, not months.'}
-            iconSrc={'/burger-menu.png'}
-          />
-          <TrustFactor
-            width={width!}
-            title={'Hello'}
-            text={
-              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
-            }
-            shortText={'Get cooking in weeks, not months.'}
-            iconSrc={'/burger-menu.png'}
-          />
-          <TrustFactor
-            width={width!}
-            title={'Hello'}
-            text={
-              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
-            }
-            shortText={'Get cooking in weeks, not months.'}
-            iconSrc={'/burger-menu.png'}
-          />
-          <TrustFactor
-            width={width!}
-            title={'Hello'}
-            text={
-              'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
-            }
-            shortText={'Get cooking in weeks, not months.'}
-            iconSrc={'/burger-menu.png'}
-          />
-        </div>
+        <TrustFactor
+          width={width!}
+          title={'Hello'}
+          text={
+            'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+          }
+          shortText={'Get cooking in weeks, not months.'}
+          iconSrc={'/burger-menu.png'}
+        />
+        <TrustFactor
+          width={width!}
+          title={'Hello'}
+          text={
+            'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+          }
+          shortText={'Get cooking in weeks, not months.'}
+          iconSrc={'/burger-menu.png'}
+        />
+        <TrustFactor
+          width={width!}
+          title={'Hello'}
+          text={
+            'Get cooking in weeks, not months. We make it easy to get your own kitchen up and running, whether you’re launching one from scratch, or expanding an established brand to a new market.'
+          }
+          shortText={'Get cooking in weeks, not months.'}
+          iconSrc={'/burger-menu.png'}
+        />
       </div>
       <Faq />
 
