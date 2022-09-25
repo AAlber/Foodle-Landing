@@ -21,22 +21,22 @@ const Footer = () => {
           <h3 className={styles['footer__logo'] + ' logo-text'}>Foodle</h3>
         </div>
         <div className={styles['footer__elements'] + ' flex-center mt-one'}>
-          <Link href={'/not-done-yet'}>
+          <Link href={'/'}>
             <a className="body-text--hover">{about}</a>
           </Link>
-          <Link href={'/not-done-yet'}>
+          <Link href={'/'}>
             <a className="body-text--hover">{feature}</a>
           </Link>
-          <Link href={'/not-done-yet'}>
+          <Link href={'/'}>
             <a className="body-text--hover">{pricing}</a>
           </Link>
-          <Link href={'/not-done-yet'}>
+          <Link href={'/'}>
             <a className="body-text--hover">{careers}</a>
           </Link>
-          <Link href={'/not-done-yet'}>
+          <Link href={'/'}>
             <a className="body-text--hover">{help}</a>
           </Link>
-          <Link href={'/not-done-yet'}>
+          <Link href={'/'}>
             <a className="body-text--hover">{privacy}</a>
           </Link>
         </div>
