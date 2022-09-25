@@ -1,0 +1,33 @@
+@use '../../../styles/base/colors';
+@use '../../../styles/abstracts/mixins';
+
+.featuresLayout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 50rem;
+  @include mixins.small-mobile {
+    gap: 0.5rem;
+  }
+  @include mixins.mobile {
+    gap: 0.5rem;
+  }
+  img{
+    margin-top: 1rem !important;
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.7rem;
+  &__header {
+    color: white;
+  }
+  &__body {
+    color: white;
+  }
+}

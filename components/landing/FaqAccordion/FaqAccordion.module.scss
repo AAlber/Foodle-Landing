@@ -1,0 +1,52 @@
+@use '../../../styles/base/colors';
+@use '../../../styles/abstracts/mixins';
+
+.question{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    cursor: pointer;
+
+    img{
+        transition: all 0.2s !important;
+        
+    }
+
+    &__title{
+        font-size: 1.5rem;
+        font-weight: 900;
+        margin-bottom: 2rem;
+        @include mixins.mobile{
+            max-width: 20rem;
+        }
+        
+    }
+
+    &__content{
+
+        font-size: 1.5rem;
+        margin-bottom: 3rem;
+        color: colors.$color-dark-grey;
+    
+    }
+    
+}
+.rotate{
+    transition: all 0.2s;
+    transform: rotate(45deg);
+}
+
+.hr{
+    
+        color: colors.$color-light-purple;
+        background-color:colors.$color-light-purple;
+        clear: both;
+        border: 0;
+        display: block;
+        height: 3px;
+
+        margin-bottom: 2rem;
+
+}

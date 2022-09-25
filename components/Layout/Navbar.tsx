@@ -6,8 +6,11 @@ import Tab from './Tab';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useRouter } from 'next/router';
 import Sidebar from './BurgerMenu';
+export type NavbarProps = {
+  screenWidth?: number;
+};
 
-const Navbar = () => {
+const Navbar = (props: NavbarProps) => {
   const intl = useIntl();
   const findKitchen = intl.formatMessage({ id: 'component.navbar.find' });
   const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
@@ -27,7 +30,7 @@ const Navbar = () => {
         {/* </div> */}
       </div>
       <div className={styles['navbar__menu']}>
-        <Tab href="/" iconSrc="/world-icon.svg" title="EN" burger={false} />
+        <Tab href="/" iconSrc={'/world-icon.svg'} title="EN" burger={false} />
         <Tab href="/" title="F.A.Q." />
         <Tab href="/" title={findKitchen} />
         <Tab href="/" title={listKitchen} />
