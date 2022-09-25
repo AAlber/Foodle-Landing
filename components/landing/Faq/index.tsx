@@ -3,27 +3,28 @@ import { useEffect, useState } from 'react';
 import styles from './Faq.module.scss';
 import FaqAccordion from '../FaqAccordion/index';
 
+import { useIntl } from 'react-intl';
+
 const Faq = () => {
+  const intl = useIntl();
+  const faqQuestion1 = intl.formatMessage({ id: 'page.home.faq.question.1' });
+  const faqQuestion2 = intl.formatMessage({ id: 'page.home.faq.question.2' });
+  const faqQuestion3 = intl.formatMessage({ id: 'page.home.faq.question.3' });
+  const faqAnswer1 = intl.formatMessage({ id: 'page.home.faq.answer.1' });
+  const faqAnswer2 = intl.formatMessage({ id: 'page.home.faq.answer.2' });
+  const faqAnswer3 = intl.formatMessage({ id: 'page.home.faq.answer.3' });
   const faqData: { title: string; content: string }[] = [
     {
-      title: 'hic temporibus velit dicta earu?',
-      content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nibh quisque suscipit fermentum netus nulla cras porttitor euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis.`,
+      title: faqQuestion1,
+      content: faqAnswer1,
     },
     {
-      title: 'hic temporibus velit dicta earum suscipit commodi eu?',
-      content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis.`,
+      title: faqQuestion2,
+      content: faqAnswer2,
     },
     {
-      title: 'hic temporibus velit dicta earum suscipit commodi eum enim atque at?',
-      content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.`,
-    },
-    {
-      title: 'hic temporibus velit dicta earum susc?',
-      content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.euismod nulla. Orci, dictumst nec aliquet id ullamcorper venenatis.`,
-    },
-    {
-      title: 'hic temporibus velit dicta earum suscipit commodi eum?',
-      content: `Lorem ipsum dolor, sit amet consectetur adipisicing elit.`,
+      title: faqQuestion3,
+      content: faqAnswer3,
     },
   ];
 
