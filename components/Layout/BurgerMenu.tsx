@@ -10,9 +10,10 @@ import { useRef, useState } from 'react';
 
 const BurgerMenu = () => {
   const intl = useIntl();
-  const findKitchen = intl.formatMessage({ id: 'component.navbar.find' });
+  const findKitchen = intl.formatMessage({ id: 'component.navbar.why' });
   const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
+  const what = intl.formatMessage({ id: 'component.navbar.what' });
 
   return (
     <Menu right customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} />} width={300}>
@@ -21,10 +22,11 @@ const BurgerMenu = () => {
           <Tab href="/" iconSrc="/world-icon.svg" title="EN" />
         </div>
         <div className="bm-top__left mt-two">
-          <Tab href="/not-done-yet" title={findKitchen} burger />
-          <Tab href="/not-done-yet" title={listKitchen} burger />
-          <Tab href="/not-done-yet" title="F.A.Q." burger />
-          <Tab href="/not-done-yet" title={contact} burger />
+        <Tab href="#faq" title="F.A.Q." />
+        <Tab href="#special-section" title={what} />
+        <Tab href="#trust-factors" title={findKitchen} />
+        <Tab href="#list-kitchen" title={listKitchen} />
+        <Tab href="#contact" title={contact} />
         </div>
       </header>
       <footer>
