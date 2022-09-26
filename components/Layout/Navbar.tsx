@@ -32,11 +32,12 @@ const Navbar = (props: NavbarProps) => {
       </div>
       <div className={styles['navbar__menu']}>
         <Tab href="/" iconSrc={'/world-icon.svg'} title="EN" burger={false} />
-        <Tab href="#faq" title="F.A.Q." />
         <Tab href="#special-section" title={what} />
         <Tab href="#trust-factors" title={findKitchen} />
         <Tab href="#list-kitchen" title={listKitchen} />
         <Tab href="#contact" title={contact} />
+        <Tab href="#faq" title="F.A.Q." />
+
       </div>
     </nav>
   );
