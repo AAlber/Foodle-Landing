@@ -78,7 +78,6 @@ const nextConfig = {
     ]
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-    console.log(config)
     if (process.env.ANALYZE) {
      config.plugins.push(
        new BundleAnalyzerPlugin({
