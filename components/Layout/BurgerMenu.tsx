@@ -10,7 +10,7 @@ import { useRef, useState } from 'react';
 
 const BurgerMenu = () => {
   const intl = useIntl();
-  const findKitchen = intl.formatMessage({ id: 'component.navbar.why' });
+  const why = intl.formatMessage({ id: 'component.navbar.why' });
   const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
   const what = intl.formatMessage({ id: 'component.navbar.what' });
@@ -23,7 +23,7 @@ const BurgerMenu = () => {
         </div>
         <div className="bm-top__left mt-two">
         <Tab href="#special-section" title={what} />
-        <Tab href="#trust-factors" title={findKitchen} />
+        <Tab href="#trust-factors" title={why} />
         <Tab href="#list-kitchen" title={listKitchen} />
         <Tab href="#contact" title={contact} />
         <Tab href="#faq" title="F.A.Q." />
