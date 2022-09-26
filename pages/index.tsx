@@ -22,27 +22,9 @@ import TrustFactor from '../components/landing/TrustFactor';
 import BurgerMenu from '../components/Layout/BurgerMenu';
 
 const Home: NextPage = () => {
-  const [email, setEmail] = useState('');
-  const [state, setState] = useState('idle');
-
-  const { locales } = useRouter();
-  const { height, width } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const intl = useIntl();
-
-  const subscribe = async (e: any) => {
-    setState('Loading');
-
-    try {
-      const response = await axios.post('/api/subscribe', { email });
-      console.log(response);
-      setState('Success');
-      setEmail('');
-    } catch (e: any) {
-      console.log(e.response.data.error.message);
-      setState('Error');
-    }
-  };
 
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
