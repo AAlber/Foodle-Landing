@@ -81,7 +81,7 @@ const Home: NextPage = () => {
       {/* <=== Section 1 ===> */}
       <div className={styles['hero']}>
         {/* Section 1 TOP */}
-        <Image priority={true} src="/landing.svg" className={styles["hero-image"]} alt='Cook cutting vegetables on a kitchen counter' layout='fill' objectFit="cover"></Image>
+        <Image priority={true} src="/landing.png" className={styles["hero-image"]} alt='Cook cutting vegetables on a kitchen counter' layout='fill' objectFit="cover"></Image>
         <div className={styles['hero__top']}>
           <div className={styles['hero__top--inner']}>
             <p className="overline">Democratise food-making</p>
