@@ -48,20 +48,6 @@ const Home: NextPage = () => {
   const easyRef = useRef(null);
 
 
-  const getSlideUpAnim = (ref: React.MutableRefObject<null>) => {
-    return gsap.to(ref.current, {
-      y: -100,
-      duration: 5,
-      scrollTrigger: {
-        trigger: ref.current,
-
-        start: 'bottom 800px',
-        end: 'bottom 80px',
-        scrub: 0.5,
-      },
-    });
-  };
-
   const getFadeInAnim = (ref: React.MutableRefObject<null>) => {
     return gsap.fromTo(
       ref.current,
