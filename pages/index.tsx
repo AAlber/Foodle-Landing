@@ -45,17 +45,8 @@ const Home: NextPage = () => {
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
-  const dreamsScroll = useRef(null);
   const easyRef = useRef(null);
 
-  const getTextTransformTimeline = (textList: string[]) => {
-    var textAnimTl = gsap.timeline({ repeat: -1 });
-    textList.forEach((text) => {
-      textAnimTl.add(gsap.to(easyRef.current, { duration: 1, text: { value: text, delimiter: '' } }));
-      textAnimTl.add(gsap.to(easyRef.current, { duration: 1, text: { value: '', delimiter: ' ' } }), '+=2');
-    });
-    return textAnimTl;
-  };
 
   const getSlideUpAnim = (ref: React.MutableRefObject<null>) => {
     return gsap.to(ref.current, {
