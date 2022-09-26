@@ -14,7 +14,7 @@ const TrustFactor = (props: TrustFactorProps) => {
   return (
     <div className={styles['trustFactor']}>
       <div>
-        <Image src={props.iconSrc} width={70} height={70} />
+        <Image loading='lazy' src={props.iconSrc} width={70} height={70} />
         <h5 className={'header-tertiary'}>{props.title}</h5>
         <p className={'body-text'}>{props.width < 720 ? props.shortText : props.text}</p>
       </div>
