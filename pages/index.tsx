@@ -1,10 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/pages/Home.module.scss';
 import Navbar from '../components/Layout/Navbar';
-import axios from 'axios';
 import Link from 'next/link';
 import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
