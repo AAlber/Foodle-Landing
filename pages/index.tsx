@@ -29,22 +29,18 @@ const Home: NextPage = () => {
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
-  const submitSubtitle = intl.formatMessage({ id: 'page.home.hero.submitSubtitle' });
   const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
   const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
   const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
   const trustFactorTitle1 = intl.formatMessage({ id: 'page.home.trustFactor.title.1' });
   const trustFactorTitle2 = intl.formatMessage({ id: 'page.home.trustFactor.title.2' });
   const trustFactorTitle3 = intl.formatMessage({ id: 'page.home.trustFactor.title.3' });
-  const trustFactorTitle4 = intl.formatMessage({ id: 'page.home.trustFactor.title.4' });
   const trustFactorText1 = intl.formatMessage({ id: 'page.home.trustFactor.text.1' });
   const trustFactorText2 = intl.formatMessage({ id: 'page.home.trustFactor.text.2' });
   const trustFactorText3 = intl.formatMessage({ id: 'page.home.trustFactor.text.3' });
-  const trustFactorText4 = intl.formatMessage({ id: 'page.home.trustFactor.text.4' });
   const trustFactorTextShort1 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.1' });
   const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
   const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
-  const trustFactorTextShort4 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.4' });
 
   //Animations
   gsap.registerPlugin(TextPlugin);
