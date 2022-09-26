@@ -45,27 +45,6 @@ const Home: NextPage = () => {
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
-  const easyRef = useRef(null);
-
-
-  const getFadeInAnim = (ref: React.MutableRefObject<null>) => {
-    return gsap.fromTo(
-      ref.current,
-      { autoAlpha: 0 },
-      {
-        autoAlpha: 1,
-        scrollTrigger: {
-          trigger: ref.current,
-
-          start: '-200px center',
-          end: '200px center',
-          scrub: 0.5,
-          markers: false,
-        },
-      }
-    );
-  };
-  const signupRef = useRef(null);
 
   // useEffect(() => {
   //   const dreamScrollAnim = getFadeInAnim(dreamsScroll);
