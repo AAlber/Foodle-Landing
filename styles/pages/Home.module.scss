@@ -27,12 +27,17 @@
     }
   }
 }
+
+.hero-image{
+  position: fixed;
+  width: max-content;
+  z-index: -999;
+  padding: 0 5rem;
+}
 .hero {
   width: 100%;
   padding: 0 5rem;
   color: black;
-  background:  url('../../public/landing.svg');
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,16 +45,19 @@
   margin-top: 5rem;
 
   form {
+    z-index: -998;
     div {
       display: flex;
     }
 
     input {
+      z-index: -998;
       flex: 1 1 80%;
     }
 
     button {
       flex: 1 1 20%;
+      z-index: -998;
     }
   }
 
@@ -57,7 +65,7 @@
     color: colors.$color-primary-light;
   }
 
-  height: 100vh;
+  height: 95vh;
   width: 100%;
 
   &__top {
