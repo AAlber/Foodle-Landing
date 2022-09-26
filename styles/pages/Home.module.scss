@@ -1,32 +1,6 @@
 @use '../base/colors';
 @use '../abstracts/mixins';
 
-.rainbow-multi {
-  background: linear-gradient(61.54deg, colors.$color-tertiary-light 15%, colors.$color-secondary-light 74.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
-.stories-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  div {
-    &:first-of-type {
-      border-radius: 1.5rem;
-      span {
-        color: #00695c !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        &:nth-child(1) {
-          margin-bottom: -0.3rem !important;
-        }
-      }
-    }
-  }
-}
 
 .hero-image{
   position: fixed;
