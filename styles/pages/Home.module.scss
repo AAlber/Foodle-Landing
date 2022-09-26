@@ -106,25 +106,6 @@
   }
 }
 
-.random-text {
-  margin-top: 10rem;
-  height: calc(27rem + 10vh);
-  color: black;
-  max-width: 501px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 10rem;
-
-  @include mixins.mobile {
-    padding: 15rem 1rem 20rem 1rem;
-    font-size: 34px;
-    margin-bottom: 30rem !important;
-  }
-
-  @include mixins.tablet {
-    margin-top: 20rem;
-  }
-}
 
 .home-btn {
   @include mixins.btn(white, colors.$color-primary-light, white);
