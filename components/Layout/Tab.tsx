@@ -21,7 +21,7 @@ const Tab = (props: TabProps) => {
 
   return (
     <Link
-      href={props.iconSrc ? '/' : '/not-done-yet'}
+      href={props.href}
       locale={props.iconSrc ? (locale === 'en' ? 'de' : 'en') : locale}
     >
       <a className={isBurger ? '' : 'hover-title flex-center '}>

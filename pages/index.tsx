@@ -150,7 +150,8 @@ const Home: NextPage = () => {
       </div>
 
       {/* <=== Section 1 ===> */}
-      <div className={styles['hero']}>
+      <div id="list-kitchen"></div>
+      <div className={styles['hero']} >
         {/* Section 1 TOP */}
         <div className={styles['hero__top']}>
           <div className={styles['hero__top--inner']}>
@@ -187,8 +188,10 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-
-      <SpecialSection />
+    <div id="special-section">
+    <SpecialSection />
+      </div>    
+      <div id='trust-factors'></div>
       <div className={styles['trustFactors']}>
         {/* <div className={styles['trustGrid']}> */}
         <TrustFactor
@@ -213,9 +216,11 @@ const Home: NextPage = () => {
           iconSrc={'/verified.svg'}
         />
       </div>
+      <div id="faq"></div>{/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
       <Faq />
-
+      <div id="contact">
       <Footer />
+      </div>
     </div>
   );
 };
