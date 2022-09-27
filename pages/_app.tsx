@@ -8,7 +8,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 import en from '../lang/en.json';
 import de from '../lang/de.json';
-import { usePostHog } from 'next-use-posthog';
 import posthog from 'posthog-js';
 
 import { IntlProvider } from 'react-intl';
