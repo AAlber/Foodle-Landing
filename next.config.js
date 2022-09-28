@@ -1,3 +1,4 @@
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 /** @type {import('next').NextConfig} */
 // Prevents XSS, Clickjacking and Injection Attacks
 // 'unsafe-eval' is temporary solution - to avoid it we have to remove all inline event-handlers
@@ -76,6 +77,17 @@ const nextConfig = {
       },
     ]
   },
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    if (process.env.ANALYZE) {
+     config.plugins.push(
+       new BundleAnalyzerPlugin({
+         analyzerMode: 'server',
+         analyzerPort: isServer ? 8888 : 8889,
+         openAnalyzer: true,
+       })
+     )
+    }
+    return config
+  },
 }
-
-module.exports = nextConfig
+module.exports = nextConfig;

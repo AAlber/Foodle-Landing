@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles['footer__end']}>
-        <a>© 2022 Foodle inc. All rights reserved</a>
+        <p>© 2022 Foodle inc. All rights reserved</p>
         <div className={styles['footer__end--socials'] + ' flex-center'}>
           <Link href={'https://www.instagram.com/foodle.berlin/?hl=en'}>
             <a>

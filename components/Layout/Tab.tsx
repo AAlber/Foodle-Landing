@@ -23,7 +23,7 @@ const Tab = (props: TabProps) => {
     <Link href={'/'} locale={props.iconSrc ? (locale === 'en' ? 'de' : 'en') : locale}>
       <a className={isBurger ? '' : 'hover-title flex-center '}>
         {props.iconSrc ? (
-          <Image src={props.iconSrc} alt={'world-icon' + isBurger ? '-white' : ''} height={18} width={18} />
+          <Image priority={false} src={props.iconSrc} alt={'world-icon' + isBurger ? '-white' : ''} height={18} width={18} />
         ) : (
           <></>
         )}
