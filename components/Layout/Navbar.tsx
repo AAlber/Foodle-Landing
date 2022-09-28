@@ -21,9 +21,9 @@ const Navbar = (props: NavbarProps) => {
         {/* <div className="flex-center"> */}
         <Link href="/" passHref>
           <div className="flex-center">
-            <a>
+            <p>
               <Image src="/foodle_logo.svg" width={45} height={27} alt="Foodle Logo" />
-            </a>
+            </p>
             <h1 className="logo-text green-text">Foodle</h1>
           </div>
         </Link>

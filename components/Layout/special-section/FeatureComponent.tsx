@@ -11,7 +11,7 @@ function FeatureComponent(props: FeatureComponentProps) {
   return (
     <>
       <div className={styles['featuresLayout']}>
-        <Image src={props.imageUrl} alt="An icon" width="200" height="200" />
+        <Image priority={false} src={props.imageUrl} alt="An icon" width="200" height="200" />
         <div className={styles['textContainer']}>
           <h3 className={styles['textContainer__header'] + ' header-tertiary'}>
             {props.title}
