@@ -16,8 +16,9 @@ import Faq from '../components/landing/Faq';
 import TrustFactor from '../components/landing/TrustFactor';
 import BurgerMenu from '../components/Layout/BurgerMenu';
 import {ServerZone} from "@amplitude/analytics-types"
-import { init,track } from '@amplitude/analytics-browser';
+import { init,setOptOut,track } from '@amplitude/analytics-browser';
 import { useEffect } from 'react';
+import CookieConsent from 'react-cookie-consent';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
@@ -41,6 +42,7 @@ const Home: NextPage = () => {
   const trustFactorTextShort1 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.1' });
   const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
   const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
+  const cookieMessage = intl.formatMessage({ id: '"component.cookie.message"' });
 
   //Animations
   gsap.registerPlugin(TextPlugin);
@@ -75,13 +77,25 @@ const Home: NextPage = () => {
       <Navbar screenWidth={width} />
       <Script
 
-      // defer
-      // src="https://static.cloudflareinsights.com/beacon.min.js"
-      // data-cf-beacon='{"token": "39f2e396c9d545eb89eea1d7fd8ccdaf"}'
+
       ></Script>
       <div className={styles['sidebar']}>
         <BurgerMenu />
       </div>
+      <CookieConsent
+      hideOnAccept={true}
+      enableDeclineButton
+      onDecline={()=>setOptOut(true)}
+      onAccept={(acceptedByScrolling) => {
+        if (acceptedByScrolling) {
+          setOptOut(false)
+        } else {
+          setOptOut(true)
+        }
+      }}
+    >
+      {cookieMessage}
+    </CookieConsent>
 
       {/* <=== Section 1 ===> */}
       <div className={styles['hero']}>
