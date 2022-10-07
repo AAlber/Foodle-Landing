@@ -22,8 +22,11 @@ import CookieConsent from 'react-cookie-consent';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
+  console.log(process.env.NODE_ENV)
 
-  useEffect(()=>{init(process.env["NEXT_PUBLIC_AMPLITUDE_KEY"]!,undefined,{serverZone:ServerZone.EU,trackingOptions:{ipAddress:false}})})
+  useEffect(()=>{
+    process.env.NODE_ENV === "production" ?
+    init(process.env["NEXT_PUBLIC_AMPLITUDE_KEY"]!,undefined,{serverZone:ServerZone.EU,trackingOptions:{ipAddress:false}}): null})
 
   const onButtonClick = () => track("Funnel Click")
   const intl = useIntl();
@@ -42,7 +45,7 @@ const Home: NextPage = () => {
   const trustFactorTextShort1 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.1' });
   const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
   const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
-  const cookieMessage = intl.formatMessage({ id: '"component.cookie.message"' });
+  const cookieMessage = intl.formatMessage({ id: "component.cookie.message" });
 
   //Animations
   gsap.registerPlugin(TextPlugin);
