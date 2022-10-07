@@ -1,63 +1,29 @@
 @use '../base/colors';
 @use '../abstracts/mixins';
 
-.rainbow-multi {
-  background: linear-gradient(61.54deg, colors.$color-tertiary-light 15%, colors.$color-secondary-light 74.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-}
 
-.stories-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  div {
-    &:first-of-type {
-      border-radius: 1.5rem;
-      span {
-        color: #00695c !important;
-        font-size: 12px !important;
-        font-weight: 600 !important;
-        &:nth-child(1) {
-          margin-bottom: -0.3rem !important;
-        }
-      }
-    }
-  }
+.hero-image{
+  position: fixed;
+  width: max-content;
+  z-index: -999;
+  padding: 0 5rem;
 }
 .hero {
   width: 100%;
   padding: 0 5rem;
   color: black;
-  background:  url('../../public/landing.svg');
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 6rem;
   margin-top: 5rem;
 
-  form {
-    div {
-      display: flex;
-    }
-
-    input {
-      flex: 1 1 80%;
-    }
-
-    button {
-      flex: 1 1 20%;
-    }
-  }
 
   .rainbow {
     color: colors.$color-primary-light;
   }
 
-  height: 100vh;
+  height: 95vh;
   width: 100%;
 
   &__top {
@@ -65,6 +31,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    a{
+      z-index: 999;
+    }
 
     &--inner {
       display: flex;
@@ -124,25 +93,6 @@
   }
 }
 
-.random-text {
-  margin-top: 10rem;
-  height: calc(27rem + 10vh);
-  color: black;
-  max-width: 501px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 10rem;
-
-  @include mixins.mobile {
-    padding: 15rem 1rem 20rem 1rem;
-    font-size: 34px;
-    margin-bottom: 30rem !important;
-  }
-
-  @include mixins.tablet {
-    margin-top: 20rem;
-  }
-}
 
 .home-btn {
   @include mixins.btn(white, colors.$color-primary-light, white);
@@ -253,47 +203,6 @@
   @include mixins.mobile {
     gap: 5rem;
     margin: 10rem 9rem 0 9rem;
-  }
-}
-
-.carousel {
-  width: 100%;
-  height: fit-content;
-  background-color: colors.$color-primary;
-  color: colors.$color-white;
-  padding: 4.5rem 3.75rem 4rem 3.75rem;
-  border-radius: 19px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 8rem;
-
-  // &__heas
-  &__wrapper {
-    width: 100%;
-  }
-  &__instructions {
-    font-size: 14px;
-    margin-top: 0.5rem;
-    opacity: 0.8;
-  }
-  @include mixins.mobile {
-    padding: 3rem 2rem 3rem 2rem;
-    &__header {
-      font-size: 25px;
-      line-height: 2.5rem;
-    }
-
-    &__instructions {
-      font-size: 13px;
-      margin-top: 0.5rem;
-      opacity: 0.8;
-      text-align: left;
-      content: 'click on restaurants to see more' !important;
-    }
-    h2 {
-      text-align: left;
-    }
   }
 }
 
