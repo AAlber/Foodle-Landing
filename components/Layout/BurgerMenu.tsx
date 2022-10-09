@@ -10,21 +10,26 @@ import { useRef, useState } from 'react';
 
 const BurgerMenu = () => {
   const intl = useIntl();
-  const findKitchen = intl.formatMessage({ id: 'component.navbar.find' });
-  const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
+  const why = intl.formatMessage({ id: 'component.navbar.why' });
+  const joinFoodle = intl.formatMessage({ id: 'component.navbar.join' });
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
+  const what = intl.formatMessage({ id: 'component.navbar.what' });
 
   return (
-    <Menu right customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} alt="Burger Menu Button"/>} width={300}>
+    <Menu
+      right
+      customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} alt="Burger Menu Button" />}
+      width={300}
+    >
       <header className="bm-top">
         <div className="bm-top__right">
           <Tab href="/" iconSrc="/world-icon.svg" title="EN" />
         </div>
         <div className="bm-top__left mt-two">
-          <Tab href="/" title={findKitchen} burger />
-          <Tab href="/" title={listKitchen} burger />
-          <Tab href="/" title="F.A.Q." burger />
-          <Tab href="/" title={contact} burger />
+          <Tab href="#join-foodle" title={joinFoodle} />
+          <Tab href="#special-section" title={what} />
+          <Tab href="#trust-factors" title={why} />
+          <Tab href="#faq" title="F.A.Q." />
         </div>
       </header>
       <footer>

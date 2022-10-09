@@ -1,6 +1,7 @@
 {
-  "component.navbar.find": "Küche finden",
-  "component.navbar.list": "Deine Küche auflisten",
+  "component.navbar.why": "Warum Foodle?",
+  "component.navbar.what": "Was ist Foodle?",
+  "component.navbar.join": "Foodle Joinen",
   "component.navbar.contact": "Kontakt",
   "page.home.hero.title": "Zeig der Welt Deine Kochkünste!",
   "page.home.hero.description": "We pair licensed kitchen owners with new chefs and bakers so businesses can grow together.",
