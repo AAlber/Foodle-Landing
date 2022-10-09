@@ -13,7 +13,7 @@ export type NavbarProps = {
 const Navbar = (props: NavbarProps) => {
   const intl = useIntl();
   const why = intl.formatMessage({ id: 'component.navbar.why' });
-  const listKitchen = intl.formatMessage({ id: 'component.navbar.list' });
+  const joinFoodle = intl.formatMessage({ id: 'component.navbar.join' });
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
   const what = intl.formatMessage({ id: 'component.navbar.what' });
   return (
@@ -32,12 +32,11 @@ const Navbar = (props: NavbarProps) => {
       </div>
       <div className={styles['navbar__menu']}>
         <Tab href="/" iconSrc={'/world-icon.svg'} title="EN" burger={false} />
+        <Tab href="#join-foodle" title={joinFoodle} />
         <Tab href="#special-section" title={what} />
         <Tab href="#trust-factors" title={why} />
-        <Tab href="#list-kitchen" title={listKitchen} />
-        <Tab href="#contact" title={contact} />
+        {/* <Tab href="#contact" title={contact} /> */}
         <Tab href="#faq" title="F.A.Q." />
-
       </div>
     </nav>
   );

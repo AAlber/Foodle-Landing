@@ -15,20 +15,25 @@ import SpecialSection from '../components/Layout/special-section/SpecialSection'
 import Faq from '../components/landing/Faq';
 import TrustFactor from '../components/landing/TrustFactor';
 import BurgerMenu from '../components/Layout/BurgerMenu';
-import {ServerZone} from "@amplitude/analytics-types"
-import { init,setOptOut,track } from '@amplitude/analytics-browser';
+import { ServerZone } from '@amplitude/analytics-types';
+import { init, setOptOut, track } from '@amplitude/analytics-browser';
 import { useEffect } from 'react';
 import CookieConsent from 'react-cookie-consent';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
-  console.log(process.env.NODE_ENV)
+  console.log(process.env.NODE_ENV);
 
-  useEffect(()=>{
-    process.env.NODE_ENV === "production" ?
-    init(process.env["NEXT_PUBLIC_AMPLITUDE_KEY"]!,undefined,{serverZone:ServerZone.EU,trackingOptions:{ipAddress:false}}): null})
+  useEffect(() => {
+    process.env.NODE_ENV === 'production'
+      ? init(process.env['NEXT_PUBLIC_AMPLITUDE_KEY']!, undefined, {
+          serverZone: ServerZone.EU,
+          trackingOptions: { ipAddress: false },
+        })
+      : null;
+  });
 
-  const onButtonClick = () => track("Funnel Click")
+  const onButtonClick = () => track('Funnel Click');
   const intl = useIntl();
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
@@ -45,7 +50,7 @@ const Home: NextPage = () => {
   const trustFactorTextShort1 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.1' });
   const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
   const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
-  const cookieMessage = intl.formatMessage({ id: "component.cookie.message" });
+  const cookieMessage = intl.formatMessage({ id: 'component.cookie.message' });
 
   //Animations
   gsap.registerPlugin(TextPlugin);
@@ -82,25 +87,32 @@ const Home: NextPage = () => {
         <BurgerMenu />
       </div>
       <CookieConsent
-      hideOnAccept={true}
-      enableDeclineButton
-      onDecline={()=>setOptOut(true)}
-      onAccept={(acceptedByScrolling) => {
-        if (acceptedByScrolling) {
-          setOptOut(false)
-        } else {
-          setOptOut(true)
-        }
-      }}
-    >
-      {cookieMessage}
-    </CookieConsent>
+        hideOnAccept={true}
+        enableDeclineButton
+        onDecline={() => setOptOut(true)}
+        onAccept={(acceptedByScrolling) => {
+          if (acceptedByScrolling) {
+            setOptOut(false);
+          } else {
+            setOptOut(true);
+          }
+        }}
+      >
+        {cookieMessage}
+      </CookieConsent>
 
       {/* <=== Section 1 ===> */}
-      <div id="list-kitchen"></div>
-      <div className={styles['hero']} >
+      <div id="join-foodle"></div>
+      <div className={styles['hero']}>
         {/* Section 1 TOP */}
-        <Image priority={true} src="/landing.png" className={styles["hero-image"]} alt='Cook cutting vegetables on a kitchen counter' layout='fill' objectFit="cover"></Image>
+        <Image
+          priority={true}
+          src="/landing.png"
+          className={styles['hero-image']}
+          alt="Cook cutting vegetables on a kitchen counter"
+          layout="fill"
+          objectFit="cover"
+        ></Image>
         <div className={styles['hero__top']}>
           <div className={styles['hero__top--inner']}>
             <p className="overline">Democratise food-making</p>
@@ -108,7 +120,9 @@ const Home: NextPage = () => {
 
             <p className={'body-text'}>{description}</p>
             <Link href={'https://form.typeform.com/to/FuAphrrA'} passHref>
-              <a onClick={onButtonClick} className={styles['home-btn'] + ' bold-medium'}>{submit}</a>
+              <a onClick={onButtonClick} className={styles['home-btn'] + ' bold-medium'}>
+                {submit}
+              </a>
             </Link>
           </div>
           {/* Section 1 Trust Factors DESKTOP */}
@@ -136,10 +150,10 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    <div id="special-section">
-    <SpecialSection />
-      </div>    
-      <div id='trust-factors'></div>
+      <div id="special-section">
+        <SpecialSection />
+      </div>
+      <div id="trust-factors"></div>
       <div className={styles['trustFactors']}>
         {/* <div className={styles['trustGrid']}> */}
         <TrustFactor
@@ -164,10 +178,11 @@ const Home: NextPage = () => {
           iconSrc={'/verified.svg'}
         />
       </div>
-      <div id="faq"></div>{/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
+      <div id="faq"></div>
+      {/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
       <Faq />
       <div id="contact">
-      <Footer />
+        <Footer />
       </div>
     </div>
   );
