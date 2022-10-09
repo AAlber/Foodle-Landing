@@ -8,7 +8,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
 import en from '../lang/en.json';
 import de from '../lang/de.json';
-import posthog from 'posthog-js';
 
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
@@ -22,30 +21,6 @@ const messages = {
 };
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-
-  const initPosthog = () => {
-    if (typeof window !== 'undefined') {
-      posthog.init(process.env.POSTHOG_API_KEY!, { api_host: 'https://app.posthog.com' });
-    }
-    return posthog;
-  };
-
-  useEffect(() => {
-    const postHog = initPosthog();
-    // Track page views
-    const handleRouteChange = () => {
-      if (typeof window !== 'undefined') {
-        console.log('being captured?');
-        postHog.capture('$pageview');
-        posthog.capture('my event', { property: 'value' });
-      }
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
   const { locale } = useRouter();
 
   return (

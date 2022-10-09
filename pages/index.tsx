@@ -15,12 +15,21 @@ import SpecialSection from '../components/Layout/special-section/SpecialSection'
 import Faq from '../components/landing/Faq';
 import TrustFactor from '../components/landing/TrustFactor';
 import BurgerMenu from '../components/Layout/BurgerMenu';
+import {ServerZone} from "@amplitude/analytics-types"
+import { init,setOptOut,track } from '@amplitude/analytics-browser';
+import { useEffect } from 'react';
+import CookieConsent from 'react-cookie-consent';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
+  console.log(process.env.NODE_ENV)
 
+  useEffect(()=>{
+    process.env.NODE_ENV === "production" ?
+    init(process.env["NEXT_PUBLIC_AMPLITUDE_KEY"]!,undefined,{serverZone:ServerZone.EU,trackingOptions:{ipAddress:false}}): null})
+
+  const onButtonClick = () => track("Funnel Click")
   const intl = useIntl();
-
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
@@ -36,6 +45,7 @@ const Home: NextPage = () => {
   const trustFactorTextShort1 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.1' });
   const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
   const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
+  const cookieMessage = intl.formatMessage({ id: "component.cookie.message" });
 
   //Animations
   gsap.registerPlugin(TextPlugin);
@@ -71,6 +81,20 @@ const Home: NextPage = () => {
       <div className={styles['sidebar']}>
         <BurgerMenu />
       </div>
+      <CookieConsent
+      hideOnAccept={true}
+      enableDeclineButton
+      onDecline={()=>setOptOut(true)}
+      onAccept={(acceptedByScrolling) => {
+        if (acceptedByScrolling) {
+          setOptOut(false)
+        } else {
+          setOptOut(true)
+        }
+      }}
+    >
+      {cookieMessage}
+    </CookieConsent>
 
       {/* <=== Section 1 ===> */}
       <div className={styles['hero']}>
@@ -82,8 +106,8 @@ const Home: NextPage = () => {
             <h1 className={'header-primary'}>{title}</h1>
 
             <p className={'body-text'}>{description}</p>
-            <Link href={'https://form.typeform.com/to/FuAphrrA'}>
-              <a className={styles['home-btn'] + ' bold-medium'}>{submit}</a>
+            <Link href={'https://form.typeform.com/to/FuAphrrA'} passHref>
+              <a onClick={onButtonClick} className={styles['home-btn'] + ' bold-medium'}>{submit}</a>
             </Link>
           </div>
           {/* Section 1 Trust Factors DESKTOP */}

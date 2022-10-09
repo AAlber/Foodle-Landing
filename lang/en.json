@@ -43,5 +43,7 @@
   "component.footer.pricing": "Pricing",
   "component.footer.careers": "Careers",
   "component.footer.help": "Help",
-  "component.footer.privacy": "Privacy"
+  "component.footer.privacy": "Privacy",
+  "component.cookie.message": "We use cookies to improve your experience on our site. You can opt out if you don't want to share data"
+
 }

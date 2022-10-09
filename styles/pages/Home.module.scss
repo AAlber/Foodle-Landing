@@ -97,6 +97,7 @@
 
 .home-btn {
   @include mixins.btn(white, colors.$color-primary-light, white);
+  z-index: 1;
   max-width: 19.5rem;
   height: 5rem;
   border-radius: 1.8rem;
