@@ -46,7 +46,7 @@
       @include mixins.small-mobile {
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 0 3rem 0 4rem !important;
+        padding: 5rem 3rem 0 4rem !important;
         inline-size: 450px;
         overflow-wrap: break-word;
         text-align: left;
@@ -54,7 +54,8 @@
       @include mixins.mobile {
         justify-content: flex-start;
         align-content: flex-start;
-        margin: 0 3rem 0 3rem !important;
+        // margin: 0 3rem 0 3rem !important;
+        padding: 5rem 3rem 0 5rem !important;
         inline-size: 450px;
         overflow-wrap: break-word;
         text-align: left;
@@ -117,6 +118,10 @@
   display: flex;
   flex-direction: row;
   margin: 10rem 10rem 0 10rem;
+
+  @include mixins.mobile {
+    margin: 5rem 0 0 0;
+  }
 
   &__container {
     display: flex;
@@ -198,12 +203,12 @@
   }
 
   @include mixins.small-mobile {
-    gap: 5rem;
-    margin: 10rem 9rem 0 9rem;
+    gap: 4rem;
+    margin: 5rem 9rem 0 9rem;
   }
   @include mixins.mobile {
-    gap: 5rem;
-    margin: 10rem 9rem 0 9rem;
+    gap: 4rem;
+    margin: 5rem 9rem 0 9rem;
   }
 }
 
