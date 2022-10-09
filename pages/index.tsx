@@ -78,10 +78,6 @@ const Home: NextPage = () => {
         {/* Web Analytics */}
       </Head>
       <Navbar screenWidth={width} />
-      <Script
-
-
-      ></Script>
       <div className={styles['sidebar']}>
         <BurgerMenu />
       </div>
