@@ -18,22 +18,6 @@
   gap: 6rem;
   margin-top: 5rem;
 
-  form {
-    z-index: -998;
-    div {
-      display: flex;
-    }
-
-    input {
-      z-index: -998;
-      flex: 1 1 80%;
-    }
-
-    button {
-      flex: 1 1 20%;
-      z-index: -998;
-    }
-  }
 
   .rainbow {
     color: colors.$color-primary-light;
@@ -47,6 +31,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    a{
+      z-index: 999;
+    }
 
     &--inner {
       display: flex;

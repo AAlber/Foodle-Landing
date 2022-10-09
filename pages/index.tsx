@@ -68,12 +68,6 @@ const Home: NextPage = () => {
         {/* Web Analytics */}
       </Head>
       <Navbar screenWidth={width} />
-      <Script
-
-      // defer
-      // src="https://static.cloudflareinsights.com/beacon.min.js"
-      // data-cf-beacon='{"token": "39f2e396c9d545eb89eea1d7fd8ccdaf"}'
-      ></Script>
       <div className={styles['sidebar']}>
         <BurgerMenu />
       </div>

@@ -75,6 +75,12 @@ const nextConfig = {
         permanent: false,
         basePath: false
       },
+      {
+        source: '/calendly',
+        destination: 'https://calendly.com/nihad-zeitouny/diskussion-mit-foodle-discussion-with-foodle',
+        permanent: false,
+        basePath: false
+      },
     ]
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
