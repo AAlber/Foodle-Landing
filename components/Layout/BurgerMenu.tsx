@@ -16,7 +16,7 @@ const BurgerMenu = () => {
   const what = intl.formatMessage({ id: 'component.navbar.what' });
 
   return (
-    <Menu right customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} />} width={300}>
+    <Menu right customBurgerIcon={<Image src={'/burger-menu.png'} width={23} height={23} alt="Burger Menu Button"/>} width={300}>
       <header className="bm-top">
         <div className="bm-top__right">
           <Tab href="/" iconSrc="/world-icon.svg" title="EN" />

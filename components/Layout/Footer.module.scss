@@ -40,7 +40,8 @@
     justify-content: space-between;
     align-items: center;
 
-    a {
+    p {
+      color: #ffffff;
       font-size: 10px;
     }
 
@@ -69,7 +70,7 @@
     &__elements {
       gap:3vw !important;
 
-      a{
+      p{
         font-size: 15px;
       }
       // &:nth-child(4) {
