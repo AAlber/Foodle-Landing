@@ -4,6 +4,7 @@ import styles from './Faq.module.scss';
 import FaqAccordion from '../FaqAccordion/index';
 
 import { useIntl } from 'react-intl';
+import FadeInWrapper from '../../../utils/FadeInWrapper';
 
 const Faq = () => {
   const intl = useIntl();
@@ -31,7 +32,9 @@ const Faq = () => {
   return (
     <div className={styles['faq']}>
       <div className="header-primary">
+        <FadeInWrapper>
         <h4>F.A.Q.</h4>
+        </FadeInWrapper>
       </div>
 
       <div className={styles['accordion']}>
