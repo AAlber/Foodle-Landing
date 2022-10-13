@@ -154,7 +154,9 @@ const Home: NextPage = () => {
         </div>
       </div>
       <div id="special-section">
+        <FadeInWrapper>
         <SpecialSection />
+        </FadeInWrapper>
       </div>
       <div id="trust-factors"></div>
       <FadeInWrapper>
