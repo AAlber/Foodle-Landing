@@ -19,7 +19,7 @@ import { ServerZone } from '@amplitude/analytics-types';
 import { init, setOptOut, track } from '@amplitude/analytics-browser';
 import { useEffect } from 'react';
 import CookieConsent from 'react-cookie-consent';
-import FadeInWrapper from '../styles/utils/FadeInWrapper';
+import FadeInWrapper from '../utils/FadeInWrapper';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
