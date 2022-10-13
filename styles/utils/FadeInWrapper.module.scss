@@ -1,0 +1,20 @@
+.fadeInSection {
+    opacity: 0;
+    visibility: hidden;
+    will-change: opacity, visibility;
+    &__isVisible {
+        animation: fadeIn 2s;
+        transform: none;
+        visibility: visible;
+      }
+  }
+  
+  
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
