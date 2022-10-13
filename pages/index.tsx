@@ -19,6 +19,7 @@ import { ServerZone } from '@amplitude/analytics-types';
 import { init, setOptOut, track } from '@amplitude/analytics-browser';
 import { useEffect } from 'react';
 import CookieConsent from 'react-cookie-consent';
+import FadeInWrapper from '../styles/utils/FadeInWrapper';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
@@ -127,6 +128,7 @@ const Home: NextPage = () => {
           </div>
           {/* Section 1 Trust Factors DESKTOP */}
           <div className="flex-center">
+          <FadeInWrapper>
             <div className={styles['trustNumbers']}>
               <div className={styles['trustNumbers__container']}>
                 <p className={styles['trustNumbers__number']}>0€</p>
@@ -147,6 +149,7 @@ const Home: NextPage = () => {
                 </div>
               </div>
             </div>
+            </FadeInWrapper>
           </div>
         </div>
       </div>
@@ -154,6 +157,7 @@ const Home: NextPage = () => {
         <SpecialSection />
       </div>
       <div id="trust-factors"></div>
+      <FadeInWrapper>
       <div className={styles['trustFactors']}>
         {/* <div className={styles['trustGrid']}> */}
         <TrustFactor
@@ -178,6 +182,8 @@ const Home: NextPage = () => {
           iconSrc={'/verified.svg'}
         />
       </div>
+      </FadeInWrapper>
+
       <div id="faq"></div>
       {/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
       <Faq />
