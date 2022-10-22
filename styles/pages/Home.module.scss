@@ -18,6 +18,11 @@
   gap: 6rem;
   margin-top: 5rem;
 
+  &__subheader{
+    font-size: 20px;
+    font-weight: 800 !important;
+  }
+
 
   .rainbow {
     color: colors.$color-primary-light;
@@ -46,10 +51,11 @@
       @include mixins.small-mobile {
         justify-content: flex-start;
         align-items: flex-start;
-        padding: 5rem 3rem 0 4rem !important;
+        padding: 5rem 3rem 0 2rem !important;
         inline-size: 450px;
         overflow-wrap: break-word;
         text-align: left;
+        max-width: 39rem;
       }
       @include mixins.mobile {
         justify-content: flex-start;

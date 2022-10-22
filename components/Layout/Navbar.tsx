@@ -16,10 +16,12 @@ const Navbar = (props: NavbarProps) => {
   const joinFoodle = intl.formatMessage({ id: 'component.navbar.join' });
   const contact = intl.formatMessage({ id: 'component.navbar.contact' });
   const what = intl.formatMessage({ id: 'component.navbar.what' });
+
+  const router = useRouter()
+  const isInterviewPage= router.pathname === '/interviews';
   return (
-    <nav className={styles['navbar']}>
-      <div className={styles['navbar__logo']}>
-        {/* <div className="flex-center"> */}
+    <nav className={isInterviewPage ?  'flex-center '+ styles['navbar']: styles['navbar']}>
+      <div className={styles['navbar__logo'] }>
         <Link href="/" passHref>
           <div className="flex-center">
             <p>
@@ -28,9 +30,10 @@ const Navbar = (props: NavbarProps) => {
             <h1 className="logo-text green-text">Foodle</h1>
           </div>
         </Link>
-        {/* </div> */}
       </div>
-      <div className={styles['navbar__menu']}>
+      {
+        isInterviewPage? <></>: 
+        <div className={styles['navbar__menu']}>
         <Tab href="/" iconSrc={'/world-icon.svg'} title="EN" burger={false} />
         <Tab href="#join-foodle" title={joinFoodle} />
         <Tab href="#special-section" title={what} />
@@ -38,6 +41,9 @@ const Navbar = (props: NavbarProps) => {
         {/* <Tab href="#contact" title={contact} /> */}
         <Tab href="#faq" title="F.A.Q." />
       </div>
+              
+      }
+      
     </nav>
   );
 };

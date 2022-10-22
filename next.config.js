@@ -81,6 +81,12 @@ const nextConfig = {
         permanent: false,
         basePath: false
       },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: false,
+        basePath: false
+      },
     ]
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {

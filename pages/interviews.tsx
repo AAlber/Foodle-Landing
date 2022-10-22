@@ -20,7 +20,7 @@ import { init, setOptOut, track } from '@amplitude/analytics-browser';
 import { useEffect } from 'react';
 import CookieConsent from 'react-cookie-consent';
 
-const Home: NextPage = () => {
+const Interviews: NextPage = () => {
   const { width } = useWindowDimensions();
   console.log(process.env.NODE_ENV);
 
@@ -35,10 +35,12 @@ const Home: NextPage = () => {
 
   const onButtonClick = () => track('Funnel Click');
   const intl = useIntl();
-  const title = intl.formatMessage({ id: 'page.home.hero.title' });
-  const description = intl.formatMessage({ id: 'page.home.hero.description' });
+  const title = intl.formatMessage({ id: 'page.interviews.hero.title' });
+  const subheader = intl.formatMessage({ id: 'page.interviews.hero.subheader' });
+  const description = intl.formatMessage({ id: 'page.interviews.hero.description' });
+  const book = intl.formatMessage({ id: 'page.interviews.hero.book' });
+  const specialTitle = intl.formatMessage({id:"page.interviews.special.mainTitle"})
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
-  const specialTitle = intl.formatMessage({id:"page.home.special.mainTitle"})
   const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
   const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
   const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
@@ -108,7 +110,7 @@ const Home: NextPage = () => {
         {/* Section 1 TOP */}
         <Image
           priority={true}
-          src="/landing.png"
+          src="/interviews.png"
           className={styles['hero-image']}
           alt="Cook cutting vegetables on a kitchen counter"
           layout="fill"
@@ -116,43 +118,19 @@ const Home: NextPage = () => {
         ></Image>
         <div className={styles['hero__top']}>
           <div className={styles['hero__top--inner']}>
-            <p className="overline">Democratise food-making</p>
             <h1 className={'header-primary'}>{title}</h1>
-
+            <h4 className={styles['hero__subheader']}>{subheader}</h4>
             <p className={'body-text'}>{description}</p>
-            <Link href={'https://form.typeform.com/to/FuAphrrA'} passHref>
+            <Link href={'https://calendly.com/alex-alber/interview-with-foodle'} passHref>
               <a onClick={onButtonClick} className={styles['home-btn'] + ' bold-medium'}>
-                {submit}
+                {book}
               </a>
             </Link>
-          </div>
-          {/* Section 1 Trust Factors DESKTOP */}
-          <div className="flex-center">
-            <div className={styles['trustNumbers']}>
-              <div className={styles['trustNumbers__container']}>
-                <p className={styles['trustNumbers__number']}>0€</p>
-                <div className="flex-center">
-                  <p className={styles['trustNumbers__text'] + ' body-text'}>{trustNumber1}</p>
-                </div>
-              </div>
-              <div className={styles['trustNumbers__container']}>
-                <p className={styles['trustNumbers__number']}>+15</p>
-                <div className="flex-center">
-                  <p className={styles['trustNumbers__text'] + ' body-text'}>{trustNumber2}</p>
-                </div>
-              </div>
-              <div className={styles['trustNumbers__container--last-child']}>
-                <p className={styles['trustNumbers__number']}>0</p>
-                <div className="flex-center">
-                  <p className={styles['trustNumbers__text--last-child'] + ' body-text'}>{trustNumber3}</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
       <div id="special-section">
-        <SpecialSection title={specialTitle}/>
+        <SpecialSection title={specialTitle} />
       </div>
       <div id="trust-factors"></div>
       <div className={styles['trustFactors']}>
@@ -189,4 +167,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default Interviews;

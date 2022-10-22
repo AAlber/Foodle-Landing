@@ -2,8 +2,12 @@ import styles from './SpecialSection.module.scss';
 import Image from 'next/image';
 import FeatureComponent from './FeatureComponent';
 import { useIntl } from 'react-intl';
+import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
 
-function SpecialSection() {
+type SpecialSectionProps = {
+  title:string,
+}
+function SpecialSection(props:SpecialSectionProps) {
   const intl = useIntl();
   const specialMainTitle = intl.formatMessage({ id: 'page.home.special.mainTitle' });
   const specialTitle1 = intl.formatMessage({ id: 'page.home.special.title.1' });
@@ -19,7 +23,7 @@ function SpecialSection() {
       <div>
         <div className={styles['specialSection']}>
           <div className={styles['specialSection__flex']}>
-            <h3 className={styles['specialSection__header'] + ' header-tertiary'}>{specialMainTitle}</h3>
+            <h3 className={styles['specialSection__header'] + ' header-tertiary'}><b>{props.title}</b></h3>
 
             <div className={styles['specialSectionGrid']}>
               <FeatureComponent title={specialTitle1} body={specialText1} imageUrl="/palm.svg" />
