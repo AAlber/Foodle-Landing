@@ -15,14 +15,7 @@ function FeatureComponent(props: FeatureComponentProps) {
         <div className={styles['textContainer']}>
           <h3 className={styles['textContainer__header'] + ' header-tertiary'}>
             {props.title}
-            {/* {props.br ? (
-              <>
-                <br />
-                <br />
-              </>
-            ) : (
-              <></>
-            )} */}
+            {/* TODO: Make these SEO friendly */}
           </h3>
           <p className={styles['textContainer__body'] + ' ' + 'body-text'}>{props.body}</p>
         </div>

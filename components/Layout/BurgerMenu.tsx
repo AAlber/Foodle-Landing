@@ -35,7 +35,7 @@ const BurgerMenu = () => {
       <footer>
         <div className="flex-center">
           <Image src={'/foodle_logo.svg'} alt="foodle logo" width={40} height={29} />
-          <h3 className={styles['footer__logo'] + ' logo-text'}>Foodle</h3>
+          <p className={styles['footer__logo'] + ' logo-text'}>Foodle</p>
         </div>
         <section className={styles['footer__end--socials'] + ' flex-center'}>
           <Image

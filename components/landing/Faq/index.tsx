@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import styles from './Faq.module.scss';
 import FaqAccordion from '../FaqAccordion/index';
 
@@ -31,7 +29,7 @@ const Faq = () => {
   return (
     <div className={styles['faq']}>
       <div className="header-primary">
-        <h4>F.A.Q.</h4>
+        <p>F.A.Q.</p>
       </div>
 
       <div className={styles['accordion']}>

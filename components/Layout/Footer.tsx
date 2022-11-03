@@ -18,7 +18,7 @@ const Footer = () => {
       <div className={styles['footer__main'] + ' flex-center__column'}>
         <div className="flex-center">
           <Image src={'/foodle_logo.svg'} alt="foodle logo" width={40} height={29} />
-          <h3 className={styles['footer__logo'] + ' logo-text'}>Foodle</h3>
+          <p className={styles['footer__logo'] + ' logo-text'}>Foodle</p>
         </div>
         <div className={styles['footer__elements'] + ' flex-center mt-one'}>
           <Link href={'/'}>

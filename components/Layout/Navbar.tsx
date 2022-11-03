@@ -27,7 +27,7 @@ const Navbar = (props: NavbarProps) => {
             <p>
               <Image src="/foodle_logo.svg" width={45} height={27} alt="Foodle Logo" />
             </p>
-            <h1 className="logo-text green-text">Foodle</h1>
+            <h2 className="logo-text green-text">Foodle</h2>
           </div>
         </Link>
       </div>

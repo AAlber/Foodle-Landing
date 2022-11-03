@@ -14,8 +14,9 @@ const TrustFactor = (props: TrustFactorProps) => {
   return (
     <div className={styles['trustFactor']}>
       <div>
-        <Image loading='lazy' src={props.iconSrc} width={70} height={70} alt={"Trustpoint icon - "+props.title}/>
-        <h5 className={'header-tertiary'}>{props.title}</h5>
+        <Image loading='lazy' src={props.iconSrc} width={70} height={70} alt={" - "+props.title}/>
+        {/* TODO: Make headers SEO friendly */}
+        <h3 className={'header-tertiary'}>{props.title}</h3>
         <p className={'body-text'}>{props.width < 720 ? props.shortText : props.text}</p>
       </div>
     </div>

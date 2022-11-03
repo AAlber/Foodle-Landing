@@ -38,6 +38,7 @@ const Home: NextPage = () => {
   const title = intl.formatMessage({ id: 'page.home.hero.title' });
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
+  const overline = intl.formatMessage({ id: 'page.home.hero.overline' });
   const specialTitle = intl.formatMessage({id:"page.home.special.mainTitle"})
   const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
   const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
@@ -52,6 +53,9 @@ const Home: NextPage = () => {
   const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
   const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
   const cookieMessage = intl.formatMessage({ id: 'component.cookie.message' });
+
+  const metaTitle = intl.formatMessage({ id: 'page.home.meta.title'});
+  const metaDescription = intl.formatMessage({ id: 'page.home.meta.description' });
 
   //Animations
   gsap.registerPlugin(TextPlugin);
@@ -71,16 +75,14 @@ const Home: NextPage = () => {
   return (
     <div>
       <Head>
-        <title>Foodle</title>
+        <title>{metaTitle}</title>
         <meta
           name="description"
-          content="Foodle is a licensed kitchen rental service where food businesses (like restaurants, bakeries, ice cream shops, etc.) rent out their kitchens to cooks, bakers or other food producers.
-          Foodle ist eine .
-          "
+          content={metaDescription}
         />
         <link rel="icon" href="/foodle_logo.svg" />
-        <link rel="alternate" href="http://localhost:3000" hrefLang="de" />
-        <link rel="alternate" href="http://localhost:3000/en" hrefLang="en" />
+        <link rel="alternate" href="https://www.foodle-kitchens.com/de" hrefLang="de" />
+        <link rel="alternate" href="https://www.foodle-kitchens.com/en" hrefLang="en" />
         {/* Web Analytics */}
       </Head>
       <Navbar screenWidth={width} />
@@ -88,6 +90,7 @@ const Home: NextPage = () => {
         <BurgerMenu />
       </div>
       <CookieConsent
+      z-index={99999}
         hideOnAccept={true}
         enableDeclineButton
         onDecline={() => setOptOut(true)}
@@ -116,9 +119,8 @@ const Home: NextPage = () => {
         ></Image>
         <div className={styles['hero__top']}>
           <div className={styles['hero__top--inner']}>
-            <p className="overline">Democratise food-making</p>
+            <p className="overline">{overline}</p>
             <h1 className={'header-primary'}>{title}</h1>
-
             <p className={'body-text'}>{description}</p>
             <Link href={'https://form.typeform.com/to/FuAphrrA'} passHref>
               <a onClick={onButtonClick} className={styles['home-btn'] + ' bold-medium'}>
