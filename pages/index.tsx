@@ -28,9 +28,10 @@ const Home: NextPage = () => {
     process.env.NODE_ENV === 'production'
       ? init(process.env['NEXT_PUBLIC_AMPLITUDE_KEY']!, undefined, {
           serverZone: ServerZone.EU,
-          trackingOptions: { ipAddress: false },
+          // trackingOptions: { ipAddress: false },
         })
       : null;
+    
   });
 
   const onButtonClick = () => track('Funnel Click');
