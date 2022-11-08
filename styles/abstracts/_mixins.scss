@@ -1,11 +1,5 @@
 // Example Code
 
-@mixin submit-msg {
-  width: fit-content;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 2rem;
-}
 
 @mixin btn($color, $bg-color, $hover-bg-color) {
   height: 100%;

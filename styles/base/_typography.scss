@@ -253,17 +253,6 @@ textarea {
 .smallest-text {
   font-size: 13px !important;
 }
-.error-msg {
-  background-color: #f44336;
-  color: white;
-  @include mixins.submit-msg();
-}
-
-.success-msg {
-  color: #009688;
-  font-weight: 600;
-  @include submit-msg();
-}
 
 .overline {
   font-size: 1.4rem !important;

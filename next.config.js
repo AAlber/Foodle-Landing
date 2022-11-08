@@ -58,6 +58,9 @@ const nextConfig = {
    locales: ["en", "de"],
    defaultLocale: "de",
  },
+ experimental: {
+  webVitalsAttribution: ['CLS', 'LCP', 'Next.js-hydration', 'TTFB','FCP']
+},
   async headers() {
     return [
       {
@@ -89,6 +92,7 @@ const nextConfig = {
       },
     ]
   },
+  
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     if (process.env.ANALYZE) {
      config.plugins.push(
