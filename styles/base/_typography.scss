@@ -7,43 +7,43 @@
   font-weight: normal;
   src: local("Archia Regular"), url("Archia-Regular.woff") format("woff");
 }*/
-@font-face {
+// @font-face {
 
 
-  font-display: swap;
-	font-family: 'Inter';
-	src: url('./fonts/Inter-Medium.ttf') format('truetype');
-	font-weight: 500;
-	font-style: normal;
-}
-@font-face {
-  font-display: swap;
-	font-family: 'Inter';
-	src: url('./fonts/Inter-Regular.ttf') format('truetype');
-	font-weight: 600;
-	font-style: normal;
-}
-@font-face {
-  font-display: swap;
-	font-family: 'Inter';
-	src: url('./fonts/Inter-SemiBold.ttf');
-	font-weight: 700;
-	font-style: normal;
-}
-@font-face {
-  font-display: swap;
-	font-family: 'Inter';
-	src: url('./fonts/Inter-Bold.ttf');
-	font-weight: 800;
-	font-style: normal;
-}
-@font-face {
-  font-display: swap;
-	font-family: 'Inter';
-	src: url('./fonts/Inter-ExtraBold.ttf');
-	font-weight: 900;
-	font-style: normal;
-}
+//   font-display: swap;
+// 	font-family: 'Inter';
+// 	src: url('./fonts/Inter-Medium.ttf') format('truetype');
+// 	font-weight: 500;
+// 	font-style: normal;
+// }
+// @font-face {
+//   font-display: swap;
+// 	font-family: 'Inter';
+// 	src: url('./fonts/Inter-Regular.ttf') format('truetype');
+// 	font-weight: 600;
+// 	font-style: normal;
+// }
+// @font-face {
+//   font-display: swap;
+// 	font-family: 'Inter';
+// 	src: url('./fonts/Inter-SemiBold.ttf');
+// 	font-weight: 700;
+// 	font-style: normal;
+// }
+// @font-face {
+//   font-display: swap;
+// 	font-family: 'Inter';
+// 	src: url('./fonts/Inter-Bold.ttf');
+// 	font-weight: 800;
+// 	font-style: normal;
+// }
+// @font-face {
+//   font-display: swap;
+// 	font-family: 'Inter';
+// 	src: url('./fonts/Inter-ExtraBold.ttf');
+// 	font-weight: 900;
+// 	font-style: normal;
+// }
 
 * {
   font-display: fallback;
