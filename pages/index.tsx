@@ -26,7 +26,6 @@ const Home: NextPage = () => {
           serverZone: ServerZone.EU,
         })
       : null;
-    
   });
 
   const onButtonClick = () => track('Funnel Click');
@@ -35,68 +34,69 @@ const Home: NextPage = () => {
   const description = intl.formatMessage({ id: 'page.home.hero.description' });
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
   const overline = intl.formatMessage({ id: 'page.home.hero.overline' });
-  const specialTitle = intl.formatMessage({id:"page.home.special.mainTitle"})
+  const specialTitle = intl.formatMessage({ id: 'page.home.special.mainTitle' });
   const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
   const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
   const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
   const cookieMessage = intl.formatMessage({ id: 'component.cookie.message' });
 
-  const metaTitle = intl.formatMessage({ id: 'page.home.meta.title'});
+  const metaTitle = intl.formatMessage({ id: 'page.home.meta.title' });
   const metaDescription = intl.formatMessage({ id: 'page.home.meta.description' });
 
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
-  const [wasScrolled, setWasScrolled]= useState(false)
-  const onScroll= ()=> wasScrolled ? null: setWasScrolled(true);
+  const [wasScrolled, setWasScrolled] = useState(false);
+  const onScroll = () => (wasScrolled ? null : setWasScrolled(true));
 
   useEffect(() => {
-    window.addEventListener("scroll", ()=>onScroll());
-    return (
-       window.removeEventListener("scroll", ()=>onScroll())
-    )
+    window.addEventListener('scroll', () => onScroll());
+    return window.removeEventListener('scroll', () => onScroll());
   }, []);
 
-  const SpecialSection = dynamic<{title:string}>(() => import('../components/Layout/special-section/SpecialSection').then(module => module), {
-    loading: ()=> <p>loading...</p>,
-    // ssr: false,
-  });
-  const TrustFactors = dynamic<{width:number}>(() => import('../components/landing/TrustFactors').then(module => module), {
-    loading: ()=> <p>loading...</p>,
-    // ssr: false,
-  });
+  const SpecialSection = dynamic<{ title: string }>(
+    () => import('../components/Layout/special-section/SpecialSection').then((module) => module),
+    {
+      loading: () => <p>loading...</p>,
+      // ssr: false,
+    }
+  );
+  const TrustFactors = dynamic<{ width: number }>(
+    () => import('../components/landing/TrustFactors').then((module) => module),
+    {
+      loading: () => <p>loading...</p>,
+      // ssr: false,
+    }
+  );
   const Faq = dynamic(() => import('../components/landing/Faq'), {
-    loading: ()=> <p>loading...</p>,
+    loading: () => <p>loading...</p>,
     // ssr: false,
   });
-  const Footer = dynamic<{}>(() => import('../components/Layout/Footer').then(module => module), {
-    loading: ()=> <p>loading...</p>,
+  const Footer = dynamic<{}>(() => import('../components/Layout/Footer').then((module) => module), {
+    loading: () => <p>loading...</p>,
     // ssr: false,
   });
-
 
   return (
     <div>
       <Head>
         <title>{metaTitle}</title>
-        <meta
-          name="description"
-          content={metaDescription}
-        />
+        <meta name="description" content={metaDescription} />
         <link rel="icon" href="/foodle_logo.svg" />
         <link rel="alternate" href="https://www.foodle-kitchens.com/de" hrefLang="de" />
         <link rel="alternate" href="https://www.foodle-kitchens.com/en" hrefLang="en" />
         {/* Web Analytics */}
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Navbar />
-      <div className={styles['sidebar']}>
-        <BurgerMenu/>
-      </div>
+      <div className={styles['sidebar']}>{wasScrolled && <BurgerMenu />}</div>
       <CookieConsent
-      z-index={99999}
+        z-index={99999}
         hideOnAccept={true}
         enableDeclineButton
         onDecline={() => setOptOut(true)}
@@ -160,28 +160,28 @@ const Home: NextPage = () => {
         </div>
       </div>
 
+      {wasScrolled && (
+        <>
+          <div id="special-section">
+            {/* @ts-ignore */}
+            <SpecialSection title={specialTitle} />
+          </div>
+          <div id="trust-factors"></div>
 
-      <div id="special-section">
-        {/* @ts-ignore */}
-        <SpecialSection title={specialTitle}/>
+          {/* @ts-ignore */}
+          <TrustFactors width={width!} />
 
-      </div>
-      <div id="trust-factors"></div>
-       
-       {/* @ts-ignore */}
-        <TrustFactors width={width!}/>
-      
-      <div id="faq"></div>
-      {/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
-       
-      {/* @ts-ignore */}
-      <Faq />
-      <div id="contact">
-       
-        {/* @ts-ignore */}
-        <Footer />
-      
-      </div>
+          <div id="faq"></div>
+          {/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
+
+          {/* @ts-ignore */}
+          <Faq />
+          <div id="contact">
+            {/* @ts-ignore */}
+            <Footer />
+          </div>
+        </>
+      )}
     </div>
   );
 };
