@@ -1,8 +1,7 @@
 @use '../base/colors';
 @use '../abstracts/mixins';
 
-
-.hero-image{
+.hero-image {
   position: fixed;
   width: max-content;
   z-index: -999;
@@ -18,11 +17,25 @@
   gap: 6rem;
   margin-top: 5rem;
 
-  &__subheader{
+  &__image {
+    width: 100%;
+
+    > div {
+      position: unset !important;
+    }
+
+    img {
+      object-fit: contain;
+      width: 100% !important;
+      position: relative !important;
+      height: unset !important;
+    }
+  }
+
+  &__subheader {
     font-size: 20px;
     font-weight: 800 !important;
   }
-
 
   .rainbow {
     color: colors.$color-primary-light;
@@ -36,7 +49,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    a{
+    a {
       z-index: 999;
     }
 
@@ -99,7 +112,6 @@
     flex-direction: column;
   }
 }
-
 
 .home-btn {
   @include mixins.btn(white, colors.$color-primary-light, white);
