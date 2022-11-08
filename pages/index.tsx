@@ -59,19 +59,19 @@ const Home: NextPage = () => {
 
   const SpecialSection = dynamic<{title:string}>(() => import('../components/Layout/special-section/SpecialSection').then(module => module), {
     loading: ()=> <p>loading...</p>,
-    ssr: false,
+    // ssr: false,
   });
   const TrustFactors = dynamic<{width:number}>(() => import('../components/landing/TrustFactors').then(module => module), {
     loading: ()=> <p>loading...</p>,
-    ssr: false,
+    // ssr: false,
   });
   const Faq = dynamic(() => import('../components/landing/Faq'), {
     loading: ()=> <p>loading...</p>,
-    ssr: false,
+    // ssr: false,
   });
   const Footer = dynamic<{}>(() => import('../components/Layout/Footer').then(module => module), {
     loading: ()=> <p>loading...</p>,
-    ssr: false,
+    // ssr: false,
   });
 
 
@@ -159,26 +159,25 @@ const Home: NextPage = () => {
 
 
       <div id="special-section">
-        {wasScrolled && 
-        // @ts-ignore
-        <SpecialSection title={specialTitle}/>}
+        {/* @ts-ignore */}
+        <SpecialSection title={specialTitle}/>
 
       </div>
       <div id="trust-factors"></div>
-      {wasScrolled && 
-      // @ts-ignore
+       
+       {/* @ts-ignore */}
         <TrustFactors width={width!}/>
-      }
+      
       <div id="faq"></div>
       {/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
-      {wasScrolled && 
-        // @ts-ignore
-      <Faq />}
+       
+      {/* @ts-ignore */}
+      <Faq />
       <div id="contact">
-      {wasScrolled && 
-        // @ts-ignore
+       
+        {/* @ts-ignore */}
         <Footer />
-      }
+      
       </div>
     </div>
   );
