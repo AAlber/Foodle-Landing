@@ -1,23 +1,20 @@
-import '../styles/app.scss';
-import type { AppProps, NextWebVitalsMetric} from 'next/app';
-import React, { useEffect } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import type { AppProps, NextWebVitalsMetric } from 'next/app';
 import 'swiper/css/bundle';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
-import en from '../lang/en.json';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import de from '../lang/de.json';
+import en from '../lang/en.json';
+import '../styles/app.scss';
 
-import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
+import { IntlProvider } from 'react-intl';
 const SafeHydrate = ({ children }: { children: any }) => {
   return <div suppressHydrationWarning>{typeof window === 'undefined' ? null : children}</div>;
 };
 export function reportWebVitals(metric: NextWebVitalsMetric) {
   console.log(metric)
 }
-export const queryClient = new QueryClient();
 const messages = {
   en,
   de,
@@ -30,10 +27,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SafeHydrate>
       {/* @ts-ignore */}
       <IntlProvider locale={locale!} messages={messages[locale!]}>
-        <QueryClientProvider client={queryClient}>
           {/* @ts-ignore */}
           <Component {...pageProps} />
-        </QueryClientProvider>
       </IntlProvider>
     </SafeHydrate>
   );

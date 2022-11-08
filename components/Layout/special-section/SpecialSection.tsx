@@ -1,15 +1,12 @@
-import styles from './SpecialSection.module.scss';
-import Image from 'next/image';
-import FeatureComponent from './FeatureComponent';
 import { useIntl } from 'react-intl';
-import { responseSymbol } from 'next/dist/server/web/spec-compliant/fetch-event';
+import FeatureComponent from './FeatureComponent';
+import styles from './SpecialSection.module.scss';
 
 type SpecialSectionProps = {
   title:string,
 }
 function SpecialSection(props:SpecialSectionProps) {
   const intl = useIntl();
-  const specialMainTitle = intl.formatMessage({ id: 'page.home.special.mainTitle' });
   const specialTitle1 = intl.formatMessage({ id: 'page.home.special.title.1' });
   const specialTitle2 = intl.formatMessage({ id: 'page.home.special.title.2' });
   const specialTitle3 = intl.formatMessage({ id: 'page.home.special.title.3' });

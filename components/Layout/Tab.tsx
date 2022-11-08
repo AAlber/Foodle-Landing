@@ -1,10 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { ViewProps } from 'react-device-detect';
-import styles from './Navbar.module.scss';
 
 interface TabProps {
   href: string;

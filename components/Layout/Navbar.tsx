@@ -1,20 +1,14 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useIntl } from 'react-intl';
 import styles from './Navbar.module.scss';
 import Tab from './Tab';
-import { FormattedMessage, useIntl } from 'react-intl';
-import { useRouter } from 'next/router';
-import Sidebar from './BurgerMenu';
-export type NavbarProps = {
-  screenWidth?: number;
-};
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = () => {
   const intl = useIntl();
   const why = intl.formatMessage({ id: 'component.navbar.why' });
   const joinFoodle = intl.formatMessage({ id: 'component.navbar.join' });
-  const contact = intl.formatMessage({ id: 'component.navbar.contact' });
   const what = intl.formatMessage({ id: 'component.navbar.what' });
 
   const router = useRouter()
@@ -25,7 +19,7 @@ const Navbar = (props: NavbarProps) => {
         <Link href="/" passHref>
           <div className="flex-center">
             <p>
-              <Image src="/foodle_logo.svg" width={45} height={27} alt="Foodle Logo" />
+              <Image loading='lazy' src="/foodle_logo.svg" width={45} height={27} alt="Foodle Logo" />
             </p>
             <h2 className="logo-text green-text">Foodle</h2>
           </div>

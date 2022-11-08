@@ -1,21 +1,20 @@
+import { init, setOptOut, track } from '@amplitude/analytics-browser';
+import { ServerZone } from '@amplitude/analytics-types';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { TextPlugin } from 'gsap/dist/TextPlugin';
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/pages/Home.module.scss';
-import Navbar from '../components/Layout/Navbar';
 import Link from 'next/link';
-import { useIntl } from 'react-intl';
-import { gsap } from 'gsap';
-import { TextPlugin } from 'gsap/dist/TextPlugin';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import useWindowDimensions from '../hooks/useWindowDimensions';
-import Script from 'next/script';
-import BurgerMenu from '../components/Layout/BurgerMenu';
-import { ServerZone } from '@amplitude/analytics-types';
-import { init, setOptOut, track } from '@amplitude/analytics-browser';
 import { useEffect, useState } from 'react';
 import CookieConsent from 'react-cookie-consent';
-import dynamic from 'next/dynamic';
+import { useIntl } from 'react-intl';
+import BurgerMenu from '../components/Layout/BurgerMenu';
+import Navbar from '../components/Layout/Navbar';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import styles from '../styles/pages/Home.module.scss';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
@@ -25,7 +24,6 @@ const Home: NextPage = () => {
     process.env.NODE_ENV === 'production'
       ? init(process.env['NEXT_PUBLIC_AMPLITUDE_KEY']!, undefined, {
           serverZone: ServerZone.EU,
-          // trackingOptions: { ipAddress: false },
         })
       : null;
     
@@ -49,17 +47,6 @@ const Home: NextPage = () => {
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
-
-  // useEffect(() => {
-  //   const dreamScrollAnim = getFadeInAnim(dreamsScroll);
-  //   const signupAnim = getSlideUpAnim(signupRef);
-  //   const textAnimTl = getTextTransformTimeline(easyAdjectives.split(' '));
-  //   return () => {
-  //     textAnimTl.kill();
-  //     signupAnim.kill();
-  //     dreamScrollAnim.kill();
-  //   };
-  // }, [easyAdjectives, width]);
   const [wasScrolled, setWasScrolled]= useState(false)
   const onScroll= ()=> wasScrolled ? null: setWasScrolled(true);
 
@@ -101,7 +88,7 @@ const Home: NextPage = () => {
         <link rel="alternate" href="https://www.foodle-kitchens.com/en" hrefLang="en" />
         {/* Web Analytics */}
       </Head>
-      <Navbar screenWidth={width} />
+      <Navbar />
       <div className={styles['sidebar']}>
         <BurgerMenu/>
       </div>
@@ -124,8 +111,6 @@ const Home: NextPage = () => {
       {/* <=== Section 1 ===> */}
       <div id="join-foodle"></div>
       <div className={styles['hero']}>
-        {/* Section 1 TOP */}
-        {/* <div className={styles['hero__image']}> */}
         <Image
           priority={true}
           src="/landing.png"

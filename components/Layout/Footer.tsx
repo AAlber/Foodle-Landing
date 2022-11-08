@@ -1,9 +1,7 @@
-import React from 'react';
-import styles from './Footer.module.scss';
-import Tab from './Tab';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
+import styles from './Footer.module.scss';
 
 const Footer = () => {
   const intl = useIntl();

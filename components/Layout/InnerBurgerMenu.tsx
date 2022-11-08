@@ -1,12 +1,9 @@
 // BurgerIcon from @SeyfDesigner
-import Link from 'next/link';
-import { slide as Menu } from 'react-burger-menu';
-import { FormattedMessage, useIntl } from 'react-intl';
-import Tab from './Tab';
 import Image from 'next/image';
+import { useIntl } from 'react-intl';
+import Tab from './Tab';
 
 import styles from './Footer.module.scss';
-import { useRef, useState } from 'react';
 
 const BurgerMenu = () => {
   const intl = useIntl();
