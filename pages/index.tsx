@@ -4,21 +4,18 @@ import Image from 'next/image';
 import styles from '../styles/pages/Home.module.scss';
 import Navbar from '../components/Layout/Navbar';
 import Link from 'next/link';
-import Footer from '../components/Layout/Footer';
 import { useIntl } from 'react-intl';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/dist/TextPlugin';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import Script from 'next/script';
-import SpecialSection from '../components/Layout/special-section/SpecialSection';
-import Faq from '../components/landing/Faq';
-import TrustFactor from '../components/landing/TrustFactor';
 import BurgerMenu from '../components/Layout/BurgerMenu';
 import { ServerZone } from '@amplitude/analytics-types';
 import { init, setOptOut, track } from '@amplitude/analytics-browser';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import CookieConsent from 'react-cookie-consent';
+import dynamic from 'next/dynamic';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
@@ -44,15 +41,6 @@ const Home: NextPage = () => {
   const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
   const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
   const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
-  const trustFactorTitle1 = intl.formatMessage({ id: 'page.home.trustFactor.title.1' });
-  const trustFactorTitle2 = intl.formatMessage({ id: 'page.home.trustFactor.title.2' });
-  const trustFactorTitle3 = intl.formatMessage({ id: 'page.home.trustFactor.title.3' });
-  const trustFactorText1 = intl.formatMessage({ id: 'page.home.trustFactor.text.1' });
-  const trustFactorText2 = intl.formatMessage({ id: 'page.home.trustFactor.text.2' });
-  const trustFactorText3 = intl.formatMessage({ id: 'page.home.trustFactor.text.3' });
-  const trustFactorTextShort1 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.1' });
-  const trustFactorTextShort2 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.2' });
-  const trustFactorTextShort3 = intl.formatMessage({ id: 'page.home.trustFactor.text.short.3' });
   const cookieMessage = intl.formatMessage({ id: 'component.cookie.message' });
 
   const metaTitle = intl.formatMessage({ id: 'page.home.meta.title'});
@@ -72,6 +60,33 @@ const Home: NextPage = () => {
   //     dreamScrollAnim.kill();
   //   };
   // }, [easyAdjectives, width]);
+  const [wasScrolled, setWasScrolled]= useState(false)
+  const onScroll= ()=> wasScrolled ? null: setWasScrolled(true);
+
+  useEffect(() => {
+    window.addEventListener("scroll", ()=>onScroll());
+    return (
+       window.removeEventListener("scroll", ()=>onScroll())
+    )
+  }, []);
+
+  const SpecialSection = dynamic<{title:string}>(() => import('../components/Layout/special-section/SpecialSection').then(module => module), {
+    loading: ()=> <p>loading...</p>,
+    ssr: false,
+  });
+  const TrustFactors = dynamic<{width:number}>(() => import('../components/landing/TrustFactors').then(module => module), {
+    loading: ()=> <p>loading...</p>,
+    ssr: false,
+  });
+  const Faq = dynamic(() => import('../components/landing/Faq'), {
+    loading: ()=> <p>loading...</p>,
+    ssr: false,
+  });
+  const Footer = dynamic<{}>(() => import('../components/Layout/Footer').then(module => module), {
+    loading: ()=> <p>loading...</p>,
+    ssr: false,
+  });
+
 
   return (
     <div>
@@ -88,7 +103,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar screenWidth={width} />
       <div className={styles['sidebar']}>
-        <BurgerMenu />
+        <BurgerMenu/>
       </div>
       <CookieConsent
       z-index={99999}
@@ -154,39 +169,29 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+
+
       <div id="special-section">
-        <SpecialSection title={specialTitle}/>
+        {wasScrolled && 
+        // @ts-ignore
+        <SpecialSection title={specialTitle}/>}
+
       </div>
       <div id="trust-factors"></div>
-      <div className={styles['trustFactors']}>
-        {/* <div className={styles['trustGrid']}> */}
-        <TrustFactor
-          width={width!}
-          title={trustFactorTitle1}
-          text={trustFactorText1}
-          shortText={trustFactorTextShort1}
-          iconSrc={'/pot.svg'}
-        />
-        <TrustFactor
-          width={width!}
-          title={trustFactorTitle2}
-          text={trustFactorText2}
-          shortText={trustFactorTextShort2}
-          iconSrc={'/support.svg'}
-        />
-        <TrustFactor
-          width={width!}
-          title={trustFactorTitle3}
-          text={trustFactorText3}
-          shortText={trustFactorTextShort3}
-          iconSrc={'/verified.svg'}
-        />
-      </div>
+      {wasScrolled && 
+      // @ts-ignore
+        <TrustFactors width={width!}/>
+      }
       <div id="faq"></div>
       {/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
-      <Faq />
+      {wasScrolled && 
+        // @ts-ignore
+      <Faq />}
       <div id="contact">
+      {wasScrolled && 
+        // @ts-ignore
         <Footer />
+      }
       </div>
     </div>
   );

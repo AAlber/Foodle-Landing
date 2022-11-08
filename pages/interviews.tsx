@@ -13,12 +13,12 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 import Script from 'next/script';
 import SpecialSection from '../components/Layout/special-section/SpecialSection';
 import Faq from '../components/landing/Faq';
-import TrustFactor from '../components/landing/TrustFactor';
 import BurgerMenu from '../components/Layout/BurgerMenu';
 import { ServerZone } from '@amplitude/analytics-types';
 import { init, setOptOut, track } from '@amplitude/analytics-browser';
 import { useEffect } from 'react';
 import CookieConsent from 'react-cookie-consent';
+import TrustFactorContainer from '../components/landing/TrustFactors';
 
 const Interviews: NextPage = () => {
   const { width } = useWindowDimensions();
@@ -133,30 +133,7 @@ const Interviews: NextPage = () => {
         <SpecialSection title={specialTitle} />
       </div>
       <div id="trust-factors"></div>
-      <div className={styles['trustFactors']}>
-        {/* <div className={styles['trustGrid']}> */}
-        <TrustFactor
-          width={width!}
-          title={trustFactorTitle1}
-          text={trustFactorText1}
-          shortText={trustFactorTextShort1}
-          iconSrc={'/pot.svg'}
-        />
-        <TrustFactor
-          width={width!}
-          title={trustFactorTitle2}
-          text={trustFactorText2}
-          shortText={trustFactorTextShort2}
-          iconSrc={'/support.svg'}
-        />
-        <TrustFactor
-          width={width!}
-          title={trustFactorTitle3}
-          text={trustFactorText3}
-          shortText={trustFactorTextShort3}
-          iconSrc={'/verified.svg'}
-        />
-      </div>
+      <TrustFactorContainer width={width!}/>
       <div id="faq"></div>
       {/*Empty div to prevent scrolling down to much and over the FAQ title section*/}
       <Faq />
