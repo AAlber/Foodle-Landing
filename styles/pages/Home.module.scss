@@ -359,20 +359,3 @@
     display: block;
   }
 }
-.trustFactors {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 12rem;
-  padding: 2rem;
-  margin-top: 20rem;
-  margin-bottom: 20rem;
-  @include mixins.mobile {
-    flex-direction: column;
-    gap: 6rem;
-    margin-top: 10rem;
-    margin-bottom: 10rem;
-    padding-right: 1rem;
-  }
-}
