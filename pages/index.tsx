@@ -125,7 +125,7 @@ const Home: NextPage = () => {
       <div id="join-foodle"></div>
       <div className={styles['hero']}>
         {/* Section 1 TOP */}
-        <div className={styles['hero__image']}>
+        {/* <div className={styles['hero__image']}> */}
         <Image
           priority={true}
           src="/landing.png"
@@ -134,7 +134,7 @@ const Home: NextPage = () => {
           layout="fill"
           objectFit="cover"
         />
-        </div>
+        {/* </div> */}
         <div className={styles['hero__top']}>
           <div className={styles['hero__top--inner']}>
             <p className="overline">{overline}</p>

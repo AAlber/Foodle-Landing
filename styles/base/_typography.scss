@@ -39,6 +39,7 @@
 }
 
 * {
+  font-display: fallback;
   font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
   // font-family: 'Inter', sans-serif !important;
   font-weight: 300;
@@ -120,6 +121,8 @@ textarea {
 }
 
 .header-primary {
+
+  font-display: fallback;
   font-size: 88px;
   line-height: 104px;
   font-weight: 700;

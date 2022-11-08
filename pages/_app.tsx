@@ -1,5 +1,5 @@
 import '../styles/app.scss';
-import type { AppProps } from 'next/app';
+import type { AppProps, NextWebVitalsMetric} from 'next/app';
 import React, { useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import 'swiper/css/bundle';
@@ -14,6 +14,9 @@ import { useRouter } from 'next/router';
 const SafeHydrate = ({ children }: { children: any }) => {
   return <div suppressHydrationWarning>{typeof window === 'undefined' ? null : children}</div>;
 };
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  console.log(metric)
+}
 export const queryClient = new QueryClient();
 const messages = {
   en,
