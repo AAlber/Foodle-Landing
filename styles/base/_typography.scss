@@ -1,49 +1,5 @@
 @use './colors';
 @use '../abstracts/mixins';
-/*@font-face {
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap'); /*@font-face {
-  font-family: ""Archia Regular"";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Archia Regular"), url("Archia-Regular.woff") format("woff");
-}*/
-// @font-face {
-
-
-//   font-display: swap;
-// 	font-family: 'Inter';
-// 	src: url('./fonts/Inter-Medium.ttf') format('truetype');
-// 	font-weight: 500;
-// 	font-style: normal;
-// }
-// @font-face {
-//   font-display: swap;
-// 	font-family: 'Inter';
-// 	src: url('./fonts/Inter-Regular.ttf') format('truetype');
-// 	font-weight: 600;
-// 	font-style: normal;
-// }
-// @font-face {
-//   font-display: swap;
-// 	font-family: 'Inter';
-// 	src: url('./fonts/Inter-SemiBold.ttf');
-// 	font-weight: 700;
-// 	font-style: normal;
-// }
-// @font-face {
-//   font-display: swap;
-// 	font-family: 'Inter';
-// 	src: url('./fonts/Inter-Bold.ttf');
-// 	font-weight: 800;
-// 	font-style: normal;
-// }
-// @font-face {
-//   font-display: swap;
-// 	font-family: 'Inter';
-// 	src: url('./fonts/Inter-ExtraBold.ttf');
-// 	font-weight: 900;
-// 	font-style: normal;
-// }
 
 * {
   font-display: fallback;
@@ -87,27 +43,13 @@
 .hover-title:hover::before {
   width: 100%;
 }
-
-/* Presentational Styles */
-// body {
-//   display: grid;
-//   font-family: 'Poppins', sans-serif;
-//   font-size: 27px;
-//   font-weight: 700;
-//   height: 100vh;
-//   place-items: center;
-// }
-
 .centered {
   text-align: center;
 }
 body {
   font-family: 'Inter', 'Helvetica', 'Arial', sans-serif;
-  // font-family: 'Inter', sans-serif !important;
-  // font-weight: 300;
 }
 textarea {
-  // font-family: 'Inter', sans-serif !important;
   font-family:'Inter', 'Helvetica', 'Arial', sans-serif;
 }
 .subtle-text {
@@ -141,10 +83,6 @@ textarea {
 }
 
 .header-secondary {
-  // font-size: 4rem ;
-  // line-height: 5.5rem;
-  // font-weight: 500;
-  // letter-spacing: -0.05em;
   font-size: 56px;
   line-height: 72px;
   font-weight: 700;
@@ -156,10 +94,6 @@ textarea {
 }
 
 .header-tertiary {
-  // font-size: 24px;
-  // line-height: 55px;
-  // font-weight: 400;
-  // letter-spacing: -0.05em;
   font-size: 40px;
   line-height: 56px;
   font-weight: 700;
@@ -226,8 +160,6 @@ textarea {
   font-size: 24px;
 }
 .body-text {
-  // font-size: 16px;
-  // font-weight: 200;
   font-size: 18px;
   line-height: 28px;
   font-weight: 400;
