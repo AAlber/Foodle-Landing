@@ -39,6 +39,10 @@ const Home: NextPage = () => {
   const metaTitle = intl.formatMessage({ id: 'page.home.meta.title' });
   const metaDescription = intl.formatMessage({ id: 'page.home.meta.description' });
 
+  const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
+  const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
+  const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
+
   //Animations
   gsap.registerPlugin(TextPlugin);
   gsap.registerPlugin(ScrollTrigger);
@@ -58,7 +62,7 @@ const Home: NextPage = () => {
   );
   const Faq = dynamic(() => import('../components/landing/Faq'), {});
   const Footer = dynamic(() => import('../components/Layout/Footer'), {});
-  const TrustNumbers= dynamic(() => import('../components/landing/TrustNumbers'), {});
+  const TrustNumbers = dynamic(() => import('../components/landing/TrustNumbers'), {});
 
   return (
     <div>
@@ -118,8 +122,28 @@ const Home: NextPage = () => {
             </Link>
           </div>
           {/* Section 1 Trust Factors DESKTOP */}
-          {/* @ts-ignore */}
-          <TrustNumbers/>
+          <div className="flex-center">
+            <div className={styles['stats']}>
+              <div className={styles['stat']}>
+                <p className={styles['stat__amount']}>0</p>
+                <div className="flex-center">
+                  <p className={styles['stat__text'] + ' body-text'}>{trustNumber1}</p>
+                </div>
+              </div>
+              <div className={styles['stat']}>
+                <p className={styles['stat__amount']}>+15</p>
+                <div className="flex-center">
+                  <p className={styles['stat__text'] + ' body-text'}>{trustNumber2}</p>
+                </div>
+              </div>
+              <div className={styles['stat']}>
+                <p className={styles['stat__amount']}>0</p>
+                <div className="flex-center">
+                  <p className={styles['stat__text'] + ' body-text'}>{trustNumber3}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
