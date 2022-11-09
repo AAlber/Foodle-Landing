@@ -68,10 +68,10 @@ const Home: NextPage = () => {
       <Head>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
-        <link rel="icon" href="/foodle_logo.svg" />
         <link rel="alternate" href="https://www.foodle-kitchens.com/de" hrefLang="de" />
         <link rel="alternate" href="https://www.foodle-kitchens.com/en" hrefLang="en" />
         {/* Web Analytics */}
+        <link rel="icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
