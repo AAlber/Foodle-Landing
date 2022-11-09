@@ -62,7 +62,6 @@ const Home: NextPage = () => {
   );
   const Faq = dynamic(() => import('../components/landing/Faq'), {});
   const Footer = dynamic(() => import('../components/Layout/Footer'), {});
-  const TrustNumbers = dynamic(() => import('../components/landing/TrustNumbers'), {});
 
   return (
     <div>
