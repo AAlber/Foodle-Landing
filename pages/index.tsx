@@ -55,25 +55,13 @@ const Home: NextPage = () => {
 
   const SpecialSection = dynamic<{ title: string }>(
     () => import('../components/Layout/special-section/SpecialSection').then((module) => module),
-    {
-      loading: () => <p>loading...</p>,
-      ssr: false,
-    }
   );
   const TrustFactors = dynamic<{ width: number }>(
     () => import('../components/landing/TrustFactors').then((module) => module),
-    {
-      loading: () => <p>loading...</p>,
-      ssr: false,
-    }
   );
   const Faq = dynamic(() => import('../components/landing/Faq'), {
-    loading: () => <p>loading...</p>,
-    ssr: false,
   });
   const Footer = dynamic<{}>(() => import('../components/Layout/Footer').then((module) => module), {
-    loading: () => <p>loading...</p>,
-    ssr: false,
   });
 
   return (
@@ -86,7 +74,7 @@ const Home: NextPage = () => {
         <link rel="alternate" href="https://www.foodle-kitchens.com/en" hrefLang="en" />
         {/* Web Analytics */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='anonymous'/>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
