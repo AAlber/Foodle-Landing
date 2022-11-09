@@ -118,10 +118,8 @@ const Home: NextPage = () => {
             </Link>
           </div>
           {/* Section 1 Trust Factors DESKTOP */}
-          {wasScrolled && (
-          /* @ts-ignore */
+          {/* @ts-ignore */}
           <TrustNumbers/>
-          )}
         </div>
       </div>
 
