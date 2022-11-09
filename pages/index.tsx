@@ -34,9 +34,6 @@ const Home: NextPage = () => {
   const submit = intl.formatMessage({ id: 'page.home.hero.submit' });
   const overline = intl.formatMessage({ id: 'page.home.hero.overline' });
   const specialTitle = intl.formatMessage({ id: 'page.home.special.mainTitle' });
-  const trustNumber1 = intl.formatMessage({ id: 'page.home.hero.trustNumber.1' });
-  const trustNumber2 = intl.formatMessage({ id: 'page.home.hero.trustNumber.2' });
-  const trustNumber3 = intl.formatMessage({ id: 'page.home.hero.trustNumber.3' });
   const cookieMessage = intl.formatMessage({ id: 'component.cookie.message' });
 
   const metaTitle = intl.formatMessage({ id: 'page.home.meta.title' });
@@ -53,16 +50,15 @@ const Home: NextPage = () => {
     return window.removeEventListener('scroll', () => onScroll());
   }, []);
 
-  const SpecialSection = dynamic<{ title: string }>(
-    () => import('../components/Layout/special-section/SpecialSection').then((module) => module),
+  const SpecialSection = dynamic<{ title: string }>(() =>
+    import('../components/Layout/special-section/SpecialSection').then((module) => module)
   );
-  const TrustFactors = dynamic<{ width: number }>(
-    () => import('../components/landing/TrustFactors').then((module) => module),
+  const TrustFactors = dynamic<{ width: number }>(() =>
+    import('../components/landing/TrustFactors').then((module) => module)
   );
-  const Faq = dynamic(() => import('../components/landing/Faq'), {
-  });
-  const Footer = dynamic<{}>(() => import('../components/Layout/Footer').then((module) => module), {
-  });
+  const Faq = dynamic(() => import('../components/landing/Faq'), {});
+  const Footer = dynamic(() => import('../components/Layout/Footer'), {});
+  const TrustNumbers= dynamic(() => import('../components/landing/TrustNumbers'), {});
 
   return (
     <div>
@@ -74,7 +70,7 @@ const Home: NextPage = () => {
         <link rel="alternate" href="https://www.foodle-kitchens.com/en" hrefLang="en" />
         {/* Web Analytics */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin='anonymous'/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
@@ -103,7 +99,7 @@ const Home: NextPage = () => {
       <div className={styles['hero']}>
         <Image
           priority={true}
-          src={width!>720? "/landing.png": "/landing-small.png"}
+          src={width! > 720 ? '/landing.png' : '/landing-small.png'}
           className={styles['hero-image']}
           alt="Cook cutting vegetables on a kitchen counter"
           layout="fill"
@@ -122,28 +118,10 @@ const Home: NextPage = () => {
             </Link>
           </div>
           {/* Section 1 Trust Factors DESKTOP */}
-          <div className="flex-center">
-            <div className={styles['trustNumbers']}>
-              <div className={styles['trustNumbers__container']}>
-                <p className={styles['trustNumbers__number']}>0€</p>
-                <div className="flex-center">
-                  <p className={styles['trustNumbers__text'] + ' body-text'}>{trustNumber1}</p>
-                </div>
-              </div>
-              <div className={styles['trustNumbers__container']}>
-                <p className={styles['trustNumbers__number']}>+15</p>
-                <div className="flex-center">
-                  <p className={styles['trustNumbers__text'] + ' body-text'}>{trustNumber2}</p>
-                </div>
-              </div>
-              <div className={styles['trustNumbers__container--last-child']}>
-                <p className={styles['trustNumbers__number']}>0</p>
-                <div className="flex-center">
-                  <p className={styles['trustNumbers__text--last-child'] + ' body-text'}>{trustNumber3}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {wasScrolled && (
+          /* @ts-ignore */
+          <TrustNumbers/>
+          )}
         </div>
       </div>
 
