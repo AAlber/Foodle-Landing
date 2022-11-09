@@ -18,7 +18,6 @@ import styles from '../styles/pages/Home.module.scss';
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
-  console.log(process.env.NODE_ENV);
 
   useEffect(() => {
     process.env.NODE_ENV === 'production'
@@ -87,7 +86,7 @@ const Home: NextPage = () => {
         <link rel="alternate" href="https://www.foodle-kitchens.com/en" hrefLang="en" />
         {/* Web Analytics */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
@@ -116,7 +115,7 @@ const Home: NextPage = () => {
       <div className={styles['hero']}>
         <Image
           priority={true}
-          src="/landing.png"
+          src={width!>720? "/landing.png": "/landing-small.png"}
           className={styles['hero-image']}
           alt="Cook cutting vegetables on a kitchen counter"
           layout="fill"

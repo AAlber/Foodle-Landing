@@ -11,7 +11,8 @@
     "next:build": "next build",
     "next:start": "next start",
     "next:lint": "next lint",
-    "analyze": "ANALYZE=true next build"
+    "analyze": "ANALYZE=true next build",
+    "bundle-report": "webpack-bundle-analyzer --port 30000 dist/stats.json"
   },
   "dependencies": {
     "@amplitude/analytics-browser": "^1.5.1",
